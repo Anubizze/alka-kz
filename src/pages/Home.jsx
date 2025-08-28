@@ -60,7 +60,7 @@ const Home = () => {
                 )}
               </div>
             </a>
-            <a href="#/lombard" className="service-card lombard" aria-label={t('lombard', currentLanguage)}>
+            <a href="/lombard" className="service-card lombard" aria-label={t('lombard', currentLanguage)}>
               <div className="service-icon">
                 <Image 
                   src="/lombard.png" 
@@ -114,7 +114,7 @@ const Home = () => {
                 <div className="news-hyperlink preview-only">
                   <span>Перейти на сайт Даму Лизинг</span>
                 </div>
-                                  <a href="#/damu-leasing" className="news-link">
+                                  <a href="/damu-leasing" className="news-link">
                     {t('readMore', currentLanguage)} ►
                   </a>
               </div>
@@ -124,7 +124,7 @@ const Home = () => {
                 <div className="news-hyperlink preview-only">
                   <span>Перейти на сайт Нурлы Жер</span>
                 </div>
-                                  <a href="#/nurly-zher" className="news-link">
+                                  <a href="/nurly-zher" className="news-link">
                     {t('readMore', currentLanguage)} ►
                   </a>
               </div>
@@ -134,7 +134,7 @@ const Home = () => {
                 <div className="news-hyperlink preview-only">
                   <span>Перейти на сайт Даму</span>
                 </div>
-                                  <a href="#/damu" className="news-link">
+                                  <a href="/damu" className="news-link">
                     {t('readMore', currentLanguage)} ►
                   </a>
               </div>

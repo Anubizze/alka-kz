@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /alka-kz/
+
+# Handle Angular and React Router
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /alka-kz/index.html [L]
+
+# Handle 404 errors
+ErrorDocument 404 /alka-kz/index.html
