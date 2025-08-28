@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /alka-kz/
+
+# Handle images and other assets
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /alka-kz/$1 [L]
+
+# Handle React Router
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /alka-kz/index.html [L]
