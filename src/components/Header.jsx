@@ -5,6 +5,7 @@ import { t } from '../utils/translations'
 import Logo from './Logo'
 import LanguageSwitcher from './LanguageSwitcher'
 import Loader from './Loader'
+import Image from './Image'
 import './Header.css'
 
 const Header = () => {
@@ -75,13 +76,13 @@ const Header = () => {
           <div className="branding">
             <div className="brand-logo">
               <Link to="/">
-                <img src="/LogoLomabrd.png" alt="АЛКА" />
+                <Image src="/LogoLomabrd.png" alt="АЛКА" />
               </Link>
             </div>
           </div>
           
           <div className="contact-info">
-            <img src="/ContactsLombard.png" alt={t('contactInfo', currentLanguage)} className="contact-image" />
+            <Image src="/ContactsLombard.png" alt={t('contactInfo', currentLanguage)} className="contact-image" />
           </div>
         </div>
       </div>
@@ -119,7 +120,7 @@ const Header = () => {
         <div className="container">
           <div className="mobile-branding">
             <Link to="/" onClick={closeMenu}>
-              <img src="/logo-alka-mob.png" alt={t('alkha', currentLanguage)} />
+              <Image src="/logo-alka-mob.png" alt={t('alkha', currentLanguage)} />
             </Link>
           </div>
           <button 
@@ -141,7 +142,7 @@ const Header = () => {
       <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
         <div className="mobile-menu-header">
           <div className="mobile-menu-logo">
-            <img src="/logo-alka-mob.png" alt="АЛКА" />
+            <Image src="/logo-alka-mob.png" alt="АЛКА" />
           </div>
           <button className="mobile-menu-close" onClick={closeMenu}>
             <span></span>

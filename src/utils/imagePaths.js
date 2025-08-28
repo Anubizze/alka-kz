@@ -15,4 +15,16 @@ const getImagePath = (path) => {
   return `/${cleanPath}`;
 };
 
+// Утилита для CSS background-image путей
+export const getCSSImagePath = (path) => {
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const isGitHubPages = window.location.hostname === 'anubizze.github.io';
+  
+  if (isGitHubPages) {
+    return `url('/alka-kz/${cleanPath}')`;
+  }
+  
+  return `url('/${cleanPath}')`;
+};
+
 export default getImagePath;
