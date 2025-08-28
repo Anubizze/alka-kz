@@ -48,7 +48,7 @@ const LombardServices = () => {
             {/* Ссылка на онлайн калькулятор золота выше текста */}
             <div className="gold-calculator-link">
               <a
-                href="/calculator"
+                href="#/calculator"
                 className="calculator-link"
               >
                 {t('goldCalculatorLink', currentLanguage)}

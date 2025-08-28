@@ -155,7 +155,7 @@ const LombardAlka = () => {
                   <Image src="/zoloto-1.png" alt="Золотые слитки" />
                 </div>
                 <div className="service-content">
-                  <a href="/lombard/services" className="service-link">Залог ювелирных изделий</a>
+                  <a href="#/lombard/services" className="service-link">Залог ювелирных изделий</a>
                   <p>Золотые и серебряные изделия</p>
                 </div>
               </div>
@@ -166,7 +166,7 @@ const LombardAlka = () => {
                   <Image src="/sotki-1.png" alt="Техника" />
                 </div>
                 <div className="service-content">
-                  <a href="/lombard/services" className="service-link">Залог техники</a>
+                  <a href="#/lombard/services" className="service-link">Залог техники</a>
                   <p>Ноутбуки, телефоны, телевизоры</p>
                 </div>
               </div>

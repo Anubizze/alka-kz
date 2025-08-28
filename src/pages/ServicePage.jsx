@@ -58,7 +58,7 @@ const ServicePage = () => {
           <div className="service-not-found">
             <h1>Сервис не найден</h1>
             <p>К сожалению, информация о сервисе "{serviceName}" не найдена.</p>
-            <a href="/" className="back-home">Вернуться на главную</a>
+            <a href="#/" className="back-home">Вернуться на главную</a>
           </div>
         </div>
       </div>
