@@ -48,53 +48,7 @@
   color: #999;
 }
 
-/* Contacts Hero Section */
-.contacts-hero {
-  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
-  padding: 80px 0;
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
 
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.hero-bg-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.3;
-}
-
-.contacts-hero .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 10;
-}
-
-.contacts-hero-content h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin: 0 0 20px 0;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.contacts-hero-content p {
-  font-size: 20px;
-  margin: 0;
-  opacity: 0.9;
-  font-weight: 400;
-}
 
 /* Central Office Section */
 .central-office-section {
@@ -111,47 +65,19 @@
 }
 
 .office-info {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 60px;
-  align-items: center;
-  text-align: left;
-}
-
-.office-image {
   text-align: center;
-}
-
-.office-image img {
-  width: 200px;
-  height: 200px;
-  object-fit: contain;
-}
-
-.office-details {
-  text-align: left;
+  margin: 20px 0;
 }
 
 .contact-details {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
+  margin: 20px 0;
 }
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.contact-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
 }
 
 .contact-icon {

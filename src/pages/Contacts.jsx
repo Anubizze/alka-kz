@@ -41,54 +41,34 @@ const Contacts = () => {
         </div>
       </div>
 
-      {/* Hero Section */}
-      <section className="contacts-hero">
-        <div className="hero-background">
-          <Image src="/ContactsLombard.png" alt="Контакты" className="hero-bg-image" />
-        </div>
-        <div className="container">
-          <div className="contacts-hero-content">
-            <h1>{t('contacts', currentLanguage)}</h1>
-            <p>{t('contactDescription', currentLanguage) || 'Свяжитесь с нами для получения консультации'}</p>
-          </div>
-        </div>
-      </section>
-
       {/* Central Office Section */}
       <section className="central-office-section">
         <div className="container">
-          <div className="office-info">
-            <div className="office-image">
-              <Image src="/LogoLomabrd.png" alt="Центральный офис" />
+          <h2 className="central-office-title">
+            {currentLanguage === 'RU' ? 'ЦЕНТРАЛЬНЫЙ ОФИС' : 'Орталық кеңсе'}
+          </h2>
+          <div className="contact-details">
+            <div className="contact-item">
+              <div className="contact-icon">📍</div>
+              <div className="contact-info">
+                <h3>Адрес</h3>
+                <p>г. Семей, ул. Примерная, 123</p>
+              </div>
             </div>
-            <div className="office-details">
-              <h2 className="central-office-title">
-                {currentLanguage === 'RU' ? 'ЦЕНТРАЛЬНЫЙ ОФИС' : 'Орталық кеңсе'}
-              </h2>
-              <div className="contact-details">
-                <div className="contact-item">
-                  <div className="contact-icon">📍</div>
-                  <div className="contact-info">
-                    <h3>Адрес</h3>
-                    <p>г. Семей, ул. Примерная, 123</p>
-                  </div>
-                </div>
-                
-                <div className="contact-item">
-                  <div className="contact-icon">📞</div>
-                  <div className="contact-info">
-                    <h3>Телефон</h3>
-                    <p>+7 (701) 081-36-76</p>
-                  </div>
-                </div>
-                
-                <div className="contact-item">
-                  <div className="contact-icon">🕒</div>
-                  <div className="contact-info">
-                    <h3>Время работы</h3>
-                    <p>Пн-Пт: 9:00 - 18:00<br/>Сб: 9:00 - 15:00</p>
-                  </div>
-                </div>
+            
+            <div className="contact-item">
+              <div className="contact-icon">📞</div>
+              <div className="contact-info">
+                <h3>Телефон</h3>
+                <p>+7 (701) 081-36-76</p>
+              </div>
+            </div>
+            
+            <div className="contact-item">
+              <div className="contact-icon">🕒</div>
+              <div className="contact-info">
+                <h3>Время работы</h3>
+                <p>Пн-Пт: 9:00 - 18:00<br/>Сб: 9:00 - 15:00</p>
               </div>
             </div>
           </div>
