@@ -49,31 +49,7 @@ const About = () => {
             предоставляющий широкий спектр финансовых услуг в Казахстане.
           </p>
           
-          <div className="about-features">
-            <div className="feature-item">
-              <div className="feature-icon">🏢</div>
-              <div className="feature-content">
-                <h3>Многолетний опыт</h3>
-                <p>Более 10 лет успешной работы на финансовом рынке</p>
-              </div>
-            </div>
-            
-            <div className="feature-item">
-              <div className="feature-icon">💎</div>
-              <div className="feature-content">
-                <h3>Качество услуг</h3>
-                <p>Высокие стандарты обслуживания клиентов</p>
-              </div>
-            </div>
-            
-            <div className="feature-item">
-              <div className="feature-icon">🤝</div>
-              <div className="feature-content">
-                <h3>Надежность</h3>
-                <p>Стабильное финансовое положение и доверие клиентов</p>
-              </div>
-            </div>
-          </div>
+
           
           {/* Форма обратной связи */}
           <div className="lombard-news-form-section">

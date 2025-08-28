@@ -127,34 +127,7 @@
   text-align: justify;
 }
 
-.about-features {
-  margin: 20px 0;
-}
 
-.feature-item {
-  margin: 15px 0;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.feature-icon {
-  font-size: 24px;
-  width: 40px;
-  text-align: center;
-}
-
-.feature-content h3 {
-  margin: 0 0 5px 0;
-  font-size: 18px;
-  color: #333;
-}
-
-.feature-content p {
-  margin: 0;
-  color: #666;
-  font-size: 14px;
-}
 
 /* Контактная форма для страницы About */
 .about-contact-form-section {
