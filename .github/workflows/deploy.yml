@@ -39,8 +39,11 @@ jobs:
         VITE_RECAPTCHA_SITE_KEY: ${{ secrets.VITE_RECAPTCHA_SITE_KEY }}
         VITE_RECAPTCHA_SECRET_KEY: ${{ secrets.VITE_RECAPTCHA_SECRET_KEY }}
         
-    - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v4
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
         path: ./dist
+        
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v4
 
