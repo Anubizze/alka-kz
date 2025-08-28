@@ -109,35 +109,35 @@ const Home = () => {
             ) : (
               // Fallback новости если нет сохраненных
               <>
-                              <div className="news-card">
-                <h3>ДАМУ ЛИЗИНГ</h3>
-                <div className="news-hyperlink preview-only">
-                  <span>Перейти на сайт Даму Лизинг</span>
-                </div>
-                                  <a href="/damu-leasing" className="news-link">
+                                              <div className="news-card">
+                  <h3>ДАМУ ЛИЗИНГ</h3>
+                  <div className="news-hyperlink preview-only">
+                    <span>Перейти на сайт Даму Лизинг</span>
+                  </div>
+                  <a href="/services/damu-leasing" className="news-link">
                     {t('readMore', currentLanguage)} ►
                   </a>
-              </div>
-              
-              <div className="news-card">
-                <h3>НУРЛЫ ЖЕР</h3>
-                <div className="news-hyperlink preview-only">
-                  <span>Перейти на сайт Нурлы Жер</span>
                 </div>
-                                  <a href="/nurly-zher" className="news-link">
+                
+                <div className="news-card">
+                  <h3>НУРЛЫ ЖЕР</h3>
+                  <div className="news-hyperlink preview-only">
+                    <span>Перейти на сайт Нурлы Жер</span>
+                  </div>
+                  <a href="/services/nurly-zher" className="news-link">
                     {t('readMore', currentLanguage)} ►
                   </a>
-              </div>
-              
-              <div className="news-card">
-                <h3>ДАМУ</h3>
-                <div className="news-hyperlink preview-only">
-                  <span>Перейти на сайт Даму</span>
                 </div>
-                                  <a href="/damu" className="news-link">
+                
+                <div className="news-card">
+                  <h3>ДАМУ</h3>
+                  <div className="news-hyperlink preview-only">
+                    <span>Перейти на сайт Даму</span>
+                  </div>
+                  <a href="/services/damu" className="news-link">
                     {t('readMore', currentLanguage)} ►
                   </a>
-              </div>
+                </div>
               </>
             )}
           </div>
