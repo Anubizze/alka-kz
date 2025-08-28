@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Image from './Image'
 import './AdminNewsManager.css'
 
 const AdminNewsManager = () => {
@@ -568,7 +569,7 @@ const AdminNewsManager = () => {
                         </div>
                       ) : (
                         <>
-                          <img 
+                          <Image 
                             src={formData.image} 
                             alt="Предварительный просмотр" 
                             className="preview-image"
@@ -619,7 +620,7 @@ const AdminNewsManager = () => {
           <div key={item.id} className="news-item">
             <div className="news-image">
               {item.image ? (
-                <img src={item.image} alt={item.alt || 'Изображение новости'} />
+                <Image src={item.image} alt={item.alt || 'Изображение новости'} />
               ) : (
                 <div className="image-placeholder">
                   <span className="placeholder-icon">🖼️</span>

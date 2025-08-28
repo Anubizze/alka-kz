@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import ContactForm from '../components/ContactForm'
 import Loader from '../components/Loader'
+import Image from '../components/Image'
 import './Damu.css'
 
 const Damu = () => {
@@ -74,7 +75,7 @@ const Damu = () => {
             
             <div className="damu-banner">
               <div className="banner-image">
-                <img src="/Damu.jpeg" alt="Даму" />
+                <Image src="/Damu.jpeg" alt="Даму" />
               </div>
             </div>
           </div>

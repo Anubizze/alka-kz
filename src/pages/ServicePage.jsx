@@ -4,6 +4,7 @@ import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import ContactForm from '../components/ContactForm'
 import Loader from '../components/Loader'
+import Image from '../components/Image'
 import './ServicePage.css'
 
 const ServicePage = () => {
@@ -103,7 +104,7 @@ const ServicePage = () => {
                         target="_blank" 
                         rel="noopener noreferrer"
                       >
-                        <img 
+                        <Image 
                           src={serviceInfo.image} 
                           alt={serviceInfo.alt || serviceInfo.title}
                           onError={(e) => {
@@ -112,7 +113,7 @@ const ServicePage = () => {
                         />
                       </a>
                     ) : (
-                      <img 
+                      <Image 
                         src={serviceInfo.image} 
                         alt={serviceInfo.alt || serviceInfo.title}
                         onError={(e) => {

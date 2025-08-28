@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import Loader from './Loader'
+import Image from './Image'
 import './LanguageSwitcher.css'
 
 const LanguageSwitcher = () => {
@@ -35,7 +36,7 @@ const LanguageSwitcher = () => {
       onClick={handleLanguageChange}
       title={currentLanguage === 'RU' ? 'Қазақ тіліне ауысу' : 'Переключиться на русский'}
     >
-      <img 
+      <Image 
         src={currentLanguage === 'RU' ? '/ru.png' : '/kz.png'} 
         alt={currentLanguage === 'RU' ? 'Русский' : 'Қазақша'}
         className="flag-icon"

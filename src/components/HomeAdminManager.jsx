@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Image from './Image'
 import './HomeAdminManager.css'
 
 const HomeAdminManager = () => {
@@ -222,7 +223,7 @@ const HomeAdminManager = () => {
 
               {imagePreview && (
                 <div className="image-preview">
-                  <img 
+                  <Image 
                     src={imagePreview} 
                     alt="Preview" 
                     onError={() => setImageError(true)}
@@ -262,7 +263,7 @@ const HomeAdminManager = () => {
         {news.map(newsItem => (
           <div key={newsItem.id} className="news-item">
             <div className="news-image">
-              <img 
+              <Image 
                 src={newsItem.image} 
                 alt={newsItem.alt}
                 onError={(e) => {

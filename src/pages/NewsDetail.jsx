@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import Loader from '../components/Loader'
+import Image from '../components/Image'
 import './NewsDetail.css'
 
 const NewsDetail = () => {
@@ -89,7 +90,7 @@ const NewsDetail = () => {
 
         {/* News Image */}
         <div className="news-image-container">
-          <img 
+          <Image 
             src={news.image || '/dengi.jpg'} 
             alt={news.alt || news.title}
             className="news-image"

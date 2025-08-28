@@ -98,44 +98,25 @@ const LombardNews = () => {
           id: 6,
           title: 'Приказ о мерах поддержки физических и юридических лиц',
           image: '/4.jpg',
-          alt: 'Документы поддержки',
-          description: 'Порядок предоставления отсрочки платежей по займам физических и юридических лиц, пострадавших в результате введения чрезвычайного положения • Порядок и контактные телефоны по реструктуризации займа',
-          fullContent: 'Приказ о мерах поддержки физических и юридических лиц, пострадавших в результате введения чрезвычайного положения. Включает порядок предоставления отсрочки платежей по займам и контактные телефоны по реструктуризации займа.',
-          pdfDocuments: [
-            { name: 'Порядок предоставления отсрочки платежей', file: '/PDF/Poryadok-predostavleniya-otsrochki-platezhej-po-zajmam-fizicheskih-i-yuridicheskih-lits-postradavshih-v-rezultate-vvedeniya-chrezvychajnogo-polozheniya.pdf' },
-            { name: 'Порядок и контактные телефоны по реструктуризации займа', file: '/PDF/Poryadok-i-kontaktnye-telefony-po-restrukturizatsii-zajma.pdf' }
-          ]
-        },
-        {
-          id: 7,
-          title: 'Финансовая отчетность',
-          image: '/photo_otchet.jpg',
-          alt: 'Финансовые документы',
-          description: 'Отчет за 2020',
-          fullContent: 'Финансовая отчетность за 2020 год. Анализ финансового состояния компании в условиях пандемии и экономических вызовов.',
-          pdfDocuments: [{ name: 'Отчет за 2020 год', file: '/PDF/Finansovaya-otchetnost-za-2020g.pdf' }]
+          alt: 'Документ',
+          description: 'Приказ о мерах поддержки физических и юридических лиц, пострадавших в результате введения чрезвычайного положения',
+          fullContent: 'Приказ о мерах поддержки физических и юридических лиц, пострадавших в результате введения чрезвычайного положения. Документ содержит информацию о порядке предоставления отсрочки платежей по займам.',
+          pdfDocuments: [{ name: 'Приказ о мерах поддержки', file: '/PDF/Poryadok-predostavleniya-otsrochki-platezhej-po-zajmam-fizicheskih-i-yuridicheskih-lits-postradavshih-v-rezultate-vvedeniya-chrezvychajnogo-polozheniya.pdf' }]
         }
       ]
       setNewsItems(defaultNews)
-      localStorage.setItem('lombardNews', JSON.stringify(defaultNews))
-      console.log('Установлены дефолтные новости:', defaultNews)
     }
     setIsLoading(false)
   }, [])
 
-  // Обработчик клика по новости
   const handleNewsClick = (news) => {
     setSelectedNews(news)
   }
 
-  // Обработчик возврата к списку
   const handleBackToList = () => {
     setSelectedNews(null)
   }
 
-  console.log('Состояние загрузки:', isLoading)
-  console.log('Количество новостей:', newsItems.length)
-  
   // Если выбрана конкретная новость, показываем её детально
   if (selectedNews) {
     return (
@@ -147,7 +128,7 @@ const LombardNews = () => {
             <div className="lombard-news-breadcrumbs">
               <span>{t('main', currentLanguage)}</span>
               <span className="separator">/</span>
-              <span>Новости</span>
+              <span>Новости компании</span>
               <span className="separator">/</span>
               <span>{selectedNews.title}</span>
             </div>
@@ -162,7 +143,7 @@ const LombardNews = () => {
                 {/* Изображение новости */}
                 <div className="lombard-news-detail-image">
                   {selectedNews.image ? (
-                    <img 
+                    <Image 
                       src={selectedNews.image} 
                       alt={selectedNews.alt} 
                       onError={(e) => {
@@ -261,7 +242,7 @@ const LombardNews = () => {
             <div className="lombard-news-breadcrumbs">
               <span>{t('main', currentLanguage)}</span>
               <span className="separator">/</span>
-              <span>Новости</span>
+              <span>Новости компании</span>
               <span className="separator">/</span>
               <span>{selectedNews.title}</span>
             </div>
@@ -276,7 +257,7 @@ const LombardNews = () => {
                 {/* Изображение новости */}
                 <div className="lombard-news-detail-image">
                   {selectedNews.image ? (
-                    <img 
+                    <Image 
                       src={selectedNews.image} 
                       alt={selectedNews.alt} 
                       onError={(e) => {
@@ -375,32 +356,33 @@ const LombardNews = () => {
                 <p>Новости не найдены</p>
               </div>
             ) : (
-              <div className="lombard-news-grid">
+              <div className="lombard-news-list">
                 {newsItems.map((news) => (
                   <div 
                     key={news.id} 
                     className="lombard-news-item"
                     onClick={() => handleNewsClick(news)}
                   >
-                    <div className="lombard-news-image">
-                      {news.image ? (
-                        <Image 
-                          src={news.image} 
-                          alt={news.alt} 
-                          onError={(e) => {
-                            e.target.src = '/dengi.jpg'
-                          }}
-                        />
-                      ) : (
-                        <Image 
-                          src="/dengi.jpg" 
-                          alt="Изображение по умолчанию" 
-                        />
-                      )}
+                    <div className="lombard-news-item-image">
+                      <Image 
+                        src={news.image} 
+                        alt={news.alt || news.title}
+                        onError={(e) => {
+                          e.target.src = '/dengi.jpg'
+                        }}
+                      />
                     </div>
-                    <div className="lombard-news-text-content">
-                      <h3 className="lombard-news-title">{news.title}</h3>
-                      <p className="lombard-news-description">{news.description}</p>
+                    <div className="lombard-news-item-content">
+                      <h3 className="lombard-news-item-title">{news.title}</h3>
+                      <p className="lombard-news-item-description">{news.description}</p>
+                      <div className="lombard-news-item-meta">
+                        <span className="lombard-news-item-date">
+                          {news.date ? new Date(news.date).toLocaleDateString('ru-RU') : 'Дата не указана'}
+                        </span>
+                        <button className="lombard-news-item-read-more">
+                          Читать далее
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}

@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import ContactForm from '../components/ContactForm'
 import Loader from '../components/Loader'
+import Image from '../components/Image'
 import './NurlyZher.css'
 
 const NurlyZher = () => {
@@ -66,7 +67,7 @@ const NurlyZher = () => {
             
             <div className="nurly-zher-banner">
               <div className="banner-image">
-                <img src="/BringLand.jpeg" alt="Nurly Zher" />
+                <Image src="/BringLand.jpeg" alt="Nurly Zher" />
               </div>
             </div>
           </div>

@@ -316,7 +316,7 @@ function Calculator() {
                     </div>
                   </div>
                   <div className="calculator-result-item">
-                    <img src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} className="mr-2 w-4 h-4" />
+                    <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} className="mr-2 w-4 h-4" />
                     {currentLanguage === 'RU' ? 'Месячная ставка' : 'Айлық мөлшерлеме'} <span className="font-bold">{creditResult.rate}%</span>
                   </div>
                 </div>
@@ -324,7 +324,7 @@ function Calculator() {
               {/* Пустой результат */}
               {!result && !creditResult && (
                 <div className="calculator-empty">
-                                    <img
+                                    <Image
                     src="/icons/rashet.png"
                     alt={currentLanguage === 'RU' ? 'Эмблема расчёта' : 'Есептеу эмблемасы'}
                     className="calculator-empty-icon"
@@ -344,7 +344,7 @@ function Calculator() {
         <div className="calculator-card">
                       <h3 className="calculator-card-title">
               <div className="calculator-card-icon">
-                <img src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Важная информация' : 'Маңызды ақпарат'} />
+                <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Важная информация' : 'Маңызды ақпарат'} />
               </div>
               {currentLanguage === 'RU' ? 'Важная информация' : 'Маңызды ақпарат'}
             </h3>
@@ -364,7 +364,7 @@ function Calculator() {
             <div className="calculator-info-item">
               <h4 className="calculator-info-title">
                 <span className="calculator-info-icon">
-                  <img
+                  <Image
                     src="/icons/yslovia.png"
                     alt={currentLanguage === 'RU' ? 'Иконка условий' : 'Шарттар белгішесі'}
                   />
@@ -381,7 +381,7 @@ function Calculator() {
             <div className="calculator-info-item">
               <h4 className="calculator-info-title">
                 <span className="calculator-info-icon">
-                  <img
+                  <Image
                     src="/icons/lupa4.png"
                     alt={currentLanguage === 'RU' ? 'Иконка поиска' : 'Іздеу белгішесі'}
                   />
@@ -405,7 +405,7 @@ function Calculator() {
             <div className="calculator-footer-logo">
               <div className="calculator-footer-logo-inner">
                 <div className="calculator-footer-logo-img">
-                  <img
+                  <Image
                     src="/icons/almaz.png"
                     alt="Алмаз АЛКА ЛОМБАРД"
                     width="35"
@@ -420,7 +420,7 @@ function Calculator() {
             </div>
             <div className="calculator-footer-info">
               <div className="calculator-footer-icon">
-                <img
+                <Image
                   src="/icons/lampa.png"
                   alt="Лампа"
                 />
@@ -434,7 +434,7 @@ function Calculator() {
             </div>
             <div className="calculator-footer-info">
               <div className="calculator-footer-icon">
-                <img
+                <Image
                   src="/icons/telephone1.png"
                   alt="Телефон"
                 />
