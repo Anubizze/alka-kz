@@ -119,77 +119,61 @@
 }
 
 .organization-card {
-  display: flex;
-  gap: 40px;
-  padding: 50px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  background: #f8f9fa;
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  border: 2px solid transparent;
 }
 
 .organization-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-}
-
-.organization-card.jewelry {
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-  color: #333;
-}
-
-.organization-card.lombard {
-  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
-  color: white;
+  border-color: #d32f2f;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .organization-icon {
-  flex-shrink: 0;
+  margin-bottom: 20px;
 }
 
 .organization-icon img {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 
-.organization-content {
-  flex: 1;
-}
-
 .organization-content h2 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
-  margin: 0 0 20px 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  margin: 0 0 15px 0;
+  color: #333;
 }
 
 .organization-content p {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.6;
-  margin: 0 0 25px 0;
-  opacity: 0.9;
+  color: #666;
+  margin: 0 0 20px 0;
 }
 
 .organization-features {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .feature {
   display: flex;
   align-items: center;
-  gap: 15px;
-  font-size: 16px;
-  font-weight: 500;
+  gap: 10px;
+  font-size: 14px;
+  color: #666;
 }
 
 .feature-icon {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /* Financial Programs */

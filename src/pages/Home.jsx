@@ -117,7 +117,7 @@ const Home = () => {
                   <div className="news-hyperlink preview-only">
                     <span>Перейти на сайт Даму Лизинг</span>
                   </div>
-                  <a href="/services/damu-leasing" className="news-link">
+                  <a href="/damu-leasing" className="news-link">
                     {t('readMore', currentLanguage)} ►
                   </a>
                 </div>
@@ -130,7 +130,7 @@ const Home = () => {
                   <div className="news-hyperlink preview-only">
                     <span>Перейти на сайт Нурлы Жер</span>
                   </div>
-                  <a href="/services/damu" className="news-link">
+                  <a href="/nurly-zher" className="news-link">
                     {t('readMore', currentLanguage)} ►
                   </a>
                 </div>
@@ -143,7 +143,7 @@ const Home = () => {
                   <div className="news-hyperlink preview-only">
                     <span>Перейти на сайт Даму</span>
                   </div>
-                  <a href="/services/damu" className="news-link">
+                  <a href="/damu" className="news-link">
                     {t('readMore', currentLanguage)} ►
                   </a>
                 </div>

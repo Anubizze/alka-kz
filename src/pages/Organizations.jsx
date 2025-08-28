@@ -60,54 +60,50 @@ const Organizations = () => {
               <div className="organization-icon">
                 <Image src="/yuvelirn.png" alt="Ювелирный салон" />
               </div>
-              <div className="organization-content">
-                <h2>{t('jewelry', currentLanguage).toUpperCase()}</h2>
-                <p>
-                  {t('jewelryDescription', currentLanguage)}
-                </p>
-                <div className="organization-features">
-                  <div className="feature">
-                    <span className="feature-icon">💎</span>
-                    <span>{t('goldJewelry', currentLanguage)}</span>
-                  </div>
-                  <div className="feature">
-                    <span className="feature-icon">💍</span>
-                    <span>{t('weddingRings', currentLanguage)}</span>
-                  </div>
-                  <div className="feature">
-                    <span className="feature-icon">✨</span>
-                    <span>{t('preciousStones', currentLanguage)}</span>
-                  </div>
+              <h2>{t('jewelry', currentLanguage)}</h2>
+              <p>
+                {t('jewelryDescription', currentLanguage)}
+              </p>
+              <div className="organization-features">
+                <div className="feature">
+                  <span className="feature-icon">💎</span>
+                  <span>{t('goldJewelry', currentLanguage)}</span>
                 </div>
-                <a href="/organizations/jewelry" className="btn btn-primary">{t('readMore', currentLanguage)}</a>
+                <div className="feature">
+                  <span className="feature-icon">💍</span>
+                  <span>{t('weddingRings', currentLanguage)}</span>
+                </div>
+                <div className="feature">
+                  <span className="feature-icon">✨</span>
+                  <span>{t('preciousStones', currentLanguage)}</span>
+                </div>
               </div>
+              <a href="/lombard" className="btn btn-primary">{t('readMore', currentLanguage)}</a>
             </div>
             
             <div className="organization-card lombard">
               <div className="organization-icon">
                 <Image src="/lombard.png" alt="Ломбард" />
               </div>
-              <div className="organization-content">
-                <h2>{t('lombard', currentLanguage).toUpperCase()}</h2>
-                <p>
-                  {t('lombardDescription', currentLanguage)}
-                </p>
-                <div className="organization-features">
-                  <div className="feature">
-                    <span className="feature-icon">💰</span>
-                    <span>{t('quickLoans', currentLanguage)}</span>
-                  </div>
-                  <div className="feature">
-                    <span className="feature-icon">📱</span>
-                    <span>{t('onlineAssessment', currentLanguage)}</span>
-                  </div>
-                  <div className="feature">
-                    <span className="feature-icon">⚡</span>
-                    <span>{t('instantIssuance', currentLanguage)}</span>
-                  </div>
+              <h2>{t('lombard', currentLanguage)}</h2>
+              <p>
+                {t('lombardDescription', currentLanguage)}
+              </p>
+              <div className="organization-features">
+                <div className="feature">
+                  <span className="feature-icon">💰</span>
+                  <span>{t('quickLoans', currentLanguage)}</span>
                 </div>
-                <a href="/lombard" className="btn btn-primary">{t('readMore', currentLanguage)}</a>
+                <div className="feature">
+                  <span className="feature-icon">📱</span>
+                  <span>{t('onlineAssessment', currentLanguage)}</span>
+                </div>
+                <div className="feature">
+                  <span className="feature-icon">⚡</span>
+                  <span>{t('instantIssuance', currentLanguage)}</span>
+                </div>
               </div>
+              <a href="/lombard" className="btn btn-primary">{t('readMore', currentLanguage)}</a>
             </div>
           </div>
         </div>
