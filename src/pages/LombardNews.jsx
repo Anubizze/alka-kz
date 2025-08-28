@@ -356,14 +356,14 @@ const LombardNews = () => {
                 <p>Новости не найдены</p>
               </div>
             ) : (
-              <div className="lombard-news-list">
+              <div className="lombard-news-grid">
                 {newsItems.map((news) => (
                   <div 
                     key={news.id} 
                     className="lombard-news-item"
                     onClick={() => handleNewsClick(news)}
                   >
-                    <div className="lombard-news-item-image">
+                    <div className="lombard-news-image">
                       <Image 
                         src={news.image} 
                         alt={news.alt || news.title}
@@ -372,17 +372,9 @@ const LombardNews = () => {
                         }}
                       />
                     </div>
-                    <div className="lombard-news-item-content">
-                      <h3 className="lombard-news-item-title">{news.title}</h3>
-                      <p className="lombard-news-item-description">{news.description}</p>
-                      <div className="lombard-news-item-meta">
-                        <span className="lombard-news-item-date">
-                          {news.date ? new Date(news.date).toLocaleDateString('ru-RU') : 'Дата не указана'}
-                        </span>
-                        <button className="lombard-news-item-read-more">
-                          Читать далее
-                        </button>
-                      </div>
+                    <div className="lombard-news-text-content">
+                      <h3 className="lombard-news-title">{news.title}</h3>
+                      <p className="lombard-news-description">{news.description}</p>
                     </div>
                   </div>
                 ))}

@@ -125,7 +125,7 @@ const Organizations = () => {
                 <span>{t('quickApproval', currentLanguage)}</span>
                 <span>{t('flexibleTerms', currentLanguage)}</span>
               </div>
-              <a href="#" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
+              <a href="/damu-leasing" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
             </div>
             
             <div className="program-card">
@@ -139,7 +139,7 @@ const Organizations = () => {
                 <span>{t('preferentialTerms', currentLanguage)}</span>
                 <span>{t('longTermFinancing', currentLanguage)}</span>
               </div>
-              <a href="#" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
+              <a href="/nurly-zher" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
             </div>
             
             <div className="program-card">
@@ -153,6 +153,7 @@ const Organizations = () => {
                 <span>{t('guarantees', currentLanguage)}</span>
                 <span>{t('regionalPrograms', currentLanguage)}</span>
               </div>
+              <a href="/damu" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
             </div>
           </div>
         </div>
