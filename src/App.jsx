@@ -32,7 +32,7 @@ const ConditionalNavigation = () => {
   const isCalculatorPage = location.pathname === '/calculator'
   
   if (isCalculatorPage) {
-    return null // Не показываем глобальную навигацию на странице calculator
+    return <LombardNavigation /> // Показываем ломбард навигацию для калькулятора
   }
   
   return isLombardPage ? <LombardNavigation /> : <Header />

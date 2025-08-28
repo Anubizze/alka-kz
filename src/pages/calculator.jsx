@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
-import LombardNavigation from '../components/LombardNavigation'
 import Image from '../components/Image'
 import './calculator.css'
 
@@ -80,9 +79,6 @@ function Calculator() {
 
   return (
     <div className="calculator-page">
-      {/* Header ломбарда */}
-      <LombardNavigation />
-      
       <div className="calculator-container">
         <div className="calculator-wrapper">
           {/* Header */}
