@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import Loader from '../components/Loader'
@@ -60,7 +61,7 @@ const Home = () => {
                 )}
               </div>
             </a>
-            <a href="#/lombard" className="service-card lombard" aria-label={t('lombard', currentLanguage)}>
+            <Link to="/lombard" className="service-card lombard" aria-label={t('lombard', currentLanguage)}>
               <div className="service-icon">
                 <Image 
                   src="/lombard.png" 
@@ -74,7 +75,7 @@ const Home = () => {
                   </div>
                 )}
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -114,9 +115,9 @@ const Home = () => {
                   <div className="news-hyperlink preview-only">
                     <span>Перейти на сайт Даму Лизинг</span>
                   </div>
-                  <a href="#/services/damu-leasing" className="news-link">
+                  <Link to="/services/damu-leasing" className="news-link">
                     {t('readMore', currentLanguage)} ►
-                  </a>
+                  </Link>
                 </div>
                 
                 <div className="news-card">
@@ -124,9 +125,9 @@ const Home = () => {
                   <div className="news-hyperlink preview-only">
                     <span>Перейти на сайт Нурлы Жер</span>
                   </div>
-                  <a href="#/services/nurly-zher" className="news-link">
+                  <Link to="/services/nurly-zher" className="news-link">
                     {t('readMore', currentLanguage)} ►
-                  </a>
+                  </Link>
                 </div>
                 
                 <div className="news-card">
@@ -134,9 +135,9 @@ const Home = () => {
                   <div className="news-hyperlink preview-only">
                     <span>Перейти на сайт Даму</span>
                   </div>
-                  <a href="#/services/damu" className="news-link">
+                  <Link to="/services/damu" className="news-link">
                     {t('readMore', currentLanguage)} ►
-                  </a>
+                  </Link>
                 </div>
               </>
             )}

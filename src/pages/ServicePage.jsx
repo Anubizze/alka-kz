@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import ContactForm from '../components/ContactForm'
@@ -58,7 +58,7 @@ const ServicePage = () => {
           <div className="service-not-found">
             <h1>Сервис не найден</h1>
             <p>К сожалению, информация о сервисе "{serviceName}" не найдена.</p>
-            <a href="#/" className="back-home">Вернуться на главную</a>
+            <Link to="/" className="back-home">Вернуться на главную</Link>
           </div>
         </div>
       </div>

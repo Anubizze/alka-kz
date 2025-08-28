@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import Loader from '../components/Loader'
@@ -155,7 +156,7 @@ const LombardAlka = () => {
                   <Image src="/zoloto-1.png" alt="Золотые слитки" />
                 </div>
                 <div className="service-content">
-                  <a href="#/lombard/services" className="service-link">Залог ювелирных изделий</a>
+                  <Link to="/lombard/services" className="service-link">Залог ювелирных изделий</Link>
                   <p>Золотые и серебряные изделия</p>
                 </div>
               </div>
@@ -166,7 +167,7 @@ const LombardAlka = () => {
                   <Image src="/sotki-1.png" alt="Техника" />
                 </div>
                 <div className="service-content">
-                  <a href="#/lombard/services" className="service-link">Залог техники</a>
+                  <Link to="/lombard/services" className="service-link">Залог техники</Link>
                   <p>Ноутбуки, телефоны, телевизоры</p>
                 </div>
               </div>

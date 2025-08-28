@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import Loader from '../components/Loader'
@@ -47,12 +48,12 @@ const LombardServices = () => {
           <div className="about-text">
             {/* Ссылка на онлайн калькулятор золота выше текста */}
             <div className="gold-calculator-link">
-              <a
-                href="#/calculator"
+              <Link
+                to="/calculator"
                 className="calculator-link"
               >
                 {t('goldCalculatorLink', currentLanguage)}
-              </a>
+              </Link>
             </div>
 
             <h2>{t('jewelryLoanTitle', currentLanguage)}</h2>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import Loader from '../components/Loader'
@@ -78,7 +79,7 @@ const Organizations = () => {
                   <span>{t('preciousStones', currentLanguage)}</span>
                 </div>
               </div>
-              <a href="#/lombard" className="btn btn-primary">{t('readMore', currentLanguage)}</a>
+              <Link to="/lombard" className="btn btn-primary">{t('readMore', currentLanguage)}</Link>
             </div>
             
             <div className="organization-card lombard">
@@ -103,7 +104,7 @@ const Organizations = () => {
                   <span>{t('instantIssuance', currentLanguage)}</span>
                 </div>
               </div>
-              <a href="#/lombard" className="btn btn-primary">{t('readMore', currentLanguage)}</a>
+              <Link to="/lombard" className="btn btn-primary">{t('readMore', currentLanguage)}</Link>
             </div>
           </div>
         </div>
@@ -125,7 +126,7 @@ const Organizations = () => {
                 <span>{t('quickApproval', currentLanguage)}</span>
                 <span>{t('flexibleTerms', currentLanguage)}</span>
               </div>
-              <a href="#/services/damu-leasing" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
+              <Link to="/services/damu-leasing" className="btn btn-outline">{t('readMore', currentLanguage)}</Link>
             </div>
             
             <div className="program-card">
@@ -139,7 +140,7 @@ const Organizations = () => {
                 <span>{t('preferentialTerms', currentLanguage)}</span>
                 <span>{t('longTermFinancing', currentLanguage)}</span>
               </div>
-              <a href="#/services/nurly-zher" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
+              <Link to="/services/nurly-zher" className="btn btn-outline">{t('readMore', currentLanguage)}</Link>
             </div>
             
             <div className="program-card">
@@ -153,7 +154,7 @@ const Organizations = () => {
                 <span>{t('guarantees', currentLanguage)}</span>
                 <span>{t('regionalPrograms', currentLanguage)}</span>
               </div>
-              <a href="#/services/damu" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
+              <Link to="/services/damu" className="btn btn-outline">{t('readMore', currentLanguage)}</Link>
             </div>
           </div>
         </div>
@@ -198,8 +199,8 @@ const Organizations = () => {
             <h2>{t('readyToCooperate', currentLanguage)}</h2>
             <p>{t('contactForInfo', currentLanguage)}</p>
             <div className="cta-buttons">
-                             <a href="#/contacts" className="btn btn-primary">{t('contactUs', currentLanguage)}</a>
-               <a href="#/about" className="btn btn-secondary">{t('aboutCompany', currentLanguage)}</a>
+                             <Link to="/contacts" className="btn btn-primary">{t('contactUs', currentLanguage)}</Link>
+               <Link to="/about" className="btn btn-secondary">{t('aboutCompany', currentLanguage)}</Link>
             </div>
           </div>
         </div>
