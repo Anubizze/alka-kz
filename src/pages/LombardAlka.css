@@ -1,0 +1,1479 @@
+.lombard-alka {
+  min-height: 100vh;
+  color: white;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section с фоном fon.png */
+.lombard-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Фоновое изображение */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hero Main Content - главный контент с изображениями */
+.hero-main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 955px;
+  height: 333px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.treasure-chest {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInFromLeft 1s ease-out;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.treasure-chest img {
+  width: 433px !important;
+  height: 333px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+.gold-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInFromRight 1s ease-out;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.gold-banner img {
+  width: 482px !important;
+  height: 98px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+/* Более специфичные селекторы для баннеров */
+.hero-main-content .money-banner img,
+.hero-main-content .den-banner img {
+  width: 484px !important;
+  height: 333px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+/* Стили для контейнеров баннеров */
+.money-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInFromLeft 1s ease-out;
+}
+
+.den-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInFromRight 1s ease-out;
+}
+
+/* Стили для техники */
+.tech-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInFromLeft 1s ease-out;
+}
+
+.tech-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInFromRight 1s ease-out;
+}
+
+/* Дополнительные стили для всех баннеров */
+.hero-main-content .gold-banner img {
+  width: 482px !important;
+  height: 98px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+.hero-main-content .money-banner img {
+  width: 484px !important;
+  height: 333px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+.hero-main-content .den-banner img {
+  width: 482px !important;
+  height: 98px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+.hero-main-content .tech-banner img {
+  width: 482px !important;
+  height: 333px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+.hero-main-content .tech-icon img {
+  width: 482px !important;
+  height: 98px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+/* Принудительные стили для всех изображений в hero секции */
+.hero-main-content img {
+  max-width: none !important;
+  max-height: none !important;
+  min-width: auto !important;
+  min-height: auto !important;
+}
+
+/* Специфичные стили для каждого типа изображений */
+.hero-main-content .treasure-chest img {
+  width: 433px !important;
+  height: 333px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+/* Навигационные стрелки */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  color: #333;
+  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.slider-arrow:active {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-50%) scale(0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.slider-arrow-left {
+  left: 20px;
+}
+
+.slider-arrow-right {
+  right: 20px;
+}
+
+.slider-arrow span {
+  display: block;
+  line-height: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-main-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding: 0 20px;
+  }
+  
+  .hero-main-content .treasure-chest img {
+    width: 300px !important;
+    height: 230px !important;
+  }
+  
+  .hero-main-content .gold-banner img {
+    width: 350px !important;
+    height: 71px !important;
+  }
+  
+  .hero-main-content .money-banner img,
+  .hero-main-content .den-banner img {
+    width: 350px !important;
+    height: 71px !important;
+  }
+  
+  .hero-main-content .money-banner img {
+    width: 350px !important;
+    height: 240px !important;
+  }
+  
+  .hero-main-content .tech-banner img {
+    width: 280px !important;
+    height: 192px !important;
+  }
+  
+  .hero-main-content .tech-icon img {
+    width: 280px !important;
+    height: 57px !important;
+  }
+  
+  .treasure-chest img {
+    width: 300px !important;
+    height: 230px !important;
+  }
+  
+  .gold-banner img {
+    width: 350px !important;
+    height: 71px !important;
+  }
+  
+  .money-banner img,
+  .den-banner img {
+    width: 350px !important;
+    height: 71px !important;
+  }
+  
+  .money-banner img {
+    width: 350px !important;
+    height: 240px !important;
+  }
+  
+  .tech-banner img {
+    width: 280px !important;
+    height: 192px !important;
+  }
+  
+  .tech-icon img {
+    width: 280px !important;
+    height: 57px !important;
+  }
+  
+  .lombard-services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+  }
+  
+  .service-card {
+    padding: 6px;
+    flex-direction: row;
+    text-align: left;
+    width: auto;
+    height: auto;
+    min-height: auto;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    min-width: 120px;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+  
+  .service-icon img {
+    max-width: 40px;
+    max-height: 40px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Мобильная высота для серого блока */
+  .hero-background-overlay {
+    height: 300px !important;
+  }
+  
+  .services-section {
+    height: 300px !important;
+  }
+  
+  .service-content .service-link {
+    font-size: 16px;
+    margin-bottom: 6px;
+    white-space: nowrap;
+  }
+  
+  .service-content p {
+    line-height: 1.3;
+    color: #666;
+    margin: 0;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  .slider-arrow-left {
+    left: 10px;
+  }
+  
+  .slider-arrow-right {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lombard-hero {
+    min-height: 100vh;
+  }
+  
+  .hero-main-content {
+    padding: 0 10px;
+    gap: 30px;
+    width: 100%;
+    height: auto;
+  }
+  
+  .treasure-chest img {
+    width: 250px !important;
+    height: 192px !important;
+  }
+  
+  .gold-banner img {
+    width: 280px !important;
+    height: 57px !important;
+  }
+  
+  .money-banner img,
+  .den-banner img {
+    width: 280px !important;
+    height: 57px !important;
+  }
+  
+  .money-banner img {
+    width: 280px !important;
+    height: 192px !important;
+  }
+  
+  .tech-banner img {
+    width: 280px !important;
+    height: 192px !important;
+  }
+  
+  .tech-icon img {
+    width: 280px !important;
+    height: 57px !important;
+  }
+  
+  .services-section {
+    height: 120px;
+  }
+  
+  .service-card {
+    padding: 8px;
+    flex-direction: row;
+    text-align: left;
+    min-width: 200px;
+    gap: 10px;
+  }
+  
+  .service-icon img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .service-content .service-link {
+    font-size: 15px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+  }
+  
+  .service-content p {
+    font-size: 13px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+}
+
+/* Серый фон под hero секцией */
+.hero-background-overlay {
+  position: relative;
+  height: 145px;
+  margin-top: -50px;
+  width: 100%;
+  left: 0;
+  z-index: 2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Секция с услугами */
+.services-section {
+  padding: 0;
+  height: 145px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+}
+
+.services-section .container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.lombard-services-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  max-width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 20px;
+}
+
+@media (max-width: 900px) {
+  .lombard-services-grid {
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .service-card {
+    width: auto;
+    height: auto;
+    min-height: auto;
+    min-width: 160px;
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .service-icon img {
+    max-width: 60px;
+    max-height: 50px;
+  }
+  
+  .service-content .service-link {
+    font-size: 15px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+  }
+  
+  .service-content p {
+    line-height: 1.2;
+    color: #666;
+    margin: 0;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .lombard-services-grid {
+    gap: 15px;
+    padding: 0 15px;
+  }
+  
+  .service-card {
+    width: auto;
+    height: auto;
+    min-height: auto;
+    min-width: 180px;
+    flex-direction: row;
+    gap: 12px;
+  }
+  
+  .service-icon img {
+    max-width: 50px;
+    max-height: 45px;
+  }
+  
+  .service-content .service-link {
+    font-size: 14px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+  }
+  
+  .service-content p {
+    line-height: 1.2;
+    color: #666;
+    margin: 0;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
+
+.service-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background: transparent;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  min-width: 150px;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  background: transparent;
+}
+
+.service-icon {
+  flex-shrink: 0;
+}
+
+.service-icon img {
+  width: auto;
+  height: auto;
+  max-width: 116px;
+  max-height: 106px;
+  object-fit: contain;
+}
+
+.service-content h3 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+  text-decoration: underline;
+}
+
+.service-content .service-link {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+  text-decoration: underline;
+  display: block;
+  transition: color 0.3s ease;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.service-content .service-link:hover {
+  color: #d32f2f;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.service-card p {
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+  text-align: left;
+}
+
+/* Новый блок с двумя колонками */
+.money-block {
+  background: #ffffff;
+  padding: 80px 0;
+  color: #000000;
+}
+
+.money-block-content {
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.money-block-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.money-block-content-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.money-block-image {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.money-block-offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+  height: 120px;
+  justify-content: center;
+}
+
+.money-block-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.money-block-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #000000;
+  line-height: 1.2;
+}
+
+.money-block-image {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.money-block-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.money-block-offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+  height: 120px;
+  justify-content: center;
+}
+
+.offer-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.offer-percentage {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #d32f2f;
+  line-height: 1;
+}
+
+.offer-details {
+  font-size: 1.2rem;
+}
+
+.money-block-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.money-block-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Новый серый блок с преимуществами */
+.features-block {
+  background: #f1f1f1;
+  padding: 20px 0;
+  height: 341px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  max-width: 1280px;
+  margin: 0 auto ;
+
+}
+
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  transition: transform 0.3s ease;
+  height: 200px;
+  justify-content: flex-start;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  margin-bottom: 20px;
+}
+
+.feature-icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.feature-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 15px;
+  line-height: 1.3;
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-text {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333333;
+  margin: 0;
+  min-height: 2.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .money-block-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .money-block-title {
+    font-size: 2rem;
+  }
+  
+  .money-block-content-row {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .money-block-offer {
+    gap: 10px;
+    align-items: center;
+    width: 200px;
+    height: 120px;
+    justify-content: center;
+  }
+  
+  .offer-text {
+    font-size: 1.5rem;
+  }
+  
+  .offer-percentage {
+    font-size: 4rem;
+  }
+  
+  .offer-details {
+    font-size: 1.2rem;
+  }
+  
+  .money-block-text p {
+    font-size: 1rem;
+  }
+  
+  .features-block {
+    height: auto;
+    padding: 40px 0;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  
+  .feature-title {
+    font-size: 1.2rem;
+  }
+  
+  .feature-text {
+    font-size: 1rem;
+  }
+  
+  .feature-icon img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .contact-form-block {
+    padding: 40px 0;
+  }
+  
+
+  
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-input {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .money-block-content {
+    gap: 30px;
+  }
+  
+  .money-block-title {
+    font-size: 1.8rem;
+  }
+  
+  .money-block-content-row {
+    gap: 15px;
+  }
+  
+  .money-block-offer {
+    gap: 10px;
+    width: 200px;
+    height: 120px;
+    justify-content: center;
+  }
+  
+  .offer-text {
+    font-size: 1.5rem;
+  }
+  
+  .offer-percentage {
+    font-size: 4rem;
+  }
+  
+  .offer-details {
+    font-size: 1.2rem;
+  }
+  
+  .money-block-text p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .money-block-content {
+    gap: 25px;
+  }
+  
+  .money-block-title {
+    font-size: 1.6rem;
+  }
+  
+  .money-block-content-row {
+    gap: 12px;
+  }
+  
+  .money-block-offer {
+    gap: 10px;
+    width: 200px;
+    height: 120px;
+    justify-content: center;
+  }
+  
+  .offer-text {
+    font-size: 1.5rem;
+  }
+  
+  .offer-percentage {
+    font-size: 4rem;
+  }
+  
+  .offer-details {
+    font-size: 1.2rem;
+  }
+  
+  .money-block-text p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Блок "Отправьте заявку" */
+.contact-form-block {
+  background: #f1f1f1;
+  padding: 20px 0;
+  margin: 40px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.contact-form-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+.contact-form-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Стили для компактной формы */
+.lombard-alka-contact-form.compact .contact-form-container {
+  max-width: 600px;
+  padding: 20px;
+}
+
+.lombard-alka-contact-form.compact .contact-form-title,
+.lombard-alka-contact-form.compact .contact-form-description {
+  display: block;
+}
+
+/* Адаптация для компонента ContactForm */
+.lombard-alka-contact-form.compact .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.lombard-alka-contact-form.compact .form-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.lombard-alka-contact-form.compact .form-input,
+.lombard-alka-contact-form.compact .form-textarea {
+  width: 100%;
+  padding: 15px 18px;
+  border: 2px solid #e0e0e0;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.lombard-alka-contact-form.compact .form-input:focus,
+.lombard-alka-contact-form.compact .form-textarea:focus {
+  outline: none;
+  border-color: #ffeb3b;
+  box-shadow: 0 0 0 3px rgba(255, 235, 59, 0.2);
+}
+
+.lombard-alka-contact-form.compact .form-textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.lombard-alka-contact-form.compact .form-submit-btn {
+  background: #ffeb3b;
+  color: #000;
+  border: none;
+  padding: 18px 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lombard-alka-contact-form.compact .form-submit-btn:hover {
+  background: #b71c1c;
+}
+
+/* Стили для успешного сообщения и ошибок */
+.lombard-alka-contact-form.compact .form-success {
+  background: #4caf50;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.lombard-alka-contact-form.compact .form-error {
+  background: #f44336;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Мобильные стили для компактной формы */
+@media (max-width: 768px) {
+  .contact-form-content {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  .lombard-alka-contact-form.compact .contact-form {
+    gap: 15px;
+  }
+  
+  .lombard-alka-contact-form.compact .form-input,
+  .lombard-alka-contact-form.compact .form-textarea {
+    padding: 12px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .lombard-alka-contact-form.compact .form-submit-btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+  
+  .contact-form-title {
+    font-size: 1.5rem;
+  }
+  
+  .contact-form-description {
+    font-size: 0.9rem;
+  }
+  
+  .lombard-alka-contact-form.compact .contact-form-container {
+    max-width: 100%;
+    padding: 15px;
+  }
+  
+  .lombard-alka-contact-form.compact .contact-form-title,
+  .lombard-alka-contact-form.compact .contact-form-description {
+    display: block;
+  }
+  
+  .lombard-alka-contact-form.compact .contact-form {
+    gap: 15px;
+  }
+  
+  .lombard-alka-contact-form.compact .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .lombard-alka-contact-form.compact .form-submit-btn {
+    width: 100%;
+    padding: 16px 30px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Секция с картой */
+.map-section {
+  background: #f8f9fa;
+  padding: 60px 0;
+  margin-top: 40px;
+}
+
+.map-content {
+  text-align: center;
+}
+
+.map-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Стили карты как в contacts */
+.map-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #eee;
+  padding: 24px 16px 16px 16px;
+  position: relative;
+  width: 580px;
+  min-width: 400px;
+  flex: 0 0 580px;
+  margin: 0 auto;
+  margin-right: 100px;
+}
+
+.map-city-label {
+  position: absolute;
+  top: 16px;
+  left: -40px;
+  background: #d7261e;
+  color: #fff;
+  border-radius: 4px 0 0 4px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-left: -68px;
+}
+
+.map-container {
+  margin-top: 24px;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Мобильные стили для карты */
+@media (max-width: 1200px) {
+  .map-card {
+    width: 540px;
+    flex: 0 0 540px;
+  }
+}
+
+/* Десктопные стили для карточек услуг */
+@media (min-width: 1025px) {
+  .service-card {
+    min-width: 400px;
+    padding: 30px;
+    gap: 30px;
+  }
+  
+  .service-icon img {
+    max-width: 180px;
+    max-height: 160px;
+  }
+  
+  .service-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .service-content .service-link {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .service-card p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-card {
+    width: 100%;
+    flex: none;
+    min-width: auto;
+  }
+  
+  .map-container {
+    height: 400px;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+  .hero-main-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    gap: 20px;
+    height: auto;
+  }
+  
+  .hero-main-content .treasure-chest img {
+    width: 200px !important;
+    height: 150px !important;
+  }
+  
+  .hero-main-content .gold-banner img {
+    width: 200px !important;
+    height: 40px !important;
+  }
+  
+  .hero-main-content .money-banner img,
+  .hero-main-content .den-banner img {
+    width: 200px !important;
+    height: 40px !important;
+  }
+  
+  .hero-main-content .money-banner img {
+    width: 200px !important;
+    height: 130px !important;
+  }
+  
+  .hero-main-content .tech-banner img {
+    width: 180px !important;
+    height: 120px !important;
+  }
+  
+  .hero-main-content .tech-icon img {
+    width: 180px !important;
+    height: 36px !important;
+  }
+  
+  .treasure-chest img {
+    width: 200px !important;
+    height: 150px !important;
+  }
+  
+  .gold-banner img {
+    width: 200px !important;
+    height: 40px !important;
+  }
+  
+  .money-banner img,
+  .den-banner img {
+    width: 200px !important;
+    height: 40px !important;
+  }
+  
+  .money-banner img {
+    width: 200px !important;
+    height: 130px !important;
+  }
+  
+  .tech-banner img {
+    width: 180px !important;
+    height: 120px !important;
+  }
+  
+  .tech-icon img {
+    width: 180px !important;
+    height: 36px !important;
+  }
+  
+
+  
+  /* Принудительно делаем карточки вертикальными на маленьких экранах */
+  .lombard-services-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    padding: 0 10px !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    overflow-x: hidden !important;
+  }
+  
+  .service-card {
+    padding: 8px !important;
+    flex-direction: row !important;
+    text-align: left !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+  }
+  
+  /* Мобильная высота для серого блока */
+  .hero-background-overlay {
+    height: 250px !important;
+  }
+  
+  .services-section {
+    height: 250px !important;
+  }
+}
+
+/* iPhone SE и очень маленькие экраны */
+@media (max-width: 375px) {
+  .hero-main-content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  
+  /* Принудительно делаем карточки вертикальными на очень маленьких экранах */
+  .lombard-services-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 0 8px !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    overflow-x: hidden !important;
+  }
+  
+  .service-card {
+    padding: 6px !important;
+    flex-direction: row !important;
+    text-align: left !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    min-width: 180px !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+  }
+  
+  /* Мобильная высота для серого блока */
+  .hero-background-overlay {
+    height: 250px !important;
+  }
+  
+  .services-section {
+    height: 250px !important;
+  }
+    padding: 0 8px;
+    gap: 15px;
+    height: auto;
+  }
+  
+  .hero-main-content .treasure-chest img {
+    width: 160px !important;
+    height: 120px !important;
+  }
+  
+  .hero-main-content .gold-banner img {
+    width: 160px !important;
+    height: 32px !important;
+  }
+  
+  .hero-main-content .money-banner img,
+  .hero-main-content .den-banner img {
+    width: 160px !important;
+    height: 32px !important;
+  }
+  
+  .hero-main-content .money-banner img {
+    width: 160px !important;
+    height: 105px !important;
+  }
+  
+  .hero-main-content .tech-banner img {
+    width: 140px !important;
+    height: 95px !important;
+  }
+  
+  .hero-main-content .tech-icon img {
+    width: 140px !important;
+    height: 28px !important;
+  }
+  
+  .treasure-chest img {
+    width: 160px !important;
+    height: 120px !important;
+  }
+  
+  .gold-banner img {
+    width: 160px !important;
+    height: 32px !important;
+  }
+  
+  .money-banner img,
+  .den-banner img {
+    width: 160px !important;
+    height: 32px !important;
+  }
+  
+  .money-banner img {
+    width: 160px !important;
+    height: 105px !important;
+  }
+  
+  .tech-banner img {
+    width: 140px !important;
+    height: 95px !important;
+  }
+  
+  .tech-icon img {
+    width: 140px !important;
+    height: 28px !important;
+  }
+  
+}

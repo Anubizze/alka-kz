@@ -1,0 +1,654 @@
+/* Contacts Page Styles - точная копия alkha.kz */
+
+/* Page Loader */
+.page-loader {
+  position: relative;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.contacts {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+}
+
+/* Заголовок и хлебные крошки */
+.header-section {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 20px 0;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #666;
+}
+
+.breadcrumbs .separator {
+  margin: 0 8px;
+  color: #999;
+}
+
+/* Central Office Section */
+.central-office-section {
+  width: 100%;
+  background: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.central-office-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.central-office-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Map Background Section */
+.map-background {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+  width: 100%;
+  min-height: calc(100vh - 500px);
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.form-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.form-container h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 40px 0;
+  color: #000;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-input,
+.form-textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: Arial, sans-serif;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  background: #ffd700;
+  color: #000;
+  border: none;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #ffed4e;
+}
+
+.submit-btn:active {
+  background: #e6c200;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 36px;
+  }
+  
+  .central-office-title {
+    font-size: 36px;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  .form-container {
+    padding: 30px 20px;
+  }
+  
+  .form-container h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .contact-form {
+    gap: 15px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 12px;
+    font-size: 14px;
+  }
+  
+  .submit-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-section {
+    padding: 15px 0;
+    margin-top: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .page-title {
+    font-size: 28px;
+  }
+  
+  .central-office-section {
+    padding: 30px 0;
+  }
+  
+  .central-office-title {
+    font-size: 28px;
+  }
+  
+  .map-background {
+    height: 300px;
+  }
+  
+  .contact-form-section {
+    min-height: calc(100vh - 400px);
+  }
+  
+  .form-container {
+    padding: 20px 15px;
+  }
+  
+  .form-container h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  
+  .contact-form {
+    gap: 12px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .submit-btn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
+
+/* contact lombard */
+.contacts-map-form-row {
+  display: flex;
+  gap: 100px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 40px 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.map-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #eee;
+  padding: 24px 16px 16px 16px;
+  position: relative;
+  width: 580px;
+  min-width: 400px;
+  flex: 0 0 580px;
+  margin-left: 120px;
+}
+
+.map-city-label {
+  position: absolute;
+  top: 16px;
+  left: -40px;
+  background: #d7261e;
+  color: #fff;
+  border-radius: 4px 0 0 4px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin-left: -68px;
+}
+
+.map-container {
+  margin-top: 24px;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.about-contact-form-section {
+  flex: 0 0 420px;
+  width: 420px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px #eee;
+  padding: 32px 24px;
+  display: flex;
+  align-items: flex-start;
+  margin-left: 80px;
+}
+
+.about-contact-form {
+  width: 100%;
+}
+
+.form-header {
+  margin-bottom: 20px;
+}
+
+.form-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-description {
+  font-size: 1rem;
+  color: #888;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background: #fafafa;
+}
+
+.form-textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+.submit-button {
+  width: 100%;
+  background: #d7261e;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 12px 0;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-button:hover {
+  background: #b71c15;
+}
+
+/* Стили для резервного варианта карты */
+.map-fallback {
+  width: 100%;
+  height: 400px;
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.map-fallback-content {
+  padding: 20px;
+  max-width: 300px;
+}
+
+.map-fallback-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.map-fallback h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.map-fallback p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.map-fallback-link {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.map-fallback-link:hover {
+  background: #0056b3;
+  color: white;
+  text-decoration: none;
+}
+
+/* Адаптивность для резервной карты */
+@media (max-width: 768px) {
+  .map-fallback {
+    height: 300px;
+  }
+  
+  .map-fallback-content {
+    padding: 16px;
+    max-width: 280px;
+  }
+  
+  .map-fallback h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .map-fallback p {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  
+  .map-fallback-link {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Стили для формы "Напишите нам" */
+.lombard-news-form-section {
+  flex: 0 0 380px;
+  max-width: 380px;
+}
+
+.lombard-news-contact-form-panel {
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  min-width: 300px;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.lombard-news-form-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.lombard-news-form-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.lombard-news-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.lombard-news-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.lombard-news-form-input-field {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  font-size: 1rem;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.lombard-news-form-input-field:focus {
+  border-color: #d32f2f;
+}
+
+.lombard-news-form-input-field::placeholder {
+  color: #999;
+}
+
+.lombard-news-form-textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  font-size: 1rem;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.lombard-news-form-textarea:focus {
+  border-color: #d32f2f;
+}
+
+.lombard-news-form-textarea::placeholder {
+  color: #999;
+}
+
+.lombard-news-form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.lombard-news-submit-btn {
+  background: #d32f2f;
+  color: #ffffff;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lombard-news-submit-btn:hover {
+  background: #b71c1c;
+}
+
+.lombard-news-submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Мобильные стили для contacts-map-form-row */
+@media (max-width: 1200px) {
+  .contacts-map-form-row {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .map-card {
+    margin-left: 60px;
+    width: 540px;
+    flex: 0 0 540px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts-map-form-row {
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
+  }
+  
+  .map-card {
+    width: 100%;
+    flex: none;
+    margin-left: 0;
+    min-width: auto;
+  }
+  
+  .map-container {
+    height: 400px;
+  }
+  
+  .lombard-news-form-section {
+    flex: none;
+    max-width: 100%;
+  }
+  
+  .lombard-news-contact-form-panel {
+    max-width: 100%;
+    min-width: auto;
+  }
+}

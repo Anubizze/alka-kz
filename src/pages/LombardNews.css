@@ -1,0 +1,576 @@
+.lombard-news-page {
+  padding: 20px 0;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+/* Индикатор загрузки */
+.lombard-news-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #d32f2f;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.lombard-news-loading p {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+}
+
+/* Пустое состояние */
+.lombard-news-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.lombard-news-empty p {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Детальный просмотр новости */
+.lombard-news-detail {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lombard-news-detail-image {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.lombard-news-detail-image img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.lombard-news-detail-description {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.lombard-news-detail-description p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  font-weight: 500;
+  margin: 0;
+}
+
+.lombard-news-detail-content {
+  margin-bottom: 30px;
+}
+
+.lombard-news-detail-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+.lombard-news-detail-content p:last-child {
+  margin-bottom: 0;
+}
+
+.lombard-news-detail-pdf {
+  margin-bottom: 30px;
+}
+
+.lombard-news-detail-pdf h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+.lombard-news-pdf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.lombard-news-pdf-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.lombard-news-pdf-item:hover {
+  border-color: #d32f2f;
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(211, 47, 47, 0.15);
+}
+
+.lombard-news-pdf-item .pdf-icon {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.lombard-news-pdf-item .pdf-name {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.lombard-news-pdf-item .pdf-download {
+  font-size: 14px;
+  color: #d32f2f;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.lombard-news-detail-back {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.lombard-news-back-btn {
+  background: #d32f2f;
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lombard-news-back-btn:hover {
+  background: #b71c1c;
+  transform: translateY(-2px);
+}
+
+.lombard-news-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Заголовок и хлебные крошки */
+.lombard-news-header-section {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 20px 0;
+  margin-top: 0;
+  margin-bottom: 60px;
+}
+
+.lombard-news-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lombard-news-page-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.lombard-news-breadcrumbs {
+  font-size: 14px;
+  color: #666;
+}
+
+.lombard-news-breadcrumbs .separator {
+  margin: 0 8px;
+  color: #999;
+}
+
+/* Основной контент - две колонки */
+.lombard-news-content {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Левая колонка - Новости */
+.lombard-news-section {
+  flex: 1;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.lombard-news-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lombard-news-item {
+  display: flex;
+  width: 100%;
+  max-width: 780px;
+  min-height: 180px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin: 0;
+  cursor: pointer;
+}
+
+.lombard-news-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.lombard-news-image {
+  flex: 0 0 189px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.lombard-news-image img {
+  width: 189px;
+  height: 126px;
+  object-fit: cover;
+}
+
+.lombard-news-text-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lombard-news-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 15px 0;
+  line-height: 1.3;
+}
+
+.lombard-news-description {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+}
+
+
+
+/* Правая колонка - Форма */
+.lombard-news-form-section {
+  flex: 0 0 400px;
+  max-width: 400px;
+  position: sticky;
+  top: 20px;
+}
+
+.lombard-news-contact-form-panel {
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  min-width: 300px;
+  flex-shrink: 0;
+}
+
+.lombard-news-form-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.lombard-news-form-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.lombard-news-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.lombard-news-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.lombard-news-form-input-field {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  font-size: 1rem;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.lombard-news-form-input-field:focus {
+  border-color: #d32f2f;
+}
+
+.lombard-news-form-input-field::placeholder {
+  color: #999;
+}
+
+.lombard-news-form-textarea {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  font-size: 1rem;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.lombard-news-form-textarea:focus {
+  border-color: #d32f2f;
+}
+
+.lombard-news-form-textarea::placeholder {
+  color: #999;
+}
+
+.lombard-news-form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.lombard-news-submit-btn {
+  background: #d32f2f;
+  color: #ffffff;
+  border: none;
+  padding: 15px 100px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lombard-news-submit-btn:hover {
+  background: #b71c1c;
+}
+
+.lombard-news-submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .lombard-news-header-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .lombard-news-page-title {
+    font-size: 32px;
+  }
+  
+  .lombard-news-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* Переключаем на вертикальный макет на мобильных */
+  .lombard-news-section {
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .lombard-news-item {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    margin: 0;
+    max-width: none;
+  }
+  
+  .lombard-news-image {
+    flex: 0 0 189px;
+    margin: 0;
+  }
+  
+  .lombard-news-form-section {
+    flex: none;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  .lombard-news-contact-form-panel {
+    padding: 20px;
+    max-width: 100%;
+    min-width: auto;
+  }
+  
+  .lombard-news-form-title {
+    font-size: 1.5rem;
+  }
+  
+  /* Адаптивность для детального просмотра */
+  .lombard-news-detail {
+    padding: 20px;
+  }
+  
+  .lombard-news-detail-image img {
+    max-height: 300px;
+  }
+  
+  .lombard-news-detail-description p {
+    font-size: 16px;
+  }
+  
+  .lombard-news-detail-content p {
+    font-size: 14px;
+  }
+  
+  .lombard-news-pdf-item {
+    padding: 12px 15px;
+  }
+  
+  .lombard-news-pdf-item .pdf-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .lombard-news-pdf-item .pdf-name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lombard-news-header-section {
+    padding: 15px 0;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+  
+  .lombard-news-page-title {
+    font-size: 28px;
+  }
+  
+  .lombard-news-breadcrumbs {
+    font-size: 12px;
+  }
+  
+  .lombard-news-page {
+    padding: 40px 0;
+  }
+  
+  .lombard-news-contact-form-panel {
+    padding: 15px;
+    max-width: 100%;
+    min-width: auto;
+  }
+  
+  .lombard-news-form-section {
+    padding: 0 15px;
+  }
+  
+  .lombard-news-form-title {
+    font-size: 1.3rem;
+  }
+  
+  .lombard-news-title {
+    font-size: 16px;
+  }
+  
+  .lombard-news-description {
+    font-size: 13px;
+  }
+  
+
+  
+  /* Адаптивность для детального просмотра на маленьких экранах */
+  .lombard-news-detail {
+    padding: 15px;
+  }
+  
+  .lombard-news-detail-image img {
+    max-height: 250px;
+  }
+  
+  .lombard-news-detail-description p {
+    font-size: 15px;
+  }
+  
+  .lombard-news-detail-content p {
+    font-size: 13px;
+  }
+  
+  .lombard-news-pdf-item {
+    padding: 10px 12px;
+  }
+  
+  .lombard-news-pdf-item .pdf-icon {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+  
+  .lombard-news-pdf-item .pdf-name {
+    font-size: 13px;
+  }
+  
+  .lombard-news-back-btn {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+}

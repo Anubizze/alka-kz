@@ -1,0 +1,426 @@
+/* Nurly Zher Page Styles */
+
+/* Page Loader */
+.page-loader {
+  position: relative;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.nurly-zher-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  position: relative;
+}
+
+.nurly-zher-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* Заголовок и хлебные крошки */
+.header-section {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 20px 0;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #666;
+}
+
+.breadcrumbs .separator {
+  margin: 0 8px;
+  color: #999;
+}
+
+/* Основной контент - двухколоночная структура */
+.nurly-zher-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  min-height: calc(100vh - 200px);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Левая колонка - Баннер Нурлы Жер */
+.nurly-zher-banner-section {
+  flex: 1;
+  max-width: 60%;
+}
+
+/* Ссылки на сайт Даму */
+.damu-website-links {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.damu-link-first,
+.damu-link-second {
+  color: #000;
+  text-decoration: underline;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.damu-link-first:hover,
+.damu-link-second:hover {
+  text-decoration: underline;
+}
+
+.nurly-zher-banner {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* Правая колонка - Контактная форма */
+.nurly-zher-contact-form-section {
+  width: 100%;
+  max-width: 450px;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+}
+
+.nurly-zher-contact-form-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, transparent 40%, rgba(200, 200, 200, 0.03) 40%, rgba(200, 200, 200, 0.03) 60%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(200, 200, 200, 0.03) 40%, rgba(200, 200, 200, 0.03) 60%, transparent 60%);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.nurly-zher-contact-form {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 20px 0;
+}
+
+.form-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  background: #f8f9fa;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+  background: #fff;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #999;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  z-index: 1;
+  margin-top: 12px;
+}
+
+.submit-button:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .nurly-zher-container {
+    padding: 30px 15px;
+  }
+  
+  .nurly-zher-content {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nurly-zher-container {
+    padding: 25px 20px;
+  }
+  
+  .nurly-zher-content {
+    gap: 25px;
+  }
+  
+  .page-title {
+    font-size: 38px;
+  }
+  
+  .nurly-zher-contact-form-section {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 36px;
+  }
+  
+  .nurly-zher-content {
+    flex-direction: column;
+    gap: 30px;
+    min-height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .nurly-zher-banner-section {
+    max-width: 100%;
+  }
+  
+  .damu-website-links {
+    margin-bottom: 15px;
+  }
+  
+  .damu-link-first,
+  .damu-link-second {
+    font-size: 15px;
+  }
+  
+  .nurly-zher-contact-form-section {
+    padding: 35px 25px;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  
+  .form-title {
+    font-size: 28px;
+  }
+  
+  .form-description {
+    font-size: 15px;
+  }
+  
+
+}
+
+@media (max-width: 480px) {
+  .nurly-zher-container {
+    padding: 20px 15px;
+  }
+  
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .page-title {
+    font-size: 28px;
+  }
+  
+  .nurly-zher-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .damu-website-links {
+    margin-bottom: 12px;
+  }
+  
+  .damu-link-first,
+  .damu-link-second {
+    font-size: 14px;
+  }
+  
+  .nurly-zher-contact-form-section {
+    padding: 30px 20px;
+    margin: 0 auto;
+    max-width: 350px;
+  }
+  
+  .form-title {
+    font-size: 24px;
+  }
+  
+  .form-description {
+    font-size: 14px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 12px;
+    font-size: 15px;
+  }
+  
+  .submit-button {
+    padding: 16px;
+    font-size: 15px;
+  }
+  
+  .banner-content {
+    padding: 20px;
+  }
+  
+  .banner-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 320px) {
+  .nurly-zher-container {
+    padding: 15px 10px;
+  }
+  
+  .header-container {
+    padding: 0 10px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+  }
+  
+  .nurly-zher-content {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  
+  .damu-website-links {
+    margin-bottom: 10px;
+  }
+  
+  .damu-link-first,
+  .damu-link-second {
+    font-size: 13px;
+  }
+  
+  .nurly-zher-contact-form-section {
+    padding: 25px 15px;
+    max-width: 300px;
+  }
+  
+  .form-title {
+    font-size: 22px;
+  }
+  
+  .form-description {
+    font-size: 13px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .submit-button {
+    padding: 14px;
+    font-size: 14px;
+  }
+}

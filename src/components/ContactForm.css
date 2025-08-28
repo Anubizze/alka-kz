@@ -1,0 +1,189 @@
+/* ContactForm Component Styles */
+.contact-form-container {
+  padding: 32px;
+  max-width: auto;
+  width: 100%;
+}
+
+.contact-form-title {
+  margin: 0 0 16px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+  text-align: center; /* Заголовок по центру везде */
+}
+
+/* Убирание всех обводок */
+.contact-form-container *:focus,
+.contact-form-container *:focus-visible,
+.contact-form *:focus,
+.contact-form *:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Мобильные устройства - заголовок по центру */
+@media (max-width: 768px) {
+  .contact-form-title {
+    text-align: center;
+  }
+}
+
+.contact-form-description {
+  margin: 0 0 24px;
+  font-size: 15px;
+  color: #6c757d;
+  line-height: 1.6;
+  font-weight: 400;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  border: 2px solid #e9ecef;
+  padding: 14px 16px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+  background: #f8f9fa;
+  color: #2c3e50;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  border-color: #d32f2f;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #adb5bd;
+  font-weight: 400;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.form-submit-btn {
+  width: 100%;
+  background: #d32f2f;
+  color: #ffffff;
+  border: none;
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-submit-btn:hover:not(:disabled) {
+  background: #b71c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.3);
+}
+
+.form-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.form-submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-success,
+.form-error {
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.form-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.form-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* CAPTCHA стили */
+.captcha-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.captcha-container .g-recaptcha {
+  transform: scale(1);
+  transform-origin: 0 0;
+}
+
+/* Адаптивность для CAPTCHA на мобильных */
+@media (max-width: 480px) {
+  .captcha-container .g-recaptcha {
+    transform: scale(0.9);
+    transform-origin: 0 0;
+  }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 480px) {
+  .contact-form-container {
+    padding: 24px 20px;
+    margin: 0 10px;
+  }
+  
+  .contact-form-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  
+  .contact-form-description {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+  
+  .form-submit-btn {
+    padding: 14px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+}

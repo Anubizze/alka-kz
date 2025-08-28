@@ -1,0 +1,138 @@
+/* Footer Styles - упрощенная версия только с копирайтом */
+
+/* Footer Loader */
+.footer-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background: #f8f9fa;
+}
+
+.footer {
+  background: #f5f5f5;
+  color: #000;
+  padding: 40px 0 20px;
+  margin-top: auto;
+  position: relative;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer Content - скрываем на всех устройствах */
+.footer-content {
+  display: none;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  position: relative;
+}
+
+.footer-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: #d32f2f;
+  border-radius: 1px;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.copyright p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .footer .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer .container {
+    padding: 0 20px;
+  }
+  
+  .footer {
+    padding: 35px 0 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 0 15px;
+  }
+  
+  .footer .container {
+    padding: 0 15px;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .copyright {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer .container {
+    padding: 0 10px;
+  }
+  
+  .footer {
+    padding: 25px 0 12px;
+  }
+  
+  .copyright p {
+    font-size: 13px;
+  }
+  
+  .footer-bottom-content {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .footer .container {
+    padding: 0 8px;
+  }
+  
+  .footer {
+    padding: 20px 0 10px;
+  }
+  
+  .copyright p {
+    font-size: 12px;
+  }
+  
+  .footer-bottom-content {
+    gap: 10px;
+  }
+}

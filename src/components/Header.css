@@ -1,0 +1,640 @@
+/* Header Styles - улучшенная версия с красивой мобильной адаптивностью */
+
+/* Убирание всех обводок в header */
+.header *:focus,
+.header *:focus-visible,
+.navigation *:focus,
+.navigation *:focus-visible,
+.nav-link:focus,
+.nav-link:focus-visible,
+.dropdown-toggle:focus,
+.dropdown-toggle:focus-visible,
+.brand-logo a:focus,
+.brand-logo a:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Header Loader */
+.header-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Header Bar - Верхняя полоса как на alkha.kz */
+.header-bar {
+  background: #ffffff;
+  padding: 25px 0;
+  color: #000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.header-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Branding Section - как на alkha.kz */
+.branding {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.brand-logo a:hover {
+  opacity: 0.8;
+}
+
+/* Убираем фиксированные размеры для десктопа */
+.brand-logo img {
+  object-fit: contain;
+}
+
+/* Contact Info - как на alkha.kz */
+.contact-info {
+  display: flex;
+  align-items: center;
+}
+
+.contact-image {
+  width: 417px;
+  height: 77px;
+  object-fit: contain;
+}
+
+/* Navigation Bar - как на alkha.kz */
+.navigation {
+  background: #ffffff;
+  padding: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.navigation .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item a,
+.nav-item span {
+  display: block;
+  padding: 12px 18px;
+  color: #555;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-right: 1px solid #e9ecef;
+  text-transform: uppercase;
+}
+
+.nav-item:last-child a,
+.nav-item:last-child span {
+  border-right: none;
+}
+
+.nav-item:hover a,
+.nav-item:hover span {
+  background-color: #f8f9fa;
+  color: #d32f2f;
+}
+
+.nav-item.active a,
+.nav-item.active span {
+  background-color: #d32f2f;
+  color: white;
+}
+
+/* Dropdown Menu - как на alkha.kz */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li a {
+  padding: 15px 25px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu li:last-child a {
+  border-bottom: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f8f9fa;
+  color: #d32f2f;
+}
+
+/* Language Switcher */
+.language-switcher {
+  margin-left: 20px;
+  padding: 0 20px;
+}
+
+/* Mobile Header */
+.mobile-header-bar {
+  display: none;
+  background: #ffffff;
+  padding: 15px 0;
+  color: #000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+
+.mobile-header-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mobile-branding {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-branding a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-branding a:hover {
+  opacity: 0.8;
+}
+
+/* Базовый размер для телефонов 375x667 */
+.mobile-branding img {
+  width: 350px;
+  height: 150px;
+  object-fit: contain;
+}
+
+/* Улучшенная кнопка бургер-меню */
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1002;
+}
+
+.mobile-menu-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.mobile-menu-btn.active {
+  background-color: #f0f0f0;
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #000;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Анимация бургер-меню */
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 1003;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 350px;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 1004;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+/* Mobile Menu Header */
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f8f9fa;
+}
+
+.mobile-menu-logo img {
+  width: 250px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.mobile-menu-close:hover {
+  background-color: #e0e0e0;
+}
+
+.mobile-menu-close span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-close span:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.mobile-menu-close span:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Mobile Menu Content */
+.mobile-menu-content {
+  padding: 20px;
+  height: calc(95vh - 100px);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav {
+  flex: 1;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-list li {
+  margin: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-nav-list li:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav-list a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.mobile-nav-list a:hover {
+  color: #d32f2f;
+  padding-left: 10px;
+}
+
+.mobile-nav-list li.active a {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.mobile-nav-list li.active a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: #d32f2f;
+  border-radius: 2px;
+}
+
+.nav-icon {
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+}
+
+/* Мобильное выпадающее меню */
+.mobile-dropdown {
+  position: relative;
+}
+
+.mobile-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.mobile-dropdown-header:hover {
+  color: #d32f2f;
+  padding-left: 10px;
+}
+
+.mobile-dropdown-arrow {
+  font-size: 12px;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown.active .mobile-dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.mobile-dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  border-left: 3px solid #d32f2f;
+  margin-left: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-dropdown.active .mobile-dropdown-menu {
+  max-height: 200px;
+}
+
+.mobile-dropdown-menu li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.mobile-dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.mobile-dropdown-menu a:hover {
+  color: #d32f2f;
+  background: #f0f0f0;
+  padding-left: 25px;
+}
+
+/* Mobile Menu Footer */
+.mobile-menu-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.mobile-language-switcher {
+  margin-bottom: 20px;
+}
+
+.mobile-contact-info p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .header-bar .container,
+  .navigation .container {
+    padding: 0 15px;
+  }
+  
+  .contact-image {
+    width: 350px;
+    height: 65px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header-bar .container,
+  .navigation .container {
+    padding: 0 20px;
+  }
+  
+  .contact-image {
+    width: 300px;
+    height: 60px;
+  }
+  
+  .nav-item a,
+  .nav-item span {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-bar {
+    display: none;
+  }
+  
+  .navigation {
+    display: none;
+  }
+  
+  .mobile-header-bar {
+    display: block;
+  }
+  
+  .mobile-menu {
+    display: block;
+  }
+  
+  .mobile-header-bar .container {
+    padding: 0 15px;
+  }
+  
+  /* Базовый размер для телефонов 375x667 */
+  .mobile-branding img {
+    width: 350px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 375px) {
+  .mobile-header-bar .container {
+    padding: 0 8px;
+  }
+  
+  /* Базовый размер для телефонов 375x667 */
+  .mobile-branding img {
+    width: 350px;
+    height: 150px;
+  }
+  
+  .mobile-menu-content {
+    padding: 12px;
+  }
+  
+  .mobile-nav-list a {
+    font-size: 14px;
+    padding: 16px 0;
+  }
+  
+  .nav-icon {
+    font-size: 16px;
+    width: 22px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 667px) {
+  /* Увеличиваем на 40% для средних телефонов */
+  .mobile-branding img {
+    width: 490px; /* 350px + 40% */
+    height: 210px; /* 150px + 40% */
+  }
+}
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  /* Увеличиваем на 30% для планшетов */
+  .mobile-branding img {
+    width: 455px; /* 350px + 30% */
+    height: 195px; /* 150px + 30% */
+  }
+}

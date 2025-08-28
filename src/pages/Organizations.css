@@ -1,0 +1,472 @@
+/* Organizations Page Styles - точная копия alkha.kz */
+
+/* Page Loader */
+.page-loader {
+  position: relative;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.organizations {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+/* Заголовок и хлебные крошки */
+.header-section {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 20px 0;
+  margin-top: 0;
+  margin-bottom: 60px;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #666;
+}
+
+.breadcrumbs .separator {
+  margin: 0 8px;
+  color: #999;
+}
+
+/* Organizations Hero Section */
+.organizations-hero {
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+  padding: 80px 0;
+  text-align: center;
+  color: white;
+}
+
+.organizations-hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.organizations-hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  display: none;
+}
+
+.organizations-hero-content p {
+  font-size: 20px;
+  margin: 0;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* Main Organizations */
+.main-organizations {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.main-organizations .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.organizations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.organization-card {
+  display: flex;
+  gap: 40px;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.organization-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+.organization-card.jewelry {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #333;
+}
+
+.organization-card.lombard {
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+  color: white;
+}
+
+.organization-icon {
+  flex-shrink: 0;
+}
+
+.organization-icon img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.organization-content {
+  flex: 1;
+}
+
+.organization-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.organization-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 25px 0;
+  opacity: 0.9;
+}
+
+.organization-features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.feature-icon {
+  font-size: 20px;
+}
+
+/* Financial Programs */
+.financial-programs {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.financial-programs .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.financial-programs h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 50px 0;
+  color: #333;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.program-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.program-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.program-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  color: #4A90E2;
+}
+
+.program-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0 0 25px 0;
+}
+
+.program-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.program-benefits span {
+  font-size: 14px;
+  color: #4A90E2;
+  font-weight: 500;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+  padding: 80px 0;
+  background: white;
+}
+
+.why-choose-us .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.why-choose-us h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 50px 0;
+  color: #333;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.reason-item {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.reason-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.reason-item h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  color: #4A90E2;
+}
+
+.reason-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+/* Contact CTA */
+.contact-cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+}
+
+.contact-cta .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cta-content {
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  color: white;
+}
+
+.cta-content p {
+  font-size: 18px;
+  margin: 0 0 40px 0;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 32px;
+  }
+  
+  .organizations-hero {
+    padding: 60px 0;
+  }
+  
+  .organizations-hero-content h1 {
+    font-size: 32px;
+  }
+  
+  .organizations-hero-content p {
+    font-size: 18px;
+  }
+  
+  .main-organizations,
+  .financial-programs,
+  .why-choose-us,
+  .contact-cta {
+    padding: 60px 0;
+  }
+  
+  .organizations-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .organization-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px;
+  }
+  
+  .organization-icon img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .programs-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .financial-programs h2,
+  .why-choose-us h2,
+  .cta-content h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-section {
+    padding: 15px 0;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+  
+  .page-title {
+    font-size: 28px;
+  }
+  
+  .breadcrumbs {
+    font-size: 12px;
+  }
+  
+  .organizations-hero {
+    padding: 60px 0;
+  }
+  
+  .organizations-hero-content h1 {
+    font-size: 28px;
+  }
+  
+  .organizations-hero-content p {
+    font-size: 16px;
+  }
+  
+  .main-organizations,
+  .financial-programs,
+  .why-choose-us,
+  .contact-cta {
+    padding: 60px 0;
+  }
+  
+  .organization-card {
+    padding: 30px 20px;
+  }
+  
+  .organization-content h2 {
+    font-size: 24px;
+  }
+  
+  .organization-content p {
+    font-size: 16px;
+  }
+  
+  .program-card {
+    padding: 30px 20px;
+  }
+  
+  .reasons-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .financial-programs h2,
+  .why-choose-us h2,
+  .cta-content h2 {
+    font-size: 24px;
+  }
+  
+  .organization-features {
+    gap: 10px;
+  }
+  
+  .feature {
+    font-size: 14px;
+  }
+  
+  .program-benefits span {
+    font-size: 13px;
+  }
+}

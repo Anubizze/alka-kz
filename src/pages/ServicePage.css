@@ -1,0 +1,412 @@
+/* ServicePage Component Styles */
+.service-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  position: relative;
+}
+
+/* Page Loader */
+.page-loader {
+  position: relative;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.service-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* Заголовок и хлебные крошки */
+.header-section {
+  width: 100%;
+  background: #f5f5f5;
+  padding: 20px 0;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #666;
+}
+
+.breadcrumbs .separator {
+  margin: 0 8px;
+  color: #999;
+}
+
+/* Основной контент - двухколоночная структура */
+.service-content {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  gap: 40px;
+}
+
+/* Левая колонка - Баннер сервиса */
+.service-banner-section {
+  flex: 1 !important;
+  max-width: 60% !important;
+  min-width: 0;
+}
+
+/* Ссылки на сервис */
+.service-website-links {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.service-link {
+  color: #000;
+  text-decoration: underline;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.service-link a {
+  color: #000;
+  text-decoration: underline;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.service-link a:hover {
+  text-decoration: underline;
+}
+
+.service-banner {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.image-link:hover img {
+  transform: scale(1.05);
+}
+
+.service-description-content {
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.service-description,
+.service-full-content {
+  margin-bottom: 30px;
+}
+
+.service-description h2,
+.service-full-content h2 {
+  color: #d32f2f;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+
+.service-description p,
+.service-full-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+
+
+
+
+/* Правая колонка - Контактная форма */
+.service-contact-form-section {
+  flex: 0 0 450px !important;
+  width: 450px !important;
+  max-width: 450px !important;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  min-width: 450px;
+}
+
+.service-contact-form-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, transparent 40%, rgba(200, 200, 200, 0.03) 40%, rgba(200, 200, 200, 0.03) 60%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, rgba(200, 200, 200, 0.03) 40%, rgba(200, 200, 200, 0.03) 60%, transparent 60%);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.service-contact-form {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+
+
+/* Стили для страницы "Сервис не найден" */
+.service-not-found {
+  text-align: center;
+  padding: 100px 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin: 40px 20px;
+}
+
+.service-not-found h1 {
+  color: #d32f2f;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.service-not-found p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.back-home {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-home:hover {
+  background: linear-gradient(135deg, #b71c1c 0%, #8e0000 100%);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .service-content {
+    flex-direction: row !important;
+    gap: 30px;
+    align-items: flex-start;
+  }
+  
+  .service-banner-section {
+    flex: 1 !important;
+    max-width: 60% !important;
+  }
+  
+  .service-contact-form-section {
+    flex: 0 0 450px !important;
+    max-width: 450px !important;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .service-content {
+    flex-direction: row !important;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .service-banner-section {
+    flex: 1 !important;
+    max-width: 55% !important;
+  }
+  
+  .service-contact-form-section {
+    flex: 0 0 400px !important;
+    max-width: 400px !important;
+    width: 400px !important;
+    min-width: 400px !important;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-section {
+    padding: 15px 0;
+    margin-bottom: 40px;
+  }
+  
+  .header-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .service-container {
+    padding: 20px 15px;
+  }
+  
+  .service-content {
+    flex-direction: column !important;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .service-banner-section {
+    max-width: 100% !important;
+    flex: none !important;
+  }
+  
+  .service-banner {
+    height: 300px;
+  }
+  
+  .service-description-content {
+    padding: 20px;
+  }
+  
+  .service-contact-form-section {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: auto !important;
+    flex: none !important;
+    padding: 30px 20px;
+    margin-left: 0;
+  }
+  
+  .meta-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
+  
+  .service-container {
+    padding: 15px 10px;
+  }
+  
+  .service-content {
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  
+  .service-description h2,
+  .service-full-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .service-description p,
+  .service-full-content p {
+    font-size: 1rem;
+  }
+  
+  .service-banner {
+    height: 250px;
+  }
+  
+  .service-contact-form-section {
+    padding: 25px 15px;
+  }
+  
+  .header-section {
+    padding: 10px 0;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  .page-title {
+    font-size: 1.6rem;
+  }
+  
+  .service-container {
+    padding: 10px 8px;
+  }
+  
+  .service-content {
+    gap: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+  .service-banner {
+    height: 200px;
+  }
+  
+  .service-contact-form-section {
+    padding: 20px 12px;
+  }
+  
+  .service-description h2,
+  .service-full-content h2 {
+    font-size: 1.3rem;
+  }
+  
+  .service-description p,
+  .service-full-content p {
+    font-size: 0.9rem;
+  }
+}

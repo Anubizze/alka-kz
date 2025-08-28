@@ -1,0 +1,31 @@
+/* Logo Styles - точная копия alkha.kz */
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4A90E2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+}

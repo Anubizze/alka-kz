@@ -1,0 +1,176 @@
+.lombard-rates-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  color: white;
+}
+
+/* Rates Hero Section */
+.rates-hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.rates-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.rates-hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Rates Table Section */
+.rates-table {
+  padding: 80px 0;
+}
+
+.rates-table .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.rates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.rate-category {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.rate-category h3 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #ffd700;
+  text-align: center;
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  padding-bottom: 15px;
+}
+
+.rate-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.rate-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.rate-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.item-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.rate-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.rates-note {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.rates-note p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ffd700;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rates-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .rates-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .rates-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .rate-category {
+    padding: 25px 20px;
+  }
+  
+  .rate-category h3 {
+    font-size: 1.6rem;
+  }
+  
+  .rate-item {
+    padding: 12px 15px;
+  }
+  
+  .item-name {
+    font-size: 1rem;
+  }
+  
+  .rate-value {
+    font-size: 1.2rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rates-hero {
+    padding: 60px 0 40px;
+  }
+  
+  .rates-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .rates-table {
+    padding: 60px 0;
+  }
+  
+  .rate-category {
+    padding: 20px 15px;
+  }
+  
+  .rate-item {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

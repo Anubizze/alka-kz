@@ -1,0 +1,482 @@
+/* Lombard Navigation Styles - новая навигация для ломбарда */
+
+/* Убирание обводок для LombardNavigation */
+.lombard-navigation *:focus,
+.lombard-navigation *:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Header Loader */
+.lombard-navigation-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.lombard-navigation {
+  width: 100%;
+  position: relative;
+}
+
+/* Header Bar - Верхняя полоса с логотипом и контактами */
+.lombard-header-bar {
+  background: #ffffff;
+  padding: 25px 0;
+  color: #000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.lombard-header-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Branding Section для ломбарда */
+.lombard-branding {
+  display: flex;
+  align-items: center;
+}
+
+.lombard-brand-logo {
+  display: flex;
+  align-items: center;
+}
+
+.lombard-brand-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.lombard-brand-logo a:hover {
+  opacity: 0.8;
+}
+
+.lombard-brand-logo img {
+  width: 500px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Contact Info для ломбарда */
+.lombard-contact-info {
+  display: flex;
+  align-items: center;
+}
+
+.lombard-contact-image {
+  width: 417px;
+  height: 77px;
+  object-fit: contain;
+}
+
+/* Navigation Bar для ломбарда */
+.lombard-nav {
+  background: #ffffff;
+  padding: 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.lombard-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.lombard-nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.lombard-nav-item {
+  position: relative;
+}
+
+.lombard-nav-item a {
+  display: block;
+  padding: 20px 25px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.lombard-nav-item a:hover {
+  color: #d32f2f;
+  background: #f8f9fa;
+  border-bottom-color: #d32f2f;
+}
+
+.lombard-nav-item.active a {
+  color: #d32f2f;
+  border-bottom-color: #d32f2f;
+  background: #f8f9fa;
+}
+
+.lombard-language-switcher {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile Header для ломбарда - ИДЕНТИЧНО АЛКА */
+.lombard-mobile-header-bar {
+  display: none;
+  background: #ffffff;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.lombard-mobile-header-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.lombard-mobile-branding {
+  display: flex;
+  align-items: center;
+}
+
+.lombard-mobile-branding a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.lombard-mobile-branding a:hover {
+  opacity: 0.8;
+}
+
+/* Базовый размер для телефонов 375x667 - ИДЕНТИЧНО АЛКА */
+.lombard-mobile-branding img {
+  width: 350px;
+  height: 150px;
+  object-fit: contain;
+}
+
+/* Улучшенная кнопка бургер-меню - ИДЕНТИЧНО АЛКА */
+.lombard-mobile-menu-btn {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1002;
+}
+
+.lombard-mobile-menu-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.lombard-mobile-menu-btn.active {
+  background-color: #f0f0f0;
+}
+
+.lombard-hamburger-line {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #000;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Анимация бургер-меню - ИДЕНТИЧНО АЛКА */
+.lombard-mobile-menu-btn.active .lombard-hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.lombard-mobile-menu-btn.active .lombard-hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.lombard-mobile-menu-btn.active .lombard-hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Menu Overlay - ИДЕНТИЧНО АЛКА */
+.lombard-mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 1003;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.lombard-mobile-menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Menu - ИДЕНТИЧНО АЛКА */
+.lombard-mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 350px;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 1004;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+.lombard-mobile-menu.open {
+  right: 0;
+}
+
+/* Mobile Menu Header - ИДЕНТИЧНО АЛКА */
+.lombard-mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #f8f9fa;
+}
+
+.lombard-mobile-menu-logo img {
+  width: 250px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.lombard-mobile-menu-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.lombard-mobile-menu-close:hover {
+  background-color: #e0e0e0;
+}
+
+.lombard-mobile-menu-close span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #333;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 0.3s ease;
+}
+
+.lombard-mobile-menu-close span:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.lombard-mobile-menu-close span:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Mobile Menu Content - ИДЕНТИЧНО АЛКА */
+.lombard-mobile-menu-content {
+  padding: 20px;
+  height: calc(95vh - 100px);
+  display: flex;
+  flex-direction: column;
+}
+
+.lombard-mobile-nav {
+  flex: 1;
+}
+
+.lombard-mobile-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lombard-mobile-nav-list li {
+  margin: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.lombard-mobile-nav-list li:last-child {
+  border-bottom: none;
+}
+
+.lombard-mobile-nav-list a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.lombard-mobile-nav-list a:hover {
+  color: #d32f2f;
+  padding-left: 10px;
+}
+
+.lombard-mobile-nav-list li.active a {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.lombard-mobile-nav-list li.active a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: #d32f2f;
+  border-radius: 2px;
+}
+
+.lombard-nav-icon {
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+}
+
+/* Mobile Menu Footer - ИДЕНТИЧНО АЛКА */
+.lombard-mobile-menu-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.lombard-mobile-language-switcher {
+  margin-bottom: 20px;
+}
+
+.lombard-mobile-contact-info p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Блокировка скролла при открытом меню */
+body.menu-open {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+}
+
+.lombard-navigation.menu-open {
+  overflow: hidden;
+}
+
+/* Responsive Design для ломбарда - ИДЕНТИЧНО АЛКА */
+@media (max-width: 768px) {
+  .lombard-nav {
+    display: none;
+  }
+  
+  .lombard-header-bar {
+    display: none;
+  }
+  
+  .lombard-mobile-header-bar {
+    display: block;
+  }
+  
+  .lombard-mobile-menu {
+    display: block;
+  }
+  
+  .lombard-mobile-menu-overlay {
+    display: block;
+  }
+  
+  .lombard-mobile-header-bar .container {
+    padding: 0 15px;
+  }
+  
+  /* Базовый размер для телефонов 375x667 */
+  .lombard-mobile-branding img {
+    width: 350px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lombard-header-bar {
+    padding: 20px 0;
+  }
+  
+  .lombard-brand-logo img {
+    width: 250px;
+    height: 50px;
+  }
+  
+  .lombard-contact-image {
+    width: 250px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 375px) {
+  .lombard-mobile-header-bar .container {
+    padding: 0 8px;
+  }
+  
+  /* Базовый размер для телефонов 375x667 */
+  .lombard-mobile-branding img {
+    width: 350px;
+    height: 150px;
+  }
+  
+  .lombard-mobile-menu-content {
+    padding: 12px;
+  }
+  
+  .lombard-mobile-nav-list a {
+    font-size: 14px;
+  }
+}
