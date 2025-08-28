@@ -78,7 +78,7 @@ const Organizations = () => {
                   <span>{t('preciousStones', currentLanguage)}</span>
                 </div>
               </div>
-              <a href="/lombard" className="btn btn-primary">{t('readMore', currentLanguage)}</a>
+              <a href="#/lombard" className="btn btn-primary">{t('readMore', currentLanguage)}</a>
             </div>
             
             <div className="organization-card lombard">
@@ -103,7 +103,7 @@ const Organizations = () => {
                   <span>{t('instantIssuance', currentLanguage)}</span>
                 </div>
               </div>
-              <a href="/lombard" className="btn btn-primary">{t('readMore', currentLanguage)}</a>
+              <a href="#/lombard" className="btn btn-primary">{t('readMore', currentLanguage)}</a>
             </div>
           </div>
         </div>
@@ -125,7 +125,7 @@ const Organizations = () => {
                 <span>{t('quickApproval', currentLanguage)}</span>
                 <span>{t('flexibleTerms', currentLanguage)}</span>
               </div>
-              <a href="/services/damu-leasing" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
+              <a href="#/services/damu-leasing" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
             </div>
             
             <div className="program-card">
@@ -139,7 +139,7 @@ const Organizations = () => {
                 <span>{t('preferentialTerms', currentLanguage)}</span>
                 <span>{t('longTermFinancing', currentLanguage)}</span>
               </div>
-              <a href="/services/nurly-zher" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
+              <a href="#/services/nurly-zher" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
             </div>
             
             <div className="program-card">
@@ -153,7 +153,7 @@ const Organizations = () => {
                 <span>{t('guarantees', currentLanguage)}</span>
                 <span>{t('regionalPrograms', currentLanguage)}</span>
               </div>
-              <a href="/services/damu" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
+              <a href="#/services/damu" className="btn btn-outline">{t('readMore', currentLanguage)}</a>
             </div>
           </div>
         </div>
@@ -198,8 +198,8 @@ const Organizations = () => {
             <h2>{t('readyToCooperate', currentLanguage)}</h2>
             <p>{t('contactForInfo', currentLanguage)}</p>
             <div className="cta-buttons">
-                             <a href="/contacts" className="btn btn-primary">{t('contactUs', currentLanguage)}</a>
-               <a href="/about" className="btn btn-secondary">{t('aboutCompany', currentLanguage)}</a>
+                             <a href="#/contacts" className="btn btn-primary">{t('contactUs', currentLanguage)}</a>
+               <a href="#/about" className="btn btn-secondary">{t('aboutCompany', currentLanguage)}</a>
             </div>
           </div>
         </div>
