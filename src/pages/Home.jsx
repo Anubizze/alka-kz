@@ -110,6 +110,9 @@ const Home = () => {
               // Fallback новости если нет сохраненных
               <>
                 <div className="news-card">
+                  <div className="news-image">
+                    <Image src="/DamuLeasing.jpeg" alt="ДАМУ ЛИЗИНГ" />
+                  </div>
                   <h3>ДАМУ ЛИЗИНГ</h3>
                   <div className="news-hyperlink preview-only">
                     <span>Перейти на сайт Даму Лизинг</span>
@@ -120,6 +123,9 @@ const Home = () => {
                 </div>
                 
                 <div className="news-card">
+                  <div className="news-image">
+                    <Image src="/BringLand.jpeg" alt="НУРЛЫ ЖЕР" />
+                  </div>
                   <h3>НУРЛЫ ЖЕР</h3>
                   <div className="news-hyperlink preview-only">
                     <span>Перейти на сайт Нурлы Жер</span>
@@ -130,6 +136,9 @@ const Home = () => {
                 </div>
                 
                 <div className="news-card">
+                  <div className="news-image">
+                    <Image src="/Damu.jpeg" alt="ДАМУ" />
+                  </div>
                   <h3>ДАМУ</h3>
                   <div className="news-hyperlink preview-only">
                     <span>Перейти на сайт Даму</span>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import Loader from '../components/Loader'
+import Image from '../components/Image'
 import './Organizations.css'
 
 const Organizations = () => {
@@ -41,6 +42,9 @@ const Organizations = () => {
 
       {/* Hero Section */}
       <section className="organizations-hero">
+        <div className="hero-background">
+          <Image src="/alka-fon2.png" alt="Фон организаций" className="hero-bg-image" />
+        </div>
         <div className="container">
           <div className="organizations-hero-content">
             <p>{t('mainActivities', currentLanguage)}</p>
@@ -54,7 +58,7 @@ const Organizations = () => {
           <div className="organizations-grid">
             <div className="organization-card jewelry">
               <div className="organization-icon">
-                <img src="/yuvelirn.png" alt="Ювелирный салон" />
+                <Image src="/yuvelirn.png" alt="Ювелирный салон" />
               </div>
               <div className="organization-content">
                 <h2>{t('jewelry', currentLanguage).toUpperCase()}</h2>
@@ -81,7 +85,7 @@ const Organizations = () => {
             
             <div className="organization-card lombard">
               <div className="organization-icon">
-                <img src="/lombard.png" alt="Ломбард" />
+                <Image src="/lombard.png" alt="Ломбард" />
               </div>
               <div className="organization-content">
                 <h2>{t('lombard', currentLanguage).toUpperCase()}</h2>

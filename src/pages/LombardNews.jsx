@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
+import Image from '../components/Image'
 import './LombardNews.css'
 import ContactForm from '../components/ContactForm'
 
@@ -169,7 +170,7 @@ const LombardNews = () => {
                       }}
                     />
                   ) : (
-                    <img 
+                    <Image 
                       src="/dengi.jpg" 
                       alt="Изображение по умолчанию" 
                     />
@@ -283,7 +284,7 @@ const LombardNews = () => {
                       }}
                     />
                   ) : (
-                    <img 
+                    <Image 
                       src="/dengi.jpg" 
                       alt="Изображение по умолчанию" 
                     />
@@ -383,7 +384,7 @@ const LombardNews = () => {
                   >
                     <div className="lombard-news-image">
                       {news.image ? (
-                        <img 
+                        <Image 
                           src={news.image} 
                           alt={news.alt} 
                           onError={(e) => {
@@ -391,7 +392,7 @@ const LombardNews = () => {
                           }}
                         />
                       ) : (
-                        <img 
+                        <Image 
                           src="/dengi.jpg" 
                           alt="Изображение по умолчанию" 
                         />
