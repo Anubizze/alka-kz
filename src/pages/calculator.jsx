@@ -78,17 +78,58 @@ function Calculator() {
   }, [showCredit, weight, purity, creditMonths, monthlyRate])
 
   return (
-    <div className="calculator-page">
-      <div className="calculator-container">
-        <div className="calculator-wrapper">
+    <div className="calculator-page" style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      padding: '20px 0',
+      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+    }}>
+      <div className="calculator-container" style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        padding: '0 20px'
+      }}>
+        <div className="calculator-wrapper" style={{
+          background: 'rgba(255, 255, 255, 0.95)',
+          borderRadius: '20px',
+          padding: '40px',
+          boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+          backdropFilter: 'blur(10px)'
+        }}>
           {/* Header */}
 
 
-          <div className="calculator-grid">
+          <div className="calculator-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '40px',
+            marginBottom: '40px'
+          }}>
             {/* Input Section */}
-            <div className="calculator-card">
-              <h2 className="calculator-card-title">
-                <div className="calculator-card-icon">
+            <div className="calculator-card" style={{
+              background: '#ffffff',
+              borderRadius: '15px',
+              padding: '30px',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+              border: '1px solid #e5e7eb',
+              transition: 'all 0.3s ease'
+            }}>
+              <h2 className="calculator-card-title" style={{
+                fontSize: '1.5rem',
+                fontWeight: '600',
+                color: '#374151',
+                marginBottom: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px'
+              }}>
+                <div className="calculator-card-icon" style={{
+                  width: '24px',
+                  height: '24px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
                   <Image src="/icons/nastr.png" alt="Параметры" />
                 </div>
                 {t('calculatorParameters', currentLanguage)}
@@ -243,9 +284,30 @@ function Calculator() {
             </div>
 
             {/* Results Section */}
-            <div className="calculator-card">
-              <h2 className="calculator-card-title">
-                <div className="calculator-card-icon">
+            <div className="calculator-card" style={{
+              background: '#ffffff',
+              borderRadius: '15px',
+              padding: '30px',
+              boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+              border: '1px solid #e5e7eb',
+              transition: 'all 0.3s ease'
+            }}>
+              <h2 className="calculator-card-title" style={{
+                fontSize: '1.5rem',
+                fontWeight: '600',
+                color: '#374151',
+                marginBottom: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px'
+              }}>
+                <div className="calculator-card-icon" style={{
+                  width: '24px',
+                  height: '24px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
                   <Image src="/icons/money.png" alt={t('resultTitle', currentLanguage)} />
                 </div>
                 {t('resultTitle', currentLanguage)}
@@ -262,22 +324,72 @@ function Calculator() {
               {/* Залоговый результат */}
               {!showCredit && result ? (
                 <div>
-                  <div className="calculator-result-item">
-                    <div className="calculator-result-label">{currentLanguage === 'RU' ? 'Цена за грамм' : 'Граммға баға'}</div>
-                    <div className="calculator-result-value">
+                  <div className="calculator-result-item" style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '12px 0',
+                    borderBottom: '1px solid #e5e7eb'
+                  }}>
+                    <div className="calculator-result-label" style={{
+                      fontSize: '14px',
+                      color: '#6b7280',
+                      fontWeight: '500'
+                    }}>{currentLanguage === 'RU' ? 'Цена за грамм' : 'Граммға баға'}</div>
+                    <div className="calculator-result-value" style={{
+                      fontSize: '16px',
+                      fontWeight: '600',
+                      color: '#374151'
+                    }}>
                       {result.pricePerGram.toLocaleString()} ₸
                     </div>
                   </div>
-                  <div className="calculator-result-item highlight">
-                    <div className="calculator-result-label">{currentLanguage === 'RU' ? 'Общая стоимость' : 'Жалпы құн'}</div>
-                    <div className="calculator-result-value">
+                  <div className="calculator-result-item highlight" style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '12px 0',
+                    borderBottom: '1px solid #e5e7eb',
+                    backgroundColor: '#f3f4f6',
+                    borderRadius: '8px',
+                    padding: '12px',
+                    margin: '8px 0'
+                  }}>
+                    <div className="calculator-result-label" style={{
+                      fontSize: '14px',
+                      color: '#6b7280',
+                      fontWeight: '500'
+                    }}>{currentLanguage === 'RU' ? 'Общая стоимость' : 'Жалпы құн'}</div>
+                    <div className="calculator-result-value" style={{
+                      fontSize: '16px',
+                      fontWeight: '600',
+                      color: '#374151'
+                    }}>
                       {parseInt(result.totalValue).toLocaleString()} ₸
                     </div>
                   </div>
                   {showSlider && (
-                    <div className="calculator-result-item primary">
-                      <div className="calculator-result-label">{currentLanguage === 'RU' ? 'Сумма займа' : 'Несие сомасы'}</div>
-                      <div className="calculator-result-value large">
+                    <div className="calculator-result-item primary" style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      padding: '12px 0',
+                      borderBottom: '1px solid #e5e7eb',
+                      backgroundColor: '#dbeafe',
+                      borderRadius: '8px',
+                      padding: '12px',
+                      margin: '8px 0'
+                    }}>
+                      <div className="calculator-result-label" style={{
+                        fontSize: '14px',
+                        color: '#1e40af',
+                        fontWeight: '600'
+                      }}>{currentLanguage === 'RU' ? 'Сумма займа' : 'Несие сомасы'}</div>
+                      <div className="calculator-result-value large" style={{
+                        fontSize: '18px',
+                        fontWeight: '700',
+                        color: '#1e40af'
+                      }}>
                         {parseInt(result.loanAmount).toLocaleString()} ₸
                       </div>
                     </div>
