@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import LombardNavigation from '../components/LombardNavigation'
+import Image from '../components/Image'
 import './calculator.css'
 
 function Calculator() {
@@ -92,7 +93,7 @@ function Calculator() {
             <div className="calculator-card">
               <h2 className="calculator-card-title">
                 <div className="calculator-card-icon">
-                  <img src="/icons/nastr.png" alt="Параметры" />
+                  <Image src="/icons/nastr.png" alt="Параметры" />
                 </div>
                 {t('calculatorParameters', currentLanguage)}
               </h2>
@@ -249,7 +250,7 @@ function Calculator() {
             <div className="calculator-card">
               <h2 className="calculator-card-title">
                 <div className="calculator-card-icon">
-                  <img src="/icons/money.png" alt={t('resultTitle', currentLanguage)} />
+                  <Image src="/icons/money.png" alt={t('resultTitle', currentLanguage)} />
                 </div>
                 {t('resultTitle', currentLanguage)}
               </h2>
@@ -286,10 +287,10 @@ function Calculator() {
                     </div>
                   )}
                   {showSlider && (
-                    <div className="calculator-result-item">
-                      <img src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} className="mr-2 w-4 h-4" />
-                      {currentLanguage === 'RU' ? 'Сумма займа составляет' : 'Несие сомасы'} <span className="font-bold">{loanPercentage}%</span> {currentLanguage === 'RU' ? 'от рыночной стоимости' : 'нарықтық құннан'}
-                    </div>
+                                      <div className="calculator-result-item">
+                    <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} className="mr-2 w-4 h-4" />
+                    {currentLanguage === 'RU' ? 'Сумма займа составляет' : 'Несие сомасы'} <span className="font-bold">{loanPercentage}%</span> {currentLanguage === 'RU' ? 'от рыночной стоимости' : 'нарықтық құннан'}
+                  </div>
                   )}
                 </div>
               ) : null}

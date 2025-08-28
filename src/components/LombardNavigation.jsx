@@ -4,6 +4,7 @@ import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import LanguageSwitcher from './LanguageSwitcher'
 import Loader from './Loader'
+import Image from './Image'
 import './LombardNavigation.css'
 
 const LombardNavigation = () => {
@@ -77,13 +78,13 @@ const LombardNavigation = () => {
           <div className="lombard-branding">
             <div className="lombard-brand-logo">
               <Link to="/lombard">
-                <img src="/LogoLomabrd.png" alt="Ломбард АЛКА" />
+                <Image src="/LogoLomabrd.png" alt="Ломбард АЛКА" />
               </Link>
             </div>
           </div>
           
           <div className="lombard-contact-info">
-            <img src="/ContactsLombard.png" alt={t('contactInfo', currentLanguage)} className="lombard-contact-image" />
+            <Image src="/ContactsLombard.png" alt={t('contactInfo', currentLanguage)} className="lombard-contact-image" />
           </div>
         </div>
       </div>
@@ -120,7 +121,7 @@ const LombardNavigation = () => {
         <div className="container">
           <div className="lombard-mobile-branding">
             <Link to="/lombard" onClick={closeMenu}>
-              <img src="/logo-alka-mob.png" alt={t('lombardAlka', currentLanguage)} />
+              <Image src="/logo-alka-mob.png" alt={t('lombardAlka', currentLanguage)} />
             </Link>
           </div>
           <button 
@@ -142,7 +143,7 @@ const LombardNavigation = () => {
       <div className={`lombard-mobile-menu ${isMenuOpen ? 'open' : ''}`}>
         <div className="lombard-mobile-menu-header">
           <div className="lombard-mobile-menu-logo">
-            <img src="/logo-alka-mob.png" alt="Ломбард АЛКА" />
+            <Image src="/logo-alka-mob.png" alt="Ломбард АЛКА" />
           </div>
           <button className="lombard-mobile-menu-close" onClick={closeMenu}>
             <span></span>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import Loader from '../components/Loader'
+import Image from '../components/Image'
 import './LombardAlka.css'
 import ContactForm from '../components/ContactForm'
 
@@ -114,16 +115,16 @@ const LombardAlka = () => {
       {/* Hero Section с фоном fon.png */}
       <section className="lombard-hero">
         <div className="hero-background">
-          <img src="/fon.png" alt="Фон" className="background-image" />
+          <Image src="/fon.png" alt="Фон" className="background-image" />
         </div>
         
         {/* Главный контент - только фотографии */}
         <div className="hero-main-content">
           <div className={currentSlideData.left.className}>
-            <img src={currentSlideData.left.src} alt={currentSlideData.left.alt} />
+            <Image src={currentSlideData.left.src} alt={currentSlideData.left.alt} />
           </div>
           <div className={currentSlideData.right.className}>
-            <img src={currentSlideData.right.src} alt={currentSlideData.right.alt} />
+            <Image src={currentSlideData.right.src} alt={currentSlideData.right.alt} />
           </div>
         </div>
 
@@ -151,7 +152,7 @@ const LombardAlka = () => {
               {/* Левая карточка - Ювелирные изделия */}
               <div className="service-card jewelry-card">
                 <div className="service-icon">
-                  <img src="/zoloto-1.png" alt="Золотые слитки" />
+                  <Image src="/zoloto-1.png" alt="Золотые слитки" />
                 </div>
                 <div className="service-content">
                   <a href="/lombard/services" className="service-link">Залог ювелирных изделий</a>
@@ -162,7 +163,7 @@ const LombardAlka = () => {
               {/* Правая карточка - Техника */}
               <div className="service-card tech-card">
                 <div className="service-icon">
-                  <img src="/sotki-1.png" alt="Техника" />
+                  <Image src="/sotki-1.png" alt="Техника" />
                 </div>
                 <div className="service-content">
                   <a href="/lombard/services" className="service-link">Залог техники</a>
@@ -183,7 +184,7 @@ const LombardAlka = () => {
               <h2 className="money-block-title">{t('urgentlyNeedMoney', currentLanguage)}</h2>
               <div className="money-block-content-row">
                 <div className="money-block-image">
-                  <img src="/odobreno.png" alt="Одобрено" />
+                  <Image src="/odobreno.png" alt="Одобрено" />
                 </div>
                 <div className="money-block-offer">
                   <span className="offer-text">{t('weGiveUpTo', currentLanguage)}</span>
@@ -212,7 +213,7 @@ const LombardAlka = () => {
             {/* Карточка 1 - Гарантия сохранности */}
             <div className="feature-card">
               <div className="feature-icon">
-                <img src="/ik1.png" alt="Гарантия сохранности" />
+                <Image src="/ik1.png" alt="Гарантия сохранности" />
               </div>
               <div className="feature-content">
                 <h3 className="feature-title">{t('guaranteeTitle', currentLanguage)}</h3>
@@ -223,7 +224,7 @@ const LombardAlka = () => {
             {/* Карточка 2 - Максимальная оценка */}
             <div className="feature-card">
               <div className="feature-icon">
-                <img src="/ik2.png" alt="Максимальная оценка" />
+                <Image src="/ik2.png" alt="Максимальная оценка" />
               </div>
               <div className="feature-content">
                 <h3 className="feature-title">{t('maxValuationTitle', currentLanguage)}</h3>
@@ -234,7 +235,7 @@ const LombardAlka = () => {
             {/* Карточка 3 - Профессиональное обслуживание */}
             <div className="feature-card">
               <div className="feature-icon">
-                <img src="/ik3.png" alt="Профессиональное обслуживание" />
+                <Image src="/ik3.png" alt="Профессиональное обслуживание" />
               </div>
               <div className="feature-content">
                 <h3 className="feature-title">{t('professionalServiceTitle', currentLanguage)}</h3>
@@ -245,7 +246,7 @@ const LombardAlka = () => {
             {/* Карточка 4 - Честные ставки */}
             <div className="feature-card">
               <div className="feature-icon">
-                <img src="/ik4.png" alt="Честные ставки" />
+                <Image src="/ik4.png" alt="Честные ставки" />
               </div>
               <div className="feature-content">
                 <h3 className="feature-title">{t('fairRatesTitle', currentLanguage)}</h3>
@@ -256,7 +257,7 @@ const LombardAlka = () => {
             {/* Карточка 5 - Быстрое получение (повтор ik1.png) */}
             <div className="feature-card">
               <div className="feature-icon">
-                <img src="/ik1.png" alt="Быстрое получение" />
+                <Image src="/ik1.png" alt="Быстрое получение" />
               </div>
               <div className="feature-content">
                 <h3 className="feature-title">{t('quickGoldTitle', currentLanguage)}</h3>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { t } from '../utils/translations'
 import Loader from '../components/Loader'
+import Image from '../components/Image'
 import './Home.css'
 
 const Home = () => {
@@ -46,7 +47,7 @@ const Home = () => {
           <div className="services-grid home-services-grid">
             <a href="#" className="service-card jewelry" aria-label={t('jewelry', currentLanguage)}>
               <div className="service-icon">
-                <img 
+                <Image 
                   src="/yuvelirn.png" 
                   alt={t('jewelry', currentLanguage)}
                   onError={() => handleImageError('yuvelirn')}
@@ -61,7 +62,7 @@ const Home = () => {
             </a>
             <a href="/lombard" className="service-card lombard" aria-label={t('lombard', currentLanguage)}>
               <div className="service-icon">
-                <img 
+                <Image 
                   src="/lombard.png" 
                   alt={t('lombard', currentLanguage)}
                   onError={() => handleImageError('lombard')}
@@ -83,7 +84,7 @@ const Home = () => {
         <div className="container">
           <div className="news-header">
             <div className="news-icon">
-              <img src="/novosti.png" alt={t('companyNews', currentLanguage)} />
+              <Image src="/novosti.png" alt={t('companyNews', currentLanguage)} />
             </div>
             <h2>{t('companyNews', currentLanguage)}</h2>
           </div>
