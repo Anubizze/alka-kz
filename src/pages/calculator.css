@@ -1465,6 +1465,30 @@
     background: #374151 !important;
     border: 2px solid #ffffff !important;
   }
+  
+  /* Секция "Важная информация" - делаем светлой */
+  .calculator-info-item {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+  }
+  
+  .calculator-info-title {
+    color: #1f2937 !important;
+  }
+  
+  .calculator-info-list li {
+    color: #374151 !important;
+  }
+  
+  .calculator-info-list strong {
+    color: #1f2937 !important;
+  }
+  
+  .calculator-info-icon {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+  }
 }
 
 @media (max-width: 480px) {
