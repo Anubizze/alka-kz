@@ -34,27 +34,27 @@ const LombardNews = () => {
           pdfDocuments: [
             {
               name: 'Договор присоединения до 50 МРП',
-              file: '/PDF/Dogovor-prisoedineniya-do-50-MRP-01.10.2021-.pdf'
+              file: getPdfPath('Dogovor-prisoedineniya-do-50-MRP-01.10.2021-.pdf')
             },
             {
               name: 'Договор присоединения свыше 50 МРП',
-              file: '/PDF/Dogovor-prisoedineniya-svyshe-50-MRP-s-01.10.2021g.-.pdf'
+              file: getPdfPath('Dogovor-prisoedineniya-svyshe-50-MRP-s-01.10.2021g.-.pdf')
             },
             {
               name: 'Приложение к ЗБ (новый)',
-              file: '/PDF/Prilozheniya-k-ZB-novyj.pdf'
+              file: getPdfPath('Prilozheniya-k-ZB-novyj.pdf')
             },
             {
               name: 'Правила ломбарда ЛОМБАРД АЛКА',
-              file: '/PDF/Pravila-lombarda-LOMBARD-ALKA.pdf'
+              file: getPdfPath('Pravila-lombarda-LOMBARD-ALKA.pdf')
             },
             {
               name: 'Уведомление Заемщику о невыполнение обязательств',
-              file: '/PDF/Uvedomlenie-Zaemshhiku-o-nevypolnenie-obyazatelstv.pdf'
+              file: getPdfPath('Uvedomlenie-Zaemshhiku-o-nevypolnenie-obyazatelstv.pdf')
             },
             {
               name: 'Правила ЛОМБАРД АЛКА от 01.09.2021г',
-              file: '/PDF/Pravila-LOMBARD-ALKA-ot-01.09.2021g.pdf'
+              file: getPdfPath('Pravila-LOMBARD-ALKA-ot-01.09.2021g.pdf')
             }
           ]
         },
