@@ -339,13 +339,13 @@ function Calculator() {
             <div className="calculator-card" style={{
               background: '#ffffff',
               borderRadius: '15px',
-              padding: '30px',
+              padding: 'clamp(20px, 4vw, 30px)',
               boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
               border: '1px solid #e5e7eb',
               transition: 'all 0.3s ease'
             }}>
               <h2 className="calculator-card-title" style={{
-                fontSize: '1.5rem',
+                fontSize: 'clamp(1.25rem, 3vw, 1.5rem)',
                 fontWeight: '600',
                 color: '#374151',
                 marginBottom: '20px',
@@ -354,8 +354,8 @@ function Calculator() {
                 gap: '12px'
               }}>
                 <div className="calculator-card-icon" style={{
-                  width: '24px',
-                  height: '24px',
+                  width: 'clamp(20px, 4vw, 24px)',
+                  height: 'clamp(20px, 4vw, 24px)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
@@ -366,7 +366,7 @@ function Calculator() {
               </h2>
               <p style={{ 
                 color: '#666', 
-                fontSize: '14px', 
+                fontSize: 'clamp(0.75rem, 2vw, 14px)', 
                 marginBottom: '20px', 
                 lineHeight: '1.5',
                 textAlign: 'center'
@@ -380,16 +380,16 @@ function Calculator() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: '12px 0',
+                    padding: 'clamp(10px, 2.5vw, 12px) 0',
                     borderBottom: '1px solid #e5e7eb'
                   }}>
                     <div className="calculator-result-label" style={{
-                      fontSize: '14px',
+                      fontSize: 'clamp(0.75rem, 2.5vw, 14px)',
                       color: '#6b7280',
                       fontWeight: '500'
                     }}>{currentLanguage === 'RU' ? 'Цена за грамм' : 'Граммға баға'}</div>
                     <div className="calculator-result-value" style={{
-                      fontSize: '16px',
+                      fontSize: 'clamp(0.875rem, 2.5vw, 16px)',
                       fontWeight: '600',
                       color: '#374151'
                     }}>
@@ -400,20 +400,20 @@ function Calculator() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: '12px 0',
+                    padding: 'clamp(10px, 2.5vw, 12px) 0',
                     borderBottom: '1px solid #e5e7eb',
                     backgroundColor: '#f3f4f6',
                     borderRadius: '8px',
-                    padding: '12px',
+                    padding: 'clamp(10px, 2.5vw, 12px)',
                     margin: '8px 0'
                   }}>
                     <div className="calculator-result-label" style={{
-                      fontSize: '14px',
+                      fontSize: 'clamp(0.75rem, 2.5vw, 14px)',
                       color: '#6b7280',
                       fontWeight: '500'
                     }}>{currentLanguage === 'RU' ? 'Общая стоимость' : 'Жалпы құн'}</div>
                     <div className="calculator-result-value" style={{
-                      fontSize: '16px',
+                      fontSize: 'clamp(0.875rem, 2.5vw, 16px)',
                       fontWeight: '600',
                       color: '#374151'
                     }}>
@@ -425,20 +425,20 @@ function Calculator() {
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
-                      padding: '12px 0',
+                      padding: 'clamp(10px, 2.5vw, 12px) 0',
                       borderBottom: '1px solid #e5e7eb',
                       backgroundColor: '#dbeafe',
                       borderRadius: '8px',
-                      padding: '12px',
+                      padding: 'clamp(10px, 2.5vw, 12px)',
                       margin: '8px 0'
                     }}>
                       <div className="calculator-result-label" style={{
-                        fontSize: '14px',
+                        fontSize: 'clamp(0.75rem, 2.5vw, 14px)',
                         color: '#1e40af',
                         fontWeight: '600'
                       }}>{currentLanguage === 'RU' ? 'Сумма займа' : 'Несие сомасы'}</div>
                       <div className="calculator-result-value large" style={{
-                        fontSize: '18px',
+                        fontSize: 'clamp(1rem, 3vw, 18px)',
                         fontWeight: '700',
                         color: '#1e40af'
                       }}>
@@ -450,12 +450,16 @@ function Calculator() {
                     <div className="calculator-result-item" style={{
                       display: 'flex',
                       alignItems: 'center',
-                      padding: '8px 0',
-                      fontSize: '0.875rem',
+                      padding: 'clamp(6px, 2vw, 8px) 0',
+                      fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
                       color: '#6b7280',
                       fontStyle: 'italic'
                     }}>
-                      <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+                      <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} style={{ 
+                        width: 'clamp(14px, 3vw, 16px)', 
+                        height: 'clamp(14px, 3vw, 16px)', 
+                        marginRight: '8px' 
+                      }} />
                       {currentLanguage === 'RU' ? 'Сумма займа составляет' : 'Несие сомасы'} <span style={{ fontWeight: 'bold' }}>{loanPercentage}%</span> {currentLanguage === 'RU' ? 'от рыночной стоимости' : 'нарықтық құннан'}
                     </div>
                   )}
@@ -468,16 +472,16 @@ function Calculator() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: '12px 0',
+                    padding: 'clamp(10px, 2.5vw, 12px) 0',
                     borderBottom: '1px solid #e5e7eb'
                   }}>
                     <div className="calculator-result-label" style={{
-                      fontSize: '14px',
+                      fontSize: 'clamp(0.75rem, 2.5vw, 14px)',
                       color: '#6b7280',
                       fontWeight: '500'
                     }}>{currentLanguage === 'RU' ? 'Сумма кредита' : 'Несие сомасы'}</div>
                     <div className="calculator-result-value" style={{
-                      fontSize: '16px',
+                      fontSize: 'clamp(0.875rem, 2.5vw, 16px)',
                       fontWeight: '600',
                       color: '#374151'
                     }}>
@@ -488,20 +492,20 @@ function Calculator() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: '12px 0',
+                    padding: 'clamp(10px, 2.5vw, 12px) 0',
                     borderBottom: '1px solid #e5e7eb',
                     backgroundColor: '#f3f4f6',
                     borderRadius: '8px',
-                    padding: '12px',
+                    padding: 'clamp(10px, 2.5vw, 12px)',
                     margin: '8px 0'
                   }}>
                     <div className="calculator-result-label" style={{
-                      fontSize: '14px',
+                      fontSize: 'clamp(0.75rem, 2.5vw, 14px)',
                       color: '#6b7280',
                       fontWeight: '500'
                     }}>{currentLanguage === 'RU' ? 'Ежемесячный платеж' : 'Айлық төлем'}</div>
                     <div className="calculator-result-value" style={{
-                      fontSize: '16px',
+                      fontSize: 'clamp(0.875rem, 2.5vw, 16px)',
                       fontWeight: '600',
                       color: '#374151'
                     }}>
@@ -512,20 +516,20 @@ function Calculator() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: '12px 0',
+                    padding: 'clamp(10px, 2.5vw, 12px) 0',
                     borderBottom: '1px solid #e5e7eb',
                     backgroundColor: '#dbeafe',
                     borderRadius: '8px',
-                    padding: '12px',
+                    padding: 'clamp(10px, 2.5vw, 12px)',
                     margin: '8px 0'
                   }}>
                     <div className="calculator-result-label" style={{
-                      fontSize: '14px',
+                      fontSize: 'clamp(0.75rem, 2.5vw, 14px)',
                       color: '#1e40af',
                       fontWeight: '600'
                     }}>{currentLanguage === 'RU' ? 'Срок кредита' : 'Несие мерзімі'}</div>
                     <div className="calculator-result-value large" style={{
-                      fontSize: '18px',
+                      fontSize: 'clamp(1rem, 3vw, 18px)',
                       fontWeight: '700',
                       color: '#1e40af'
                     }}>
@@ -535,25 +539,43 @@ function Calculator() {
                   <div className="calculator-result-item" style={{
                     display: 'flex',
                     alignItems: 'center',
-                    padding: '8px 0',
-                    fontSize: '0.875rem',
+                    padding: 'clamp(6px, 2vw, 8px) 0',
+                    fontSize: 'clamp(0.75rem, 2vw, 0.875rem)',
                     color: '#6b7280',
                     fontStyle: 'italic'
                   }}>
-                    <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+                    <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} style={{ 
+                      width: 'clamp(14px, 3vw, 16px)', 
+                      height: 'clamp(14px, 3vw, 16px)', 
+                      marginRight: '8px' 
+                    }} />
                     {currentLanguage === 'RU' ? 'Месячная ставка' : 'Айлық мөлшерлеме'} <span style={{ fontWeight: 'bold' }}>{creditResult.rate}%</span>
                   </div>
                 </div>
               ) : null}
               {/* Пустой результат */}
               {!result && !creditResult && (
-                <div className="calculator-empty">
+                <div className="calculator-empty" style={{
+                  textAlign: 'center',
+                  padding: 'clamp(1.5rem, 4vw, 2.5rem) 0'
+                }}>
                   <Image
                     src="/icons/rashet.png"
                     alt={currentLanguage === 'RU' ? 'Эмблема расчёта' : 'Есептеу эмблемасы'}
                     className="calculator-empty-icon"
+                    style={{
+                      width: 'clamp(32px, 8vw, 64px)',
+                      height: 'clamp(32px, 8vw, 64px)',
+                      margin: '0 auto clamp(8px, 2vw, 12px)',
+                      display: 'block'
+                    }}
                   />
-                  <p className="calculator-empty-text">
+                  <p className="calculator-empty-text" style={{
+                    color: '#9ca3af',
+                    fontSize: 'clamp(0.75rem, 2.5vw, 0.875rem)',
+                    padding: '0 clamp(8px, 2vw, 10px)',
+                    lineHeight: '1.4'
+                  }}>
                     {currentLanguage === 'RU' 
                       ? 'Введите параметры для расчета стоимости золота и залогового кредита' 
                       : 'Алтының құнын және залог несие сомасын есептеу үшін параметрлерді енгізіңіз'

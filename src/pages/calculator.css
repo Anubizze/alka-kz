@@ -860,6 +860,11 @@
     font-size: 0.875rem;
   }
   
+  .calculator-purity-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
   .calculator-purity-button {
     padding: 12px;
     border-radius: 6px;
@@ -1148,6 +1153,12 @@
     min-width: 20px;
     min-height: 20px;
   }
+  
+  .calculator-checkbox label {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
 }
 
 /* Поддержка темной темы для мобильных устройств */
@@ -1223,5 +1234,121 @@
   .calculator-footer-logo-inner {
     background: #1f2937;
     border-color: #4b5563;
+  }
+}
+
+/* Дополнительные улучшения для мобильных устройств */
+@media (max-width: 480px) {
+  /* Улучшенная навигация для мобильных */
+  .calculator-header h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.2;
+  }
+  
+  .calculator-header p {
+    font-size: 0.875rem !important;
+    line-height: 1.4;
+  }
+  
+  /* Оптимизация для маленьких экранов */
+  .calculator-form-group {
+    margin-bottom: 1.25rem;
+  }
+  
+  /* Улучшенные кнопки для мобильных */
+  .calculator-purity-button {
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+  }
+  
+  .calculator-purity-button:active {
+    transform: scale(0.98);
+    border-color: #667eea;
+  }
+  
+  /* Оптимизация слайдеров */
+  .calculator-range {
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    height: 8px;
+  }
+  
+  .calculator-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #ffffff;
+    border: 2px solid #667eea;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .calculator-range::-moz-range-thumb {
+    background: #ffffff;
+    border: 2px solid #667eea;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Специальные стили для очень маленьких экранов */
+@media (max-width: 320px) {
+  .calculator-wrapper {
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .calculator-card {
+    padding: 10px;
+    border-radius: 6px;
+  }
+  
+  .calculator-card-title {
+    font-size: 0.9375rem;
+  }
+  
+  .calculator-label {
+    font-size: 0.8125rem;
+  }
+  
+  .calculator-input {
+    padding: 0.375rem 0.5rem;
+    font-size: 0.8125rem;
+  }
+  
+  .calculator-purity-button {
+    padding: 8px;
+  }
+  
+  .calculator-purity-value {
+    font-size: 0.8125rem;
+  }
+  
+  .calculator-purity-price {
+    font-size: 0.6875rem;
+  }
+  
+  .calculator-footer-content {
+    padding: 0.625rem;
+  }
+  
+  .calculator-footer-logo-img img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .calculator-footer-logo-title {
+    font-size: 0.6875rem;
+  }
+  
+  .calculator-footer-logo-subtitle {
+    font-size: 0.5rem;
+  }
+  
+  .calculator-footer-text {
+    font-size: 0.5rem;
   }
 }
