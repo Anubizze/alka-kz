@@ -65,7 +65,7 @@ const LombardNews = () => {
           alt: 'Финансовые документы',
           description: 'Отчет за 2024',
           fullContent: 'Финансовая отчетность за 2024 год. Подробная информация о финансовом состоянии компании, доходах, расходах и результатах деятельности за отчетный период.',
-          pdfDocuments: [{ name: 'Отчет за 2024 год', file: '/PDF/otchet-za-2024.pdf' }]
+          pdfDocuments: [{ name: 'Отчет за 2024 год', file: getPdfPath('otchet-za-2024.pdf') }]
         },
         {
           id: 3,
@@ -74,7 +74,7 @@ const LombardNews = () => {
           alt: 'Финансовые документы',
           description: 'Отчет за 2023',
           fullContent: 'Финансовая отчетность за 2023 год. Анализ финансовых показателей, сравнение с предыдущими периодами и прогнозы на будущее.',
-          pdfDocuments: [{ name: 'Отчет за 2023 год', file: '/PDF/Otchet-2023.pdf' }]
+          pdfDocuments: [{ name: 'Отчет за 2023 год', file: getPdfPath('Otchet-2023.pdf') }]
         },
         {
           id: 4,
@@ -83,7 +83,7 @@ const LombardNews = () => {
           alt: 'Финансовые документы',
           description: 'Отчет за 2022',
           fullContent: 'Финансовая отчетность за 2022 год. Детальный анализ финансового состояния компании и результаты хозяйственной деятельности.',
-          pdfDocuments: [{ name: 'Отчет за 2022 год', file: '/PDF/Otchet-za-2022g.pdf' }]
+          pdfDocuments: [{ name: 'Отчет за 2022 год', file: getPdfPath('Otchet-za-2022g.pdf') }]
         },
         {
           id: 5,
@@ -92,7 +92,7 @@ const LombardNews = () => {
           alt: 'Финансовые документы',
           description: 'Отчет за 2021',
           fullContent: 'Финансовая отчетность за 2021 год. Обзор финансовых результатов и анализ эффективности бизнес-процессов.',
-          pdfDocuments: [{ name: 'Отчет за 2021 год', file: '/PDF/Otchet-za-2021g.pdf' }]
+          pdfDocuments: [{ name: 'Отчет за 2021 год', file: getPdfPath('Otchet-2021_merged.pdf') }]
         },
         {
           id: 6,
@@ -101,7 +101,7 @@ const LombardNews = () => {
           alt: 'Документ',
           description: 'Приказ о мерах поддержки физических и юридических лиц, пострадавших в результате введения чрезвычайного положения',
           fullContent: 'Приказ о мерах поддержки физических и юридических лиц, пострадавших в результате введения чрезвычайного положения. Документ содержит информацию о порядке предоставления отсрочки платежей по займам.',
-          pdfDocuments: [{ name: 'Приказ о мерах поддержки', file: '/PDF/Poryadok-predostavleniya-otsrochki-platezhej-po-zajmam-fizicheskih-i-yuridicheskih-lits-postradavshih-v-rezultate-vvedeniya-chrezvychajnogo-polozheniya.pdf' }]
+          pdfDocuments: [{ name: 'Приказ о мерах поддержки', file: getPdfPath('Poryadok-predostavleniya-otsrochki-platezhej-po-zajmam-fizicheskih-i-yuridicheskih-lits-postradavshih-v-rezultate-vvedeniya-chrezvychajnogo-polozheniya.pdf') }]
         }
       ]
       setNewsItems(defaultNews)
@@ -179,6 +179,7 @@ const LombardNews = () => {
                           href={doc.file}
                           target="_blank"
                           rel="noopener noreferrer"
+                          download={doc.name}
                           className="lombard-news-pdf-item"
                         >
                           <span className="pdf-icon">📄</span>
@@ -293,6 +294,7 @@ const LombardNews = () => {
                           href={doc.file}
                           target="_blank"
                           rel="noopener noreferrer"
+                          download={doc.name}
                           className="lombard-news-pdf-item"
                         >
                           <span className="pdf-icon">📄</span>
