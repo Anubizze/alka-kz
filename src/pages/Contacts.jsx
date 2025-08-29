@@ -41,39 +41,7 @@ const Contacts = () => {
         </div>
       </div>
 
-      {/* Central Office Section */}
-      <section className="central-office-section">
-        <div className="container">
-          <h2 className="central-office-title">
-            {currentLanguage === 'RU' ? 'ЦЕНТРАЛЬНЫЙ ОФИС' : 'Орталық кеңсе'}
-          </h2>
-          <div className="contact-details">
-            <div className="contact-item">
-              <div className="contact-icon">📍</div>
-              <div className="contact-info">
-                <h3>Адрес</h3>
-                <p>г. Семей, ул. Примерная, 123</p>
-              </div>
-            </div>
-            
-            <div className="contact-item">
-              <div className="contact-icon">📞</div>
-              <div className="contact-info">
-                <h3>Телефон</h3>
-                <p>+7 (701) 081-36-76</p>
-              </div>
-            </div>
-            
-            <div className="contact-item">
-              <div className="contact-icon">🕒</div>
-              <div className="contact-info">
-                <h3>Время работы</h3>
-                <p>Пн-Пт: 9:00 - 18:00<br/>Сб: 9:00 - 15:00</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Map Section */}
       <section className="map-section">
