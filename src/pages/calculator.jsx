@@ -97,7 +97,29 @@ function Calculator() {
           backdropFilter: 'blur(10px)'
         }}>
           {/* Header */}
-
+          <div className="calculator-header" style={{
+            textAlign: 'center',
+            marginBottom: '30px'
+          }}>
+            <h1 style={{
+              fontSize: '2rem',
+              fontWeight: '700',
+              color: '#374151',
+              marginBottom: '10px'
+            }}>
+              {currentLanguage === 'RU' ? 'Калькулятор залогового кредита' : 'Залог несие калькуляторы'}
+            </h1>
+            <p style={{
+              fontSize: '1rem',
+              color: '#6b7280',
+              lineHeight: '1.5'
+            }}>
+              {currentLanguage === 'RU' 
+                ? 'Рассчитайте стоимость золота и сумму залогового кредита' 
+                : 'Алтынның құнын және залог несие сомасын есептеңіз'
+              }
+            </p>
+          </div>
 
           <div className="calculator-grid" style={{
             display: 'grid',
@@ -158,6 +180,7 @@ function Calculator() {
                     className="calculator-input"
                     step="0.01"
                     min="0"
+                    inputMode="decimal"
                   />
                   <div className="calculator-input-suffix">
                     г
@@ -176,6 +199,8 @@ function Calculator() {
                       key={purityKey}
                       onClick={() => setPurity(parseInt(purityKey))}
                       className={`calculator-purity-button ${purity === parseInt(purityKey) ? 'active' : ''}`}
+                      type="button"
+                      aria-label={`${purityKey} проба золота`}
                     >
                       <div className="calculator-purity-value">{purityKey}</div>
                       <div className="calculator-purity-price">
@@ -193,10 +218,22 @@ function Calculator() {
                   checked={showSlider}
                   onChange={() => setShowSlider((v) => !v)}
                   id="loanPercentageToggle"
+                  aria-describedby="loanPercentageDesc"
                 />
                 <label htmlFor="loanPercentageToggle">
                   {t('calculateLoanToggle', currentLanguage)}
                 </label>
+                <div id="loanPercentageDesc" style={{
+                  fontSize: '0.875rem',
+                  color: '#6b7280',
+                  marginTop: '5px',
+                  fontStyle: 'italic'
+                }}>
+                  {currentLanguage === 'RU' 
+                    ? 'Включите для расчета суммы займа' 
+                    : 'Несие сомасын есептеу үшін қосыңыз'
+                  }
+                </div>
               </div>
 
               {showSlider && (
@@ -212,6 +249,7 @@ function Calculator() {
                       value={loanPercentage}
                       onChange={(e) => setLoanPercentage(parseInt(e.target.value))}
                       className="calculator-range"
+                      aria-label={`Процент займа: ${loanPercentage}%`}
                       style={{
                         background: `linear-gradient(to right, #404040 0%, #404040 ${loanPercentage}%, #e5e7eb ${loanPercentage}%, #e5e7eb 100%)`
                       }}
@@ -232,10 +270,22 @@ function Calculator() {
                   checked={showCredit}
                   onChange={() => setShowCredit((v) => !v)}
                   id="creditToggle"
+                  aria-describedby="creditDesc"
                 />
                 <label htmlFor="creditToggle">
                   {t('calculateCreditToggle', currentLanguage)}
                 </label>
+                <div id="creditDesc" style={{
+                  fontSize: '0.875rem',
+                  color: '#6b7280',
+                  marginTop: '5px',
+                  fontStyle: 'italic'
+                }}>
+                  {currentLanguage === 'RU' 
+                    ? 'Включите для расчета кредитных платежей' 
+                    : 'Несие төлемдерін есептеу үшін қосыңыз'
+                  }
+                </div>
               </div>
 
               {/* Credit Calculator Inputs */}
@@ -251,6 +301,7 @@ function Calculator() {
                     value={creditMonths}
                     onChange={e => setCreditMonths(parseInt(e.target.value))}
                     className="calculator-range"
+                    aria-label={`Срок кредита: ${creditMonths} месяцев`}
                     style={{
                       background: `linear-gradient(to right, #404040 0%, #404040 ${(creditMonths / 24) * 100}%, #e5e7eb ${(creditMonths / 24) * 100}%, #e5e7eb 100%)`
                     }}
@@ -270,6 +321,7 @@ function Calculator() {
                     value={monthlyRate}
                     onChange={e => setMonthlyRate(parseInt(e.target.value))}
                     className="calculator-range"
+                    aria-label={`Месячная ставка: ${monthlyRate}%`}
                     style={{
                       background: `linear-gradient(to right, #404040 0%, #404040 ${((monthlyRate - 1) / 4) * 100}%, #e5e7eb ${((monthlyRate - 1) / 4) * 100}%, #e5e7eb 100%)`
                     }}
@@ -395,63 +447,148 @@ function Calculator() {
                     </div>
                   )}
                   {showSlider && (
-                                      <div className="calculator-result-item">
-                    <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} className="mr-2 w-4 h-4" />
-                    {currentLanguage === 'RU' ? 'Сумма займа составляет' : 'Несие сомасы'} <span className="font-bold">{loanPercentage}%</span> {currentLanguage === 'RU' ? 'от рыночной стоимости' : 'нарықтық құннан'}
-                  </div>
+                    <div className="calculator-result-item" style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      padding: '8px 0',
+                      fontSize: '0.875rem',
+                      color: '#6b7280',
+                      fontStyle: 'italic'
+                    }}>
+                      <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+                      {currentLanguage === 'RU' ? 'Сумма займа составляет' : 'Несие сомасы'} <span style={{ fontWeight: 'bold' }}>{loanPercentage}%</span> {currentLanguage === 'RU' ? 'от рыночной стоимости' : 'нарықтық құннан'}
+                    </div>
                   )}
                 </div>
               ) : null}
               {/* Кредитный результат */}
               {showCredit && creditResult ? (
                 <div>
-                  <div className="calculator-result-item">
-                    <div className="calculator-result-label">{currentLanguage === 'RU' ? 'Сумма кредита' : 'Несие сомасы'}</div>
-                    <div className="calculator-result-value">
+                  <div className="calculator-result-item" style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '12px 0',
+                    borderBottom: '1px solid #e5e7eb'
+                  }}>
+                    <div className="calculator-result-label" style={{
+                      fontSize: '14px',
+                      color: '#6b7280',
+                      fontWeight: '500'
+                    }}>{currentLanguage === 'RU' ? 'Сумма кредита' : 'Несие сомасы'}</div>
+                    <div className="calculator-result-value" style={{
+                      fontSize: '16px',
+                      fontWeight: '600',
+                      color: '#374151'
+                    }}>
                       {parseInt(creditResult.principal).toLocaleString()} ₸
                     </div>
                   </div>
-                  <div className="calculator-result-item highlight">
-                    <div className="calculator-result-label">{currentLanguage === 'RU' ? 'Ежемесячный платеж' : 'Айлық төлем'}</div>
-                    <div className="calculator-result-value">
+                  <div className="calculator-result-item highlight" style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '12px 0',
+                    borderBottom: '1px solid #e5e7eb',
+                    backgroundColor: '#f3f4f6',
+                    borderRadius: '8px',
+                    padding: '12px',
+                    margin: '8px 0'
+                  }}>
+                    <div className="calculator-result-label" style={{
+                      fontSize: '14px',
+                      color: '#6b7280',
+                      fontWeight: '500'
+                    }}>{currentLanguage === 'RU' ? 'Ежемесячный платеж' : 'Айлық төлем'}</div>
+                    <div className="calculator-result-value" style={{
+                      fontSize: '16px',
+                      fontWeight: '600',
+                      color: '#374151'
+                    }}>
                       {parseInt(creditResult.monthlyPayment).toLocaleString()} ₸
                     </div>
                   </div>
-                  <div className="calculator-result-item primary">
-                    <div className="calculator-result-label">{currentLanguage === 'RU' ? 'Срок кредита' : 'Несие мерзімі'}</div>
-                    <div className="calculator-result-value large">
+                  <div className="calculator-result-item primary" style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '12px 0',
+                    borderBottom: '1px solid #e5e7eb',
+                    backgroundColor: '#dbeafe',
+                    borderRadius: '8px',
+                    padding: '12px',
+                    margin: '8px 0'
+                  }}>
+                    <div className="calculator-result-label" style={{
+                      fontSize: '14px',
+                      color: '#1e40af',
+                      fontWeight: '600'
+                    }}>{currentLanguage === 'RU' ? 'Срок кредита' : 'Несие мерзімі'}</div>
+                    <div className="calculator-result-value large" style={{
+                      fontSize: '18px',
+                      fontWeight: '700',
+                      color: '#1e40af'
+                    }}>
                       {creditResult.months} {currentLanguage === 'RU' ? 'месяцев' : 'ай'}
                     </div>
                   </div>
-                  <div className="calculator-result-item">
-                    <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} className="mr-2 w-4 h-4" />
-                    {currentLanguage === 'RU' ? 'Месячная ставка' : 'Айлық мөлшерлеме'} <span className="font-bold">{creditResult.rate}%</span>
+                  <div className="calculator-result-item" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    padding: '8px 0',
+                    fontSize: '0.875rem',
+                    color: '#6b7280',
+                    fontStyle: 'italic'
+                  }}>
+                    <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Эмблема' : 'Эмблема'} style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+                    {currentLanguage === 'RU' ? 'Месячная ставка' : 'Айлық мөлшерлеме'} <span style={{ fontWeight: 'bold' }}>{creditResult.rate}%</span>
                   </div>
                 </div>
               ) : null}
               {/* Пустой результат */}
               {!result && !creditResult && (
                 <div className="calculator-empty">
-                                    <Image
+                  <Image
                     src="/icons/rashet.png"
                     alt={currentLanguage === 'RU' ? 'Эмблема расчёта' : 'Есептеу эмблемасы'}
                     className="calculator-empty-icon"
                   />
-                <p className="calculator-empty-text">
-                  {currentLanguage === 'RU' 
-                    ? 'Введите параметры для расчета стоимости золота и залогового кредита' 
-                    : 'Алтының құнын және залог несие сомасын есептеу үшін параметрлерді енгізіңіз'
-                  }
-                </p>
-              </div>
-            )}
+                  <p className="calculator-empty-text">
+                    {currentLanguage === 'RU' 
+                      ? 'Введите параметры для расчета стоимости золота и залогового кредита' 
+                      : 'Алтының құнын және залог несие сомасын есептеу үшін параметрлерді енгізіңіз'
+                    }
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
 
-        {/* Info Section */}
-        <div className="calculator-card">
-                      <h3 className="calculator-card-title">
-              <div className="calculator-card-icon">
+          {/* Info Section */}
+          <div className="calculator-card" style={{
+            background: '#ffffff',
+            borderRadius: '15px',
+            padding: '30px',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)',
+            border: '1px solid #e5e7eb',
+            transition: 'all 0.3s ease'
+          }}>
+            <h3 className="calculator-card-title" style={{
+              fontSize: '1.5rem',
+              fontWeight: '600',
+              color: '#374151',
+              marginBottom: '20px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px'
+            }}>
+              <div className="calculator-card-icon" style={{
+                width: '24px',
+                height: '24px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
                 <Image src="/icons/vazninfa.png" alt={currentLanguage === 'RU' ? 'Важная информация' : 'Маңызды ақпарат'} />
               </div>
               {currentLanguage === 'RU' ? 'Важная информация' : 'Маңызды ақпарат'}
@@ -465,54 +602,66 @@ function Calculator() {
             }}>
               {currentLanguage === 'RU' 
                 ? 'Условия залогового кредита и требования к золоту' 
-                : 'Залог несие шарттары және алтыға қойылатын талаптар'
+                : 'Залог несие шарттары және алтынға қойылатын талаптар'
               }
             </p>
-          <div className="calculator-info-grid">
-            <div className="calculator-info-item">
-              <h4 className="calculator-info-title">
-                <span className="calculator-info-icon">
-                  <Image
-                    src="/icons/yslovia.png"
-                    alt={currentLanguage === 'RU' ? 'Иконка условий' : 'Шарттар белгішесі'}
-                  />
-                </span>
-                {currentLanguage === 'RU' ? 'Условия займа' : 'Несие шарттары'}
-              </h4>
-              <ul className="calculator-info-list">
-                <li>{currentLanguage === 'RU' ? 'Минимальный срок' : 'Минималды мерзім'} <strong>30 {currentLanguage === 'RU' ? 'дней' : 'күн'}</strong></li>
-                <li>{currentLanguage === 'RU' ? 'Максимальный срок' : 'Максималды мерзім'} <strong>12 {currentLanguage === 'RU' ? 'месяцев' : 'ай'}</strong></li>
-                <li>{currentLanguage === 'RU' ? 'Процентная ставка' : 'Пайыздық мөлшерлеме'} <strong>2-3% {currentLanguage === 'RU' ? 'в месяц' : 'айына'}</strong></li>
-                <li>{currentLanguage === 'RU' ? 'Досрочное погашение' : 'Ерте өтеу'}</li>
-              </ul>
-            </div>
-            <div className="calculator-info-item">
-              <h4 className="calculator-info-title">
-                <span className="calculator-info-icon">
-                  <Image
-                    src="/icons/lupa4.png"
-                    alt={currentLanguage === 'RU' ? 'Иконка поиска' : 'Іздеу белгішесі'}
-                  />
-                </span>
-                {currentLanguage === 'RU' ? 'Требования к золоту' : 'Алтынға қойылатын талаптар'}
-              </h4>
-              <ul className="calculator-info-list">
-                <li>{currentLanguage === 'RU' ? 'Проба золота' : 'Алтын сынауы'} <strong>585, 750, 916, 999</strong> {currentLanguage === 'RU' ? 'пробы' : 'сынау'}</li>
-                <li>{currentLanguage === 'RU' ? 'Проверка подлинности' : 'Шынайылығын тексеру'}</li>
-                <li>{currentLanguage === 'RU' ? 'Оценка в день обращения' : 'Жүгірту күні бағалау'}</li>
-                <li>{currentLanguage === 'RU' ? 'Ежедневное обновление цен' : 'Күнделікті баға жаңарту'}</li>
-              </ul>
+            <div className="calculator-info-grid">
+              <div className="calculator-info-item">
+                <h4 className="calculator-info-title">
+                  <span className="calculator-info-icon">
+                    <Image
+                      src="/icons/yslovia.png"
+                      alt={currentLanguage === 'RU' ? 'Иконка условий' : 'Шарттар белгішесі'}
+                    />
+                  </span>
+                  {currentLanguage === 'RU' ? 'Условия займа' : 'Несие шарттары'}
+                </h4>
+                <ul className="calculator-info-list">
+                  <li>{currentLanguage === 'RU' ? 'Минимальный срок' : 'Минималды мерзім'} <strong>30 {currentLanguage === 'RU' ? 'дней' : 'күн'}</strong></li>
+                  <li>{currentLanguage === 'RU' ? 'Максимальный срок' : 'Максималды мерзім'} <strong>12 {currentLanguage === 'RU' ? 'месяцев' : 'ай'}</strong></li>
+                  <li>{currentLanguage === 'RU' ? 'Процентная ставка' : 'Пайыздық мөлшерлеме'} <strong>2-3% {currentLanguage === 'RU' ? 'в месяц' : 'айына'}</strong></li>
+                  <li>{currentLanguage === 'RU' ? 'Досрочное погашение' : 'Ерте өтеу'}</li>
+                </ul>
+              </div>
+              <div className="calculator-info-item">
+                <h4 className="calculator-info-title">
+                  <span className="calculator-info-icon">
+                    <Image
+                      src="/icons/lupa4.png"
+                      alt={currentLanguage === 'RU' ? 'Иконка поиска' : 'Іздеу белгішесі'}
+                    />
+                  </span>
+                  {currentLanguage === 'RU' ? 'Требования к золоту' : 'Алтынға қойылатын талаптар'}
+                </h4>
+                <ul className="calculator-info-list">
+                  <li>{currentLanguage === 'RU' ? 'Проба золота' : 'Алтын сынауы'} <strong>585, 750, 916, 999</strong> {currentLanguage === 'RU' ? 'пробы' : 'сынау'}</li>
+                  <li>{currentLanguage === 'RU' ? 'Проверка подлинности' : 'Шынайылығын тексеру'}</li>
+                  <li>{currentLanguage === 'RU' ? 'Оценка в день обращения' : 'Жүгірту күні бағалау'}</li>
+                  <li>{currentLanguage === 'RU' ? 'Ежедневное обновление цен' : 'Күнделікті баға жаңарту'}</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Footer */}
-      <div className="calculator-footer">
-          <div className="calculator-footer-content">
+        {/* Footer */}
+        <div className="calculator-footer">
+          <div className="calculator-footer-content" style={{
+            background: '#f9fafb',
+            borderRadius: '12px',
+            padding: '1.25rem',
+            border: '1px solid #e5e7eb'
+          }}>
             <div className="calculator-footer-logo">
-              <div className="calculator-footer-logo-inner">
-                <div className="calculator-footer-logo-img">
+              <div className="calculator-footer-logo-inner" style={{
+                display: 'flex',
+                alignItems: 'center',
+                background: 'white',
+                borderRadius: '8px',
+                padding: '8px',
+                border: '1px solid #d1d5db'
+              }}>
+                <div className="calculator-footer-logo-img" style={{ marginRight: '8px' }}>
                   <Image
                     src="/icons/almaz.png"
                     alt="Алмаз АЛКА ЛОМБАРД"
@@ -520,34 +669,78 @@ function Calculator() {
                     height="35"
                   />
                 </div>
-                <div className="calculator-footer-logo-text">
-                  <div className="calculator-footer-logo-title">АЛҚА</div>
-                  <div className="calculator-footer-logo-subtitle">ЛОМБАРД</div>
+                <div className="calculator-footer-logo-text" style={{ textAlign: 'left' }}>
+                  <div className="calculator-footer-logo-title" style={{
+                    fontSize: '1rem',
+                    fontWeight: '700',
+                    color: '#374151',
+                    lineHeight: '1.2'
+                  }}>АЛҚА</div>
+                  <div className="calculator-footer-logo-subtitle" style={{
+                    fontSize: '0.75rem',
+                    fontWeight: '600',
+                    color: '#6b7280',
+                    lineHeight: '1.2'
+                  }}>ЛОМБАРД</div>
                 </div>
               </div>
             </div>
-            <div className="calculator-footer-info">
-              <div className="calculator-footer-icon">
+            <div className="calculator-footer-info" style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: '8px'
+            }}>
+              <div className="calculator-footer-icon" style={{
+                width: '20px',
+                height: '20px',
+                background: '#e5e7eb',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: '8px'
+              }}>
                 <Image
                   src="/icons/lampa.png"
                   alt="Лампа"
                 />
               </div>
-              <p className="calculator-footer-text">
+              <p className="calculator-footer-text" style={{
+                fontSize: '0.75rem',
+                color: '#6b7280'
+              }}>
                 {currentLanguage === 'RU' 
                   ? 'Калькулятор показывает приблизительные расчеты. Для точной оценки посетите наш ломбард' 
                   : 'Калькулятор шамамен есептеулерді көрсетеді. Дәл бағалау үшін ломбардымызға келіңіз'
                 }
               </p>
             </div>
-            <div className="calculator-footer-info">
-              <div className="calculator-footer-icon">
+            <div className="calculator-footer-info" style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: '8px'
+            }}>
+              <div className="calculator-footer-icon" style={{
+                width: '20px',
+                height: '20px',
+                background: '#e5e7eb',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: '8px'
+              }}>
                 <Image
                   src="/icons/telephone1.png"
                   alt="Телефон"
                 />
               </div>
-              <p className="calculator-footer-text">
+              <p className="calculator-footer-text" style={{
+                fontSize: '0.75rem',
+                color: '#6b7280'
+              }}>
                 {currentLanguage === 'RU' 
                   ? 'Свяжитесь с нами для получения дополнительной информации о залоговых кредитах' 
                   : 'Залог несиелері туралы қосымша ақпарат алу үшін бізбен хабарласыңыз'
