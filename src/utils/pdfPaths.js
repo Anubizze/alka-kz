@@ -1,13 +1,8 @@
 // Утилита для правильных путей к PDF файлам в GitHub Pages
 export const getPdfPath = (filename) => {
-  // В режиме разработки используем относительные пути
-  if (import.meta.env.DEV) {
-    return `/PDF/${filename}`
-  }
-  
-  // В продакшене (GitHub Pages) используем пути к корню
-  // GitHub Pages ожидает файлы в корне, а не в папке alka-kz
-  return `/${filename}`
+  // Всегда используем пути к папке PDF (и в разработке, и в продакшене)
+  // Это обеспечивает совместимость с GitHub Pages
+  return `/PDF/${filename}`
 }
 
 // Список всех доступных PDF файлов

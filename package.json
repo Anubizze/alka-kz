@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run copy-pdfs",
-    "copy-pdfs": "copyfiles -u 1 \"public/PDF/*.pdf\" dist/",
+    "copy-pdfs": "copyfiles -u 1 \"public/PDF/*.pdf\" dist/PDF/",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
