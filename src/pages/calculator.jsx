@@ -400,11 +400,10 @@ function Calculator() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: 'clamp(10px, 2.5vw, 12px) 0',
+                    padding: 'clamp(10px, 2.5vw, 12px)',
                     borderBottom: '1px solid #e5e7eb',
                     backgroundColor: '#f3f4f6',
                     borderRadius: '8px',
-                    padding: 'clamp(10px, 2.5vw, 12px)',
                     margin: '8px 0'
                   }}>
                     <div className="calculator-result-label" style={{
@@ -422,15 +421,14 @@ function Calculator() {
                   </div>
                   {showSlider && (
                     <div className="calculator-result-item primary" style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      padding: 'clamp(10px, 2.5vw, 12px) 0',
-                      borderBottom: '1px solid #e5e7eb',
-                      backgroundColor: '#dbeafe',
-                      borderRadius: '8px',
-                      padding: 'clamp(10px, 2.5vw, 12px)',
-                      margin: '8px 0'
+                                          display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: 'clamp(10px, 2.5vw, 12px)',
+                    borderBottom: '1px solid #e5e7eb',
+                    backgroundColor: '#dbeafe',
+                    borderRadius: '8px',
+                    margin: '8px 0'
                     }}>
                       <div className="calculator-result-label" style={{
                         fontSize: 'clamp(0.75rem, 2.5vw, 14px)',
@@ -492,11 +490,10 @@ function Calculator() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: 'clamp(10px, 2.5vw, 12px) 0',
+                    padding: 'clamp(10px, 2.5vw, 12px)',
                     borderBottom: '1px solid #e5e7eb',
                     backgroundColor: '#f3f4f6',
                     borderRadius: '8px',
-                    padding: 'clamp(10px, 2.5vw, 12px)',
                     margin: '8px 0'
                   }}>
                     <div className="calculator-result-label" style={{
@@ -516,11 +513,10 @@ function Calculator() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    padding: 'clamp(10px, 2.5vw, 12px) 0',
+                    padding: 'clamp(10px, 2.5vw, 12px)',
                     borderBottom: '1px solid #e5e7eb',
                     backgroundColor: '#dbeafe',
                     borderRadius: '8px',
-                    padding: 'clamp(10px, 2.5vw, 12px)',
                     margin: '8px 0'
                   }}>
                     <div className="calculator-result-label" style={{
