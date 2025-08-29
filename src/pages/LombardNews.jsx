@@ -177,8 +177,6 @@ const LombardNews = () => {
                         <a
                           key={index}
                           href={doc.file}
-                          target="_blank"
-                          rel="noopener noreferrer"
                           download={doc.name}
                           className="lombard-news-pdf-item"
                         >
@@ -292,8 +290,6 @@ const LombardNews = () => {
                         <a
                           key={index}
                           href={doc.file}
-                          target="_blank"
-                          rel="noopener noreferrer"
                           download={doc.name}
                           className="lombard-news-pdf-item"
                         >

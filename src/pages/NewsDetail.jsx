@@ -120,8 +120,7 @@ const NewsDetail = () => {
                 <a 
                   key={index} 
                   href={doc.file} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  download={doc.name}
                   className="pdf-card"
                 >
                   <div className="pdf-icon">📄</div>

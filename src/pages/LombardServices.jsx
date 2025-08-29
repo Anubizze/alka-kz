@@ -138,8 +138,6 @@ const LombardServices = () => {
                   <a
                     key={index}
                     href={doc.file}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     download={doc.name}
                     className="lombard-services-pdf-item"
                   >
