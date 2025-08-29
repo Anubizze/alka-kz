@@ -5,10 +5,50 @@ import { t } from '../utils/translations'
 import Loader from '../components/Loader'
 import './LombardServices.css'
 import ContactForm from '../components/ContactForm'
+import { getPdfPath } from '../utils/pdfPaths'
 
 const LombardServices = () => {
   const { currentLanguage } = useLanguage()
   const [isLoading, setIsLoading] = useState(true)
+
+  // PDF документы для услуг ломбарда
+  const pdfDocuments = [
+    {
+      name: 'Правила ломбарда ЛОМБАРД АЛКА',
+      file: getPdfPath('Pravila-lombarda-LOMBARD-ALKA.pdf'),
+      description: 'Основные правила работы ломбарда'
+    },
+    {
+      name: 'Правила ЛОМБАРД АЛКА от 01.09.2021г',
+      file: getPdfPath('Pravila-LOMBARD-ALKA-ot-01.09.2021g.pdf'),
+      description: 'Обновленные правила ломбарда'
+    },
+    {
+      name: 'Договор присоединения до 50 МРП',
+      file: getPdfPath('Dogovor-prisoedineniya-do-50-MRP-01.10.2021-.pdf'),
+      description: 'Договор для займов до 50 МРП'
+    },
+    {
+      name: 'Договор присоединения свыше 50 МРП',
+      file: getPdfPath('Dogovor-prisoedineniya-svyshe-50-MRP-s-01.10.2021g.-.pdf'),
+      description: 'Договор для займов свыше 50 МРП'
+    },
+    {
+      name: 'Приложение к ЗБ (новый)',
+      file: getPdfPath('Prilozheniya-k-ZB-novyj.pdf'),
+      description: 'Приложение к залоговому билету'
+    },
+    {
+      name: 'Порядок реструктуризации займа',
+      file: getPdfPath('Poryadok-i-kontaktnye-telefony-po-restrukturizatsii-zajma.pdf'),
+      description: 'Условия реструктуризации займов'
+    },
+    {
+      name: 'Порядок предоставления отсрочки платежей',
+      file: getPdfPath('Poryadok-predostavleniya-otsrochki-platezhej-po-zajmam-fizicheskih-i-yuridicheskih-lits-postradavshih-v-rezultate-vvedeniya-chrezvychajnogo-polozheniya.pdf'),
+      description: 'Условия отсрочки платежей'
+    }
+  ]
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -87,6 +127,37 @@ const LombardServices = () => {
             <p>
               {t('electronicsLoanDescription', currentLanguage)}
             </p>
+
+            {/* PDF документы для скачивания */}
+            <div className="lombard-services-pdf-section">
+              <h3>Документы для скачивания</h3>
+              <p>Скачайте необходимые документы для ознакомления с условиями услуг ломбарда:</p>
+              
+              <div className="lombard-services-pdf-grid">
+                {pdfDocuments.map((doc, index) => (
+                  <a
+                    key={index}
+                    href={doc.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download={doc.name}
+                    className="lombard-services-pdf-item"
+                  >
+                    <div className="pdf-item-header">
+                      <span className="pdf-icon">📄</span>
+                      <span className="pdf-name">{doc.name}</span>
+                    </div>
+                    <div className="pdf-item-description">
+                      {doc.description}
+                    </div>
+                    <div className="pdf-item-download">
+                      <span className="download-text">Скачать</span>
+                      <span className="download-icon">⬇️</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Правая колонка — форма */}
