@@ -5,6 +5,7 @@ import { t } from '../utils/translations'
 import Image from '../components/Image'
 import './LombardNews.css'
 import ContactForm from '../components/ContactForm'
+import { getPdfPath } from '../utils/pdfPaths'
 
 const LombardNews = () => {
   const { currentLanguage } = useLanguage()
