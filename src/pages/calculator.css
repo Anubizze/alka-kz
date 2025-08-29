@@ -1514,6 +1514,39 @@
     border-color: #374151 !important;
     color: #1f2937 !important;
   }
+  
+  /* Секция "Важная информация" - делаем светлой */
+  .calculator-info-item {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+  }
+  
+  .calculator-info-title {
+    color: #1f2937 !important;
+  }
+  
+  .calculator-info-list li {
+    color: #374151 !important;
+  }
+  
+  .calculator-info-list strong {
+    color: #1f2937 !important;
+  }
+  
+  .calculator-info-icon {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+  }
+  
+  /* Принудительно переопределяем темную тему для мобильных */
+  .calculator-info-item[data-theme="dark"],
+  .calculator-info-item.dark-theme,
+  .calculator-info-item {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+  }
 }
 
 @media (max-width: 360px) {
@@ -1540,3 +1573,58 @@
     color: #1f2937 !important;
   }
 }
+
+/* ===== КАЛЬКУЛЯТОР ЗАЛОГОВЫХ КРЕДИТОВ ===== */
+
+/* ПРИНУДИТЕЛЬНОЕ ПЕРЕОПРЕДЕЛЕНИЕ ТЕМНОЙ ТЕМЫ НА МОБИЛЬНЫХ */
+/* Эти правила имеют максимальный приоритет и переопределяют ВСЕ темные стили */
+@media (max-width: 768px) {
+  .calculator-info-item,
+  .calculator-info-item[data-theme="dark"],
+  .calculator-info-item.dark-theme,
+  .calculator-info-item[class*="dark"],
+  .calculator-info-item[class*="theme-dark"],
+  .calculator-info-item[style*="background: #374151"],
+  .calculator-info-item[style*="background:#374151"],
+  .calculator-info-item[style*="background-color: #374151"],
+  .calculator-info-item[style*="background-color:#374151"] {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+  }
+  
+  .calculator-info-title,
+  .calculator-info-title[data-theme="dark"],
+  .calculator-info-title.dark-theme,
+  .calculator-info-title[class*="dark"],
+  .calculator-info-title[class*="theme-dark"] {
+    color: #1f2937 !important;
+  }
+  
+  .calculator-info-list li,
+  .calculator-info-list li[data-theme="dark"],
+  .calculator-info-list li.dark-theme,
+  .calculator-info-list li[class*="dark"],
+  .calculator-info-list li[class*="theme-dark"] {
+    color: #374151 !important;
+  }
+  
+  .calculator-info-list strong,
+  .calculator-info-list strong[data-theme="dark"],
+  .calculator-info-list strong.dark-theme,
+  .calculator-info-list strong[class*="dark"],
+  .calculator-info-list strong[class*="theme-dark"] {
+    color: #1f2937 !important;
+  }
+  
+  .calculator-info-icon,
+  .calculator-info-icon[data-theme="dark"],
+  .calculator-info-icon.dark-theme,
+  .calculator-info-icon[class*="dark"],
+  .calculator-info-icon[class*="theme-dark"] {
+    background: #f3f4f6 !important;
+    border: 1px solid #d1d5db !important;
+  }
+}
+
+/* ===== ОСНОВНЫЕ СТИЛИ ===== */
