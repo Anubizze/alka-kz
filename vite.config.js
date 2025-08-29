@@ -15,14 +15,18 @@ export default defineConfig({
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
-          // Сохраняем PDF файлы в корне dist
+          // PDF файлы размещаем в корне для GitHub Pages
           if (assetInfo.name && assetInfo.name.endsWith('.pdf')) {
-            return 'PDF/[name][extname]'
+            return '[name][extname]'
           }
+          // Остальные файлы в assets
           return 'assets/[name]-[hash][extname]'
         }
       }
     }
   },
-  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg', '**/*.webp', '**/*.pdf']
+  // Включаем PDF файлы в обработку
+  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg', '**/*.webp', '**/*.pdf'],
+  // Копируем PDF файлы в корень dist
+  publicDir: 'public'
 })

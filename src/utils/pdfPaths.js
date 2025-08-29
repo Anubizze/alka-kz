@@ -5,8 +5,8 @@ export const getPdfPath = (filename) => {
     return `/PDF/${filename}`
   }
   
-  // В продакшене (GitHub Pages) используем полные пути с базой
-  return `/alka-kz/PDF/${filename}`
+  // В продакшене (GitHub Pages) используем пути к корню без папки PDF
+  return `/alka-kz/${filename}`
 }
 
 // Список всех доступных PDF файлов
