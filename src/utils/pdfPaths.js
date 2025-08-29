@@ -5,7 +5,8 @@ export const getPdfPath = (filename) => {
     return `/PDF/${filename}`
   }
   
-  // В продакшене (GitHub Pages) используем пути к корню без папки PDF
+  // В продакшене (GitHub Pages) используем пути с учетом base path
+  // base: '/alka-kz/' в vite.config.js
   return `/alka-kz/${filename}`
 }
 
