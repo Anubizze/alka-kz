@@ -11,7 +11,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true,
+    sourcemap: false, // Отключаем source maps для решения CSP проблем
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
