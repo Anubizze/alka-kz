@@ -1352,3 +1352,43 @@
     font-size: 0.5rem;
   }
 }
+
+/* Принудительное одноколоночное отображение на мобильных */
+@media (max-width: 768px) {
+  .calculator-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto !important;
+  }
+  
+  .calculator-card:first-child {
+    grid-row: 1;
+  }
+  
+  .calculator-card:last-child {
+    grid-row: 2;
+  }
+  
+  .calculator-purity-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 15px !important;
+  }
+  
+  .calculator-purity-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .calculator-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 12px !important;
+  }
+}

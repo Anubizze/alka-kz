@@ -123,8 +123,8 @@ function Calculator() {
 
           <div className="calculator-grid" style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '40px',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: 'clamp(20px, 4vw, 40px)',
             marginBottom: '40px'
           }}>
             {/* Input Section */}
