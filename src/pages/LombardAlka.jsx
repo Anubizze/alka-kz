@@ -11,6 +11,7 @@ const LombardAlka = () => {
   const { currentLanguage } = useLanguage()
   const [isLoading, setIsLoading] = useState(true)
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [mapError, setMapError] = useState(false)
 
   useEffect(() => {
     // Имитация загрузки контента страницы
@@ -20,6 +21,10 @@ const LombardAlka = () => {
 
     return () => clearTimeout(timer)
   }, [])
+
+  const handleMapError = () => {
+    setMapError(true)
+  }
 
   useEffect(() => {
     // Автоматическое переключение слайдов каждые 5 секунд
@@ -299,14 +304,39 @@ const LombardAlka = () => {
                 Семей
               </div>
               <div className="map-container">
-                <iframe
-                  src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae3294964b2d645a93e9cc0338de16d6a995cf25b3290afae94858f02bf15398e&source=constructor"
-                  width="100%"
-                  height="400"
-                  frameBorder="0"
-                  allowFullScreen
-                  title="Семей карта - ЛОМБАРД АЛҚА"
-                />
+                {!mapError ? (
+                  <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae3294964b2d645a93e9cc0338de16d6a995cf25b3290afae94858f02bf15398e&source=constructor"
+                    width="100%"
+                    height="400"
+                    frameBorder="0"
+                    allowFullScreen
+                    title="Семей карта - ЛОМБАРД АЛҚА"
+                    onError={handleMapError}
+                  />
+                ) : (
+                  <div className="map-fallback">
+                    <div className="map-fallback-content">
+                      <div className="map-fallback-icon">📍</div>
+                      <h3>ЛОМБАРД АЛҚА - Семей</h3>
+                      <p>Адрес: г. Семей, ул. Абая, 123</p>
+                      <p>Телефон: +7 (701) 081-36-76</p>
+                      <p>Email: {import.meta.env.VITE_RECIPIENT_EMAIL || 'Не настроен'}</p>
+                      <p>Время работы: Ежедневно с 10:00 до 18:00</p>
+                      <a 
+                        href="https://yandex.kz/maps/165/semey/?ll=80.233015,50.417717&z=11.14" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="map-fallback-link"
+                      >
+                        {currentLanguage === 'RU' 
+                          ? 'Открыть карту в Яндекс.Картах' 
+                          : 'Яндекс картасында ашу'
+                        }
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
