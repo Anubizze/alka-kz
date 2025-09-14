@@ -7,12 +7,46 @@ import './calculator.css'
 function Calculator() {
   const { currentLanguage } = useLanguage()
   
-  const goldPrices = {
+  const [goldPrices, setGoldPrices] = useState({
     585: 32429,
     750: 41576,
     916: 50778,
     999: 64459
-  }
+  })
+
+  // Загружаем цены из localStorage при инициализации
+  useEffect(() => {
+    const loadPrices = () => {
+      const savedPrices = localStorage.getItem('goldPrices')
+      if (savedPrices) {
+        setGoldPrices(JSON.parse(savedPrices))
+      }
+    }
+    
+    // Загружаем при инициализации
+    loadPrices()
+    
+    // Слушаем изменения в localStorage (для синхронизации с админ-панелью)
+    const handleStorageChange = (e) => {
+      if (e.key === 'goldPrices') {
+        loadPrices()
+      }
+    }
+    
+    // Слушаем изменения localStorage в других вкладках
+    window.addEventListener('storage', handleStorageChange)
+    
+    // Слушаем изменения localStorage в той же вкладке (кастомное событие)
+    const handleCustomStorageChange = () => {
+      loadPrices()
+    }
+    window.addEventListener('goldPricesUpdated', handleCustomStorageChange)
+    
+    return () => {
+      window.removeEventListener('storage', handleStorageChange)
+      window.removeEventListener('goldPricesUpdated', handleCustomStorageChange)
+    }
+  }, [])
 
   // Залоговый калькулятор
   const [weight, setWeight] = useState('')

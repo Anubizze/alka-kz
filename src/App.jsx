@@ -23,6 +23,8 @@ import NewsDetail from './pages/NewsDetail'
 import Calculator from './pages/calculator'
 import AdminPanel from './pages/AdminPanel'
 import HomeAdminPanel from './components/HomeAdminPanel'
+import CalculatorAdminManager from './components/CalculatorAdminManager'
+import CalculatorAdminAuth from './components/CalculatorAdminAuth'
 import './styles/App.css'
 
 // Компонент для условного отображения навигации
@@ -30,9 +32,10 @@ const ConditionalNavigation = () => {
   const location = useLocation()
   const isLombardPage = location.pathname.startsWith('/lombard')
   const isCalculatorPage = location.pathname === '/calculator'
+  const isCalculatorAdminPage = location.pathname.startsWith('/calculator/admin')
   
-  if (isCalculatorPage) {
-    return <LombardNavigation /> // Показываем ломбард навигацию для калькулятора
+  if (isCalculatorPage || isCalculatorAdminPage) {
+    return <LombardNavigation /> // Показываем ломбард навигацию для калькулятора и его админ-панели
   }
   
   return isLombardPage ? <LombardNavigation /> : <Header />
@@ -83,6 +86,8 @@ function App() {
               <Route path="/calculator" element={<Calculator />} />
               <Route path="/lombard/admin" element={<AdminPanel />} />
               <Route path="/admin" element={<HomeAdminPanel />} />
+              <Route path="/calculator/admin/auth" element={<CalculatorAdminAuth />} />
+              <Route path="/calculator/admin" element={<CalculatorAdminManager />} />
             </Routes>
           </main>
           <Footer />

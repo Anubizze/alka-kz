@@ -14,11 +14,16 @@ const HomeAdminManager = () => {
     link: '',
     hyperlink: ''
   })
-  const [imageUrl, setImageUrl] = useState('')
-  const [imagePreview, setImagePreview] = useState('')
-  const [imageError, setImageError] = useState(false)
+  
+  // Объединяем связанные состояния изображения
+  const [imageState, setImageState] = useState({
+    url: '',
+    preview: '',
+    error: false,
+    selectedFile: null
+  })
+  
   const [imageFileInputRef] = useState(React.createRef())
-  const [selectedImageFile, setSelectedImageFile] = useState(null)
 
   // Загружаем новости из localStorage при инициализации
   useEffect(() => {
@@ -68,59 +73,63 @@ const HomeAdminManager = () => {
 
   const handleImageUrlChange = (e) => {
     const url = e.target.value
-    setImageUrl(url)
+    setImageState(prev => ({ ...prev, url, preview: url, error: false }))
     setFormData(prev => ({ ...prev, image: url }))
-    setImagePreview(url)
-    setImageError(false)
+  }
+
+  // Валидация файла изображения
+  const validateImageFile = (file) => {
+    if (!file.type.startsWith('image/')) {
+      alert('Пожалуйста, выберите файл изображения (JPG, PNG, GIF, WebP)')
+      return false
+    }
+    
+    const maxSize = 5 * 1024 * 1024 // 5MB
+    if (file.size > maxSize) {
+      alert('Файл слишком большой! Максимальный размер: 5MB')
+      return false
+    }
+    
+    return true
+  }
+
+  // Обработка успешной загрузки файла
+  const handleFileLoadSuccess = (file, base64String) => {
+    const selectedFile = {
+      file: file,
+      fileName: file.name,
+      base64: base64String,
+      previewUrl: base64String
+    }
+    
+    setImageState(prev => ({ 
+      ...prev, 
+      selectedFile, 
+      preview: base64String, 
+      error: false 
+    }))
+    
+    setFormData(prev => ({ ...prev, image: base64String }))
+    
+    alert(`✅ Изображение "${file.name}" успешно загружено!\n\n📊 Размер: ${(file.size / 1024).toFixed(1)} KB\n🖼️ Формат: ${file.type}\n\n💾 Изображение сохранено в данных новости!`)
   }
 
   // Обработка выбора файла изображения
   const handleImageFileSelect = (event) => {
     const file = event.target.files[0]
-    if (file) {
-      // Проверяем, что это изображение
-      if (!file.type.startsWith('image/')) {
-        alert('Пожалуйста, выберите файл изображения (JPG, PNG, GIF, WebP)')
-        return
-      }
-      
-      // Проверяем размер файла (максимум 5MB)
-      const maxSize = 5 * 1024 * 1024 // 5MB
-      if (file.size > maxSize) {
-        alert('Файл слишком большой! Максимальный размер: 5MB')
-        return
-      }
-      
-      // Создаем FileReader для конвертации в base64
-      const reader = new FileReader()
-      
-      reader.onload = (e) => {
-        const base64String = e.target.result
-        
-        setSelectedImageFile({
-          file: file,
-          fileName: file.name,
-          base64: base64String,
-          previewUrl: base64String
-        })
-        
-        // Устанавливаем base64 изображение в форму
-        setFormData(prev => ({ ...prev, image: base64String }))
-        
-        setImagePreview(base64String)
-        setImageError(false)
-        
-        // Показываем уведомление об успешной загрузке
-        alert(`✅ Изображение "${file.name}" успешно загружено!\n\n📊 Размер: ${(file.size / 1024).toFixed(1)} KB\n🖼️ Формат: ${file.type}\n\n💾 Изображение сохранено в данных новости!`)
-      }
-      
-      reader.onerror = () => {
-        alert('Ошибка при чтении файла. Попробуйте другой файл.')
-      }
-      
-      // Читаем файл как base64
-      reader.readAsDataURL(file)
+    if (!file || !validateImageFile(file)) return
+    
+    const reader = new FileReader()
+    
+    reader.onload = (e) => {
+      handleFileLoadSuccess(file, e.target.result)
     }
+    
+    reader.onerror = () => {
+      alert('Ошибка при чтении файла. Попробуйте другой файл.')
+    }
+    
+    reader.readAsDataURL(file)
   }
 
   // Открытие диалога выбора изображения
@@ -130,14 +139,11 @@ const HomeAdminManager = () => {
 
   // Обработка добавления изображения по URL
   const handleAddImageUrl = () => {
-    if (imageUrl.trim()) {
-      // Проверяем, что это валидный URL
+    if (imageState.url.trim()) {
       try {
-        new URL(imageUrl)
-        setFormData(prev => ({ ...prev, image: imageUrl }))
-        setImagePreview(imageUrl)
-        setImageError(false)
-        setImageUrl('')
+        new URL(imageState.url)
+        setFormData(prev => ({ ...prev, image: imageState.url }))
+        setImageState(prev => ({ ...prev, preview: imageState.url, error: false, url: '' }))
       } catch {
         alert('Пожалуйста, введите корректный URL изображения')
       }
@@ -147,22 +153,39 @@ const HomeAdminManager = () => {
   // Удаление изображения
   const removeImage = () => {
     setFormData(prev => ({ ...prev, image: '' }))
-    setImagePreview('')
-    setImageError(false)
-    setSelectedImageFile(null)
+    setImageState({
+      url: '',
+      preview: '',
+      error: false,
+      selectedFile: null
+    })
+  }
+
+  // Функция сброса формы
+  const resetForm = () => {
+    setFormData({
+      title: '',
+      image: '',
+      alt: '',
+      link: '',
+      hyperlink: ''
+    })
+    setImageState({
+      url: '',
+      preview: '',
+      error: false,
+      selectedFile: null
+    })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    
-    console.log('Отправка формы:', { editingNews, formData }) // Отладочная информация
     
     if (editingNews) {
       // Редактируем существующую новость
       const updatedNews = news.map(item => 
         item.id === editingNews.id ? { ...formData, id: editingNews.id } : item
       )
-      console.log('Обновленные новости:', updatedNews) // Отладочная информация
       setNews(updatedNews)
       localStorage.setItem('homeCompanyNews', JSON.stringify(updatedNews))
       setEditingNews(null)
@@ -177,21 +200,11 @@ const HomeAdminManager = () => {
       localStorage.setItem('homeCompanyNews', JSON.stringify(updatedNews))
     }
     
-    // Сбрасываем форму
-    setFormData({
-      title: '',
-      image: '',
-      alt: '',
-      link: '',
-      hyperlink: ''
-    })
-    setImageUrl('')
-    setImagePreview('')
+    resetForm()
     setShowForm(false)
   }
 
   const handleEdit = (newsItem) => {
-    console.log('Редактируем новость:', newsItem) // Отладочная информация
     setEditingNews(newsItem)
     
     // Убеждаемся, что все поля правильно заполнены
@@ -204,11 +217,13 @@ const HomeAdminManager = () => {
     }
     
     setFormData(editData)
-    setImageUrl(newsItem.image || '')
-    setImagePreview(newsItem.image || '')
+    setImageState({
+      url: newsItem.image || '',
+      preview: newsItem.image || '',
+      error: false,
+      selectedFile: null
+    })
     setShowForm(true)
-    
-    console.log('Данные для редактирования:', editData) // Отладочная информация
   }
 
   const handleDelete = (id) => {
@@ -222,17 +237,7 @@ const HomeAdminManager = () => {
   const handleCancel = () => {
     setShowForm(false)
     setEditingNews(null)
-    setFormData({
-      title: '',
-      image: '',
-      alt: '',
-      link: '',
-      hyperlink: ''
-    })
-    setImageUrl('')
-    setImagePreview('')
-    setSelectedImageFile(null)
-    setImageError(false)
+    resetForm()
   }
 
 
@@ -309,7 +314,7 @@ const HomeAdminManager = () => {
                     type="button"
                     className="add-image-url-btn"
                     onClick={handleAddImageUrl}
-                    disabled={!imageUrl.trim()}
+                    disabled={!imageState.url.trim()}
                   >
                     🌐 Добавить по URL
                   </button>
@@ -319,8 +324,8 @@ const HomeAdminManager = () => {
                 <div className="image-url-input">
                   <input
                     type="text"
-                    value={imageUrl}
-                    onChange={(e) => setImageUrl(e.target.value)}
+                    value={imageState.url}
+                    onChange={(e) => setImageState(prev => ({ ...prev, url: e.target.value }))}
                     placeholder="Введите URL изображения (например: https://example.com/image.jpg)"
                     onKeyPress={(e) => e.key === 'Enter' && handleAddImageUrl()}
                   />
@@ -342,9 +347,9 @@ const HomeAdminManager = () => {
                 </div>
               </div>
 
-              {imagePreview && (
+              {imageState.preview && (
                 <div className="image-preview">
-                  {imageError ? (
+                  {imageState.error ? (
                     <div className="image-error">
                       <span>❌ Ошибка загрузки изображения</span>
                       <div className="image-error-warning">
@@ -361,10 +366,10 @@ const HomeAdminManager = () => {
                     </div>
                   ) : (
                     <>
-                      {selectedImageFile ? (
+                      {imageState.selectedFile ? (
                         <div className="image-preview-uploaded">
                           <img 
-                            src={selectedImageFile.previewUrl} 
+                            src={imageState.selectedFile.previewUrl} 
                             alt="Загруженное изображение" 
                             className="preview-image"
                           />
@@ -374,8 +379,8 @@ const HomeAdminManager = () => {
                               <span className="success-text">Изображение загружено и сохранено!</span>
                             </div>
                             <div className="image-file-info">
-                              <span className="file-name">{selectedImageFile.fileName}</span>
-                              <span className="file-size">({(selectedImageFile.file.size / 1024).toFixed(1)} KB)</span>
+                              <span className="file-name">{imageState.selectedFile.fileName}</span>
+                              <span className="file-size">({(imageState.selectedFile.file.size / 1024).toFixed(1)} KB)</span>
                             </div>
                             <button 
                               type="button"
@@ -389,11 +394,11 @@ const HomeAdminManager = () => {
                       ) : (
                         <>
                           <Image 
-                            src={imagePreview} 
+                            src={imageState.preview} 
                             alt="Предварительный просмотр" 
                             className="preview-image"
-                            onError={() => setImageError(true)}
-                            onLoad={() => setImageError(false)}
+                            onError={() => setImageState(prev => ({ ...prev, error: true }))}
+                            onLoad={() => setImageState(prev => ({ ...prev, error: false }))}
                           />
                           <div className="image-preview-info">
                             <span className="image-url">{formData.image}</span>
