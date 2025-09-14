@@ -102,9 +102,9 @@ const Home = () => {
                       }} />
                     </div>
                   )}
-                  <a href={newsItem.link} className="news-link">
+                  <Link to={newsItem.link} className="news-link">
                     {t('readMore', currentLanguage)} ►
-                  </a>
+                  </Link>
                 </div>
               ))
             ) : (

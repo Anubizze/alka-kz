@@ -17,9 +17,11 @@ const AdminNewsManager = () => {
   })
   const [newPdfDoc, setNewPdfDoc] = useState({ name: '', file: '' })
   const [fileInputRef] = useState(React.createRef())
+  const [imageFileInputRef] = useState(React.createRef())
   const [imageUrl, setImageUrl] = useState('')
   const [imagePreview, setImagePreview] = useState('')
   const [imageError, setImageError] = useState(false)
+  const [selectedImageFile, setSelectedImageFile] = useState(null)
 
   // Загружаем новости из localStorage при инициализации
   useEffect(() => {
@@ -208,9 +210,66 @@ const AdminNewsManager = () => {
     }
   }
 
+  // Обработка выбора файла изображения
+  const handleImageFileSelect = (event) => {
+    const file = event.target.files[0]
+    if (file) {
+      // Проверяем, что это изображение
+      if (!file.type.startsWith('image/')) {
+        alert('Пожалуйста, выберите файл изображения (JPG, PNG, GIF, WebP)')
+        return
+      }
+      
+      // Проверяем размер файла (максимум 5MB)
+      const maxSize = 5 * 1024 * 1024 // 5MB
+      if (file.size > maxSize) {
+        alert('Файл слишком большой! Максимальный размер: 5MB')
+        return
+      }
+      
+      // Создаем FileReader для конвертации в base64
+      const reader = new FileReader()
+      
+      reader.onload = (e) => {
+        const base64String = e.target.result
+        
+        setSelectedImageFile({
+          file: file,
+          fileName: file.name,
+          base64: base64String,
+          previewUrl: base64String
+        })
+        
+        // Устанавливаем base64 изображение в форму
+        setFormData({
+          ...formData,
+          image: base64String
+        })
+        
+        setImagePreview(base64String)
+        setImageError(false)
+        
+        // Показываем уведомление об успешной загрузке
+        alert(`✅ Изображение "${file.name}" успешно загружено!\n\n📊 Размер: ${(file.size / 1024).toFixed(1)} KB\n🖼️ Формат: ${file.type}\n\n💾 Изображение сохранено в данных новости и будет отображаться без дополнительных файлов!`)
+      }
+      
+      reader.onerror = () => {
+        alert('Ошибка при чтении файла. Попробуйте другой файл.')
+      }
+      
+      // Читаем файл как base64
+      reader.readAsDataURL(file)
+    }
+  }
+
   // Открытие диалога выбора файла
   const openFileDialog = () => {
     fileInputRef.current.click()
+  }
+
+  // Открытие диалога выбора изображения
+  const openImageFileDialog = () => {
+    imageFileInputRef.current.click()
   }
 
   // Удаление PDF документа
@@ -254,6 +313,7 @@ const AdminNewsManager = () => {
     })
     setImagePreview('')
     setImageError(false)
+    setSelectedImageFile(null)
   }
 
   // Сброс формы
@@ -268,6 +328,10 @@ const AdminNewsManager = () => {
       date: new Date().toISOString()
     })
     setNewPdfDoc({ name: '', file: '' })
+    setSelectedImageFile(null)
+    setImagePreview('')
+    setImageError(false)
+    setImageUrl('')
   }
 
   // Выход из админ панели
@@ -521,17 +585,29 @@ const AdminNewsManager = () => {
                 />
               </div>
 
+              {/* Скрытый input для выбора изображений */}
+              <input
+                ref={imageFileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleImageFileSelect}
+                style={{ display: 'none' }}
+              />
+
               <div className="form-row">
                 <div className="form-group">
-                  <label>Путь к изображению:</label>
-                  <div className="image-input-group">
-                    <input
-                      type="text"
-                      value={formData.image}
-                      onChange={(e) => setFormData({...formData, image: e.target.value})}
-                      placeholder="/path/to/image.jpg или https://example.com/image.jpg"
-                      required
-                    />
+                  <label>Изображение:</label>
+                  
+                  {/* Кнопки выбора изображения */}
+                  <div className="image-selection-buttons">
+                    <button 
+                      type="button"
+                      className="select-image-file-btn"
+                      onClick={openImageFileDialog}
+                    >
+                      📷 Загрузить фотографию
+                    </button>
+                    <span className="image-separator">или</span>
                     <button 
                       type="button"
                       className="add-image-url-btn"
@@ -553,12 +629,31 @@ const AdminNewsManager = () => {
                     />
                   </div>
                   
+                  {/* Поле для отображения изображения (base64 или URL) */}
+                  <div className="image-path-display">
+                    <input
+                      type="text"
+                      value={formData.image}
+                      onChange={(e) => setFormData({...formData, image: e.target.value})}
+                      placeholder="Загрузите изображение или введите URL (например: https://example.com/image.jpg)"
+                      required
+                      className="image-path-input"
+                    />
+                    <div className="image-path-hint">
+                      💡 Изображения загружаются напрямую в данные новости (base64) или используйте URL
+                    </div>
+                  </div>
+                  
                   {/* Предварительный просмотр изображения */}
                   {formData.image && (
                     <div className="image-preview">
                       {imageError ? (
                         <div className="image-error">
                           <span>❌ Ошибка загрузки изображения</span>
+                          <div className="image-error-warning">
+                            <p>⚠️ Файл не найден на сервере!</p>
+                            <p>Убедитесь, что файл загружен в папку "public/" или используйте корректный URL</p>
+                          </div>
                           <button 
                             type="button"
                             className="remove-image-btn"
@@ -569,23 +664,52 @@ const AdminNewsManager = () => {
                         </div>
                       ) : (
                         <>
-                          <Image 
-                            src={formData.image} 
-                            alt="Предварительный просмотр" 
-                            className="preview-image"
-                            onError={handleImageError}
-                            onLoad={() => setImageError(false)}
-                          />
-                          <div className="image-preview-info">
-                            <span className="image-url">{formData.image}</span>
-                            <button 
-                              type="button"
-                              className="remove-image-btn"
-                              onClick={removeImage}
-                            >
-                              🗑️ Удалить
-                            </button>
-                          </div>
+                          {selectedImageFile ? (
+                            <div className="image-preview-uploaded">
+                              <img 
+                                src={selectedImageFile.previewUrl} 
+                                alt="Загруженное изображение" 
+                                className="preview-image"
+                              />
+                              <div className="image-preview-info">
+                                <div className="image-success">
+                                  <span className="success-icon">✅</span>
+                                  <span className="success-text">Изображение загружено и сохранено!</span>
+                                </div>
+                                <div className="image-file-info">
+                                  <span className="file-name">{selectedImageFile.fileName}</span>
+                                  <span className="file-size">({(selectedImageFile.file.size / 1024).toFixed(1)} KB)</span>
+                                </div>
+                                <button 
+                                  type="button"
+                                  className="remove-image-btn"
+                                  onClick={removeImage}
+                                >
+                                  🗑️ Удалить
+                                </button>
+                              </div>
+                            </div>
+                          ) : (
+                            <>
+                              <Image 
+                                src={formData.image} 
+                                alt="Предварительный просмотр" 
+                                className="preview-image"
+                                onError={handleImageError}
+                                onLoad={() => setImageError(false)}
+                              />
+                              <div className="image-preview-info">
+                                <span className="image-url">{formData.image}</span>
+                                <button 
+                                  type="button"
+                                  className="remove-image-btn"
+                                  onClick={removeImage}
+                                >
+                                  🗑️ Удалить
+                                </button>
+                              </div>
+                            </>
+                          )}
                         </>
                       )}
                     </div>
@@ -620,7 +744,15 @@ const AdminNewsManager = () => {
           <div key={item.id} className="news-item">
             <div className="news-image">
               {item.image ? (
-                <Image src={item.image} alt={item.alt || 'Изображение новости'} />
+                item.image.startsWith('data:') ? (
+                  <img 
+                    src={item.image} 
+                    alt={item.alt || 'Изображение новости'} 
+                    className="news-image-img"
+                  />
+                ) : (
+                  <Image src={item.image} alt={item.alt || 'Изображение новости'} />
+                )
               ) : (
                 <div className="image-placeholder">
                   <span className="placeholder-icon">🖼️</span>

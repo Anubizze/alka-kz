@@ -144,13 +144,21 @@ const LombardNews = () => {
                 {/* Изображение новости */}
                 <div className="lombard-news-detail-image">
                   {selectedNews.image ? (
-                    <Image 
-                      src={selectedNews.image} 
-                      alt={selectedNews.alt} 
-                      onError={(e) => {
-                        e.target.src = '/dengi.jpg'
-                      }}
-                    />
+                    selectedNews.image.startsWith('data:') ? (
+                      <img 
+                        src={selectedNews.image} 
+                        alt={selectedNews.alt} 
+                        className="lombard-news-detail-img"
+                      />
+                    ) : (
+                      <Image 
+                        src={selectedNews.image} 
+                        alt={selectedNews.alt} 
+                        onError={(e) => {
+                          e.target.src = '/dengi.jpg'
+                        }}
+                      />
+                    )
                   ) : (
                     <Image 
                       src="/dengi.jpg" 
@@ -257,13 +265,21 @@ const LombardNews = () => {
                 {/* Изображение новости */}
                 <div className="lombard-news-detail-image">
                   {selectedNews.image ? (
-                    <Image 
-                      src={selectedNews.image} 
-                      alt={selectedNews.alt} 
-                      onError={(e) => {
-                        e.target.src = '/dengi.jpg'
-                      }}
-                    />
+                    selectedNews.image.startsWith('data:') ? (
+                      <img 
+                        src={selectedNews.image} 
+                        alt={selectedNews.alt} 
+                        className="lombard-news-detail-img"
+                      />
+                    ) : (
+                      <Image 
+                        src={selectedNews.image} 
+                        alt={selectedNews.alt} 
+                        onError={(e) => {
+                          e.target.src = '/dengi.jpg'
+                        }}
+                      />
+                    )
                   ) : (
                     <Image 
                       src="/dengi.jpg" 
@@ -363,13 +379,21 @@ const LombardNews = () => {
                     onClick={() => handleNewsClick(news)}
                   >
                     <div className="lombard-news-image">
-                      <Image 
-                        src={news.image} 
-                        alt={news.alt || news.title}
-                        onError={(e) => {
-                          e.target.src = '/dengi.jpg'
-                        }}
-                      />
+                      {news.image.startsWith('data:') ? (
+                        <img 
+                          src={news.image} 
+                          alt={news.alt || news.title}
+                          className="lombard-news-img"
+                        />
+                      ) : (
+                        <Image 
+                          src={news.image} 
+                          alt={news.alt || news.title}
+                          onError={(e) => {
+                            e.target.src = '/dengi.jpg'
+                          }}
+                        />
+                      )}
                     </div>
                     <div className="lombard-news-text-content">
                       <h3 className="lombard-news-title">{news.title}</h3>

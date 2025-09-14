@@ -104,6 +104,30 @@ const ServicePage = () => {
                         target="_blank" 
                         rel="noopener noreferrer"
                       >
+                        {serviceInfo.image.startsWith('data:') ? (
+                          <img 
+                            src={serviceInfo.image} 
+                            alt={serviceInfo.alt || serviceInfo.title}
+                            className="service-image-img"
+                          />
+                        ) : (
+                          <Image 
+                            src={serviceInfo.image} 
+                            alt={serviceInfo.alt || serviceInfo.title}
+                            onError={(e) => {
+                              e.target.style.display = 'none'
+                            }}
+                          />
+                        )}
+                      </a>
+                    ) : (
+                      serviceInfo.image.startsWith('data:') ? (
+                        <img 
+                          src={serviceInfo.image} 
+                          alt={serviceInfo.alt || serviceInfo.title}
+                          className="service-image-img"
+                        />
+                      ) : (
                         <Image 
                           src={serviceInfo.image} 
                           alt={serviceInfo.alt || serviceInfo.title}
@@ -111,15 +135,7 @@ const ServicePage = () => {
                             e.target.style.display = 'none'
                           }}
                         />
-                      </a>
-                    ) : (
-                      <Image 
-                        src={serviceInfo.image} 
-                        alt={serviceInfo.alt || serviceInfo.title}
-                        onError={(e) => {
-                          e.target.style.display = 'none'
-                        }}
-                      />
+                      )
                     )}
                   </div>
                 )}

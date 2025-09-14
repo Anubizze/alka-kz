@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react'
 import Image from './Image'
 import './HomeAdminManager.css'
@@ -16,6 +17,8 @@ const HomeAdminManager = () => {
   const [imageUrl, setImageUrl] = useState('')
   const [imagePreview, setImagePreview] = useState('')
   const [imageError, setImageError] = useState(false)
+  const [imageFileInputRef] = useState(React.createRef())
+  const [selectedImageFile, setSelectedImageFile] = useState(null)
 
   // Загружаем новости из localStorage при инициализации
   useEffect(() => {
@@ -69,6 +72,84 @@ const HomeAdminManager = () => {
     setFormData(prev => ({ ...prev, image: url }))
     setImagePreview(url)
     setImageError(false)
+  }
+
+  // Обработка выбора файла изображения
+  const handleImageFileSelect = (event) => {
+    const file = event.target.files[0]
+    if (file) {
+      // Проверяем, что это изображение
+      if (!file.type.startsWith('image/')) {
+        alert('Пожалуйста, выберите файл изображения (JPG, PNG, GIF, WebP)')
+        return
+      }
+      
+      // Проверяем размер файла (максимум 5MB)
+      const maxSize = 5 * 1024 * 1024 // 5MB
+      if (file.size > maxSize) {
+        alert('Файл слишком большой! Максимальный размер: 5MB')
+        return
+      }
+      
+      // Создаем FileReader для конвертации в base64
+      const reader = new FileReader()
+      
+      reader.onload = (e) => {
+        const base64String = e.target.result
+        
+        setSelectedImageFile({
+          file: file,
+          fileName: file.name,
+          base64: base64String,
+          previewUrl: base64String
+        })
+        
+        // Устанавливаем base64 изображение в форму
+        setFormData(prev => ({ ...prev, image: base64String }))
+        
+        setImagePreview(base64String)
+        setImageError(false)
+        
+        // Показываем уведомление об успешной загрузке
+        alert(`✅ Изображение "${file.name}" успешно загружено!\n\n📊 Размер: ${(file.size / 1024).toFixed(1)} KB\n🖼️ Формат: ${file.type}\n\n💾 Изображение сохранено в данных новости!`)
+      }
+      
+      reader.onerror = () => {
+        alert('Ошибка при чтении файла. Попробуйте другой файл.')
+      }
+      
+      // Читаем файл как base64
+      reader.readAsDataURL(file)
+    }
+  }
+
+  // Открытие диалога выбора изображения
+  const openImageFileDialog = () => {
+    imageFileInputRef.current.click()
+  }
+
+  // Обработка добавления изображения по URL
+  const handleAddImageUrl = () => {
+    if (imageUrl.trim()) {
+      // Проверяем, что это валидный URL
+      try {
+        new URL(imageUrl)
+        setFormData(prev => ({ ...prev, image: imageUrl }))
+        setImagePreview(imageUrl)
+        setImageError(false)
+        setImageUrl('')
+      } catch {
+        alert('Пожалуйста, введите корректный URL изображения')
+      }
+    }
+  }
+
+  // Удаление изображения
+  const removeImage = () => {
+    setFormData(prev => ({ ...prev, image: '' }))
+    setImagePreview('')
+    setImageError(false)
+    setSelectedImageFile(null)
   }
 
   const handleSubmit = (e) => {
@@ -150,6 +231,8 @@ const HomeAdminManager = () => {
     })
     setImageUrl('')
     setImagePreview('')
+    setSelectedImageFile(null)
+    setImageError(false)
   }
 
 
@@ -210,26 +293,122 @@ const HomeAdminManager = () => {
               </div>
 
               <div className="form-group">
-                <label>URL изображения:</label>
-                <input
-                  type="text"
-                  name="image"
-                  value={imageUrl}
-                  onChange={handleImageUrlChange}
-                  placeholder="https://example.com/image.jpg или /image.jpg"
-                  required
-                />
+                <label>Изображение:</label>
+                
+                {/* Кнопки выбора изображения */}
+                <div className="image-selection-buttons">
+                  <button 
+                    type="button"
+                    className="select-image-file-btn"
+                    onClick={openImageFileDialog}
+                  >
+                    📷 Загрузить фотографию
+                  </button>
+                  <span className="image-separator">или</span>
+                  <button 
+                    type="button"
+                    className="add-image-url-btn"
+                    onClick={handleAddImageUrl}
+                    disabled={!imageUrl.trim()}
+                  >
+                    🌐 Добавить по URL
+                  </button>
+                </div>
+                
+                {/* Поле для ввода URL */}
+                <div className="image-url-input">
+                  <input
+                    type="text"
+                    value={imageUrl}
+                    onChange={(e) => setImageUrl(e.target.value)}
+                    placeholder="Введите URL изображения (например: https://example.com/image.jpg)"
+                    onKeyPress={(e) => e.key === 'Enter' && handleAddImageUrl()}
+                  />
+                </div>
+                
+                {/* Поле для отображения изображения */}
+                <div className="image-path-display">
+                  <input
+                    type="text"
+                    value={formData.image}
+                    onChange={(e) => setFormData(prev => ({ ...prev, image: e.target.value }))}
+                    placeholder="Загрузите изображение или введите URL"
+                    required
+                    className="image-path-input"
+                  />
+                  <div className="image-path-hint">
+                    💡 Изображения загружаются напрямую в данные новости (base64) или используйте URL
+                  </div>
+                </div>
               </div>
 
               {imagePreview && (
                 <div className="image-preview">
-                  <Image 
-                    src={imagePreview} 
-                    alt="Preview" 
-                    onError={() => setImageError(true)}
-                    style={{ display: imageError ? 'none' : 'block' }}
-                  />
-                  {imageError && <p className="image-error">Ошибка загрузки изображения</p>}
+                  {imageError ? (
+                    <div className="image-error">
+                      <span>❌ Ошибка загрузки изображения</span>
+                      <div className="image-error-warning">
+                        <p>⚠️ Файл не найден на сервере!</p>
+                        <p>Убедитесь, что файл загружен в папку "public/" или используйте корректный URL</p>
+                      </div>
+                      <button 
+                        type="button"
+                        className="remove-image-btn"
+                        onClick={removeImage}
+                      >
+                        🗑️ Удалить
+                      </button>
+                    </div>
+                  ) : (
+                    <>
+                      {selectedImageFile ? (
+                        <div className="image-preview-uploaded">
+                          <img 
+                            src={selectedImageFile.previewUrl} 
+                            alt="Загруженное изображение" 
+                            className="preview-image"
+                          />
+                          <div className="image-preview-info">
+                            <div className="image-success">
+                              <span className="success-icon">✅</span>
+                              <span className="success-text">Изображение загружено и сохранено!</span>
+                            </div>
+                            <div className="image-file-info">
+                              <span className="file-name">{selectedImageFile.fileName}</span>
+                              <span className="file-size">({(selectedImageFile.file.size / 1024).toFixed(1)} KB)</span>
+                            </div>
+                            <button 
+                              type="button"
+                              className="remove-image-btn"
+                              onClick={removeImage}
+                            >
+                              🗑️ Удалить
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <>
+                          <Image 
+                            src={imagePreview} 
+                            alt="Предварительный просмотр" 
+                            className="preview-image"
+                            onError={() => setImageError(true)}
+                            onLoad={() => setImageError(false)}
+                          />
+                          <div className="image-preview-info">
+                            <span className="image-url">{formData.image}</span>
+                            <button 
+                              type="button"
+                              className="remove-image-btn"
+                              onClick={removeImage}
+                            >
+                              🗑️ Удалить
+                            </button>
+                          </div>
+                        </>
+                      )}
+                    </>
+                  )}
                 </div>
               )}
 
@@ -245,6 +424,15 @@ const HomeAdminManager = () => {
               </div>
 
 
+
+              {/* Скрытый input для выбора изображений */}
+              <input
+                ref={imageFileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleImageFileSelect}
+                style={{ display: 'none' }}
+              />
 
               <div className="form-actions">
                 <button type="submit" className="save-btn">
@@ -263,14 +451,28 @@ const HomeAdminManager = () => {
         {news.map(newsItem => (
           <div key={newsItem.id} className="news-item">
             <div className="news-image">
-              <Image 
-                src={newsItem.image} 
-                alt={newsItem.alt}
-                onError={(e) => {
-                  e.target.style.display = 'none'
-                  e.target.nextSibling.style.display = 'block'
-                }}
-              />
+              {newsItem.image ? (
+                newsItem.image.startsWith('data:') ? (
+                  <img 
+                    src={newsItem.image} 
+                    alt={newsItem.alt}
+                    className="news-image-img"
+                  />
+                ) : (
+                  <Image 
+                    src={newsItem.image} 
+                    alt={newsItem.alt}
+                    onError={(e) => {
+                      e.target.style.display = 'none'
+                      e.target.nextSibling.style.display = 'block'
+                    }}
+                  />
+                )
+              ) : (
+                <div className="image-fallback">
+                  <span>Изображение недоступно</span>
+                </div>
+              )}
               <div className="image-fallback" style={{ display: 'none' }}>
                 <span>Изображение недоступно</span>
               </div>
