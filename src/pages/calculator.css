@@ -1579,6 +1579,49 @@
 /* ПРИНУДИТЕЛЬНОЕ ПЕРЕОПРЕДЕЛЕНИЕ ТЕМНОЙ ТЕМЫ НА МОБИЛЬНЫХ */
 /* Эти правила имеют максимальный приоритет и переопределяют ВСЕ темные стили */
 @media (max-width: 768px) {
+  /* Принудительно отключаем темную тему на мобильных */
+  .calculator-wrapper {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #1f2937 !important;
+  }
+  
+  .calculator-card {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #e5e7eb !important;
+  }
+  
+  .calculator-card-title {
+    color: #1f2937 !important;
+  }
+  
+  .calculator-label {
+    color: #1f2937 !important;
+  }
+  
+  .calculator-input {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+  }
+  
+  .calculator-purity-button {
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+  }
+  
+  .calculator-purity-button:hover {
+    background: #f3f4f6 !important;
+    border-color: #9ca3af !important;
+  }
+  
+  .calculator-purity-button.active {
+    background: #e5e7eb !important;
+    border-color: #374151 !important;
+    color: #1f2937 !important;
+  }
+  
   .calculator-info-item,
   .calculator-info-item[data-theme="dark"],
   .calculator-info-item.dark-theme,
@@ -1624,6 +1667,29 @@
   .calculator-info-icon[class*="theme-dark"] {
     background: #f3f4f6 !important;
     border: 1px solid #d1d5db !important;
+  }
+  
+  .calculator-footer-content {
+    background: #f9fafb !important;
+    color: #1f2937 !important;
+    border-color: #e5e7eb !important;
+  }
+  
+  .calculator-footer-logo-inner {
+    background: #ffffff !important;
+    border-color: #d1d5db !important;
+  }
+  
+  .calculator-footer-logo-title {
+    color: #1f2937 !important;
+  }
+  
+  .calculator-footer-logo-subtitle {
+    color: #6b7280 !important;
+  }
+  
+  .calculator-footer-text {
+    color: #6b7280 !important;
   }
 }
 

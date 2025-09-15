@@ -312,75 +312,483 @@
 
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
+  .lombard-company {
+    padding: 10px 0;
   }
   
-  .page-title {
-    font-size: 32px;
+  .container {
+    padding: 0 15px;
   }
   
-  .company-content {
-    flex-direction: column;
-    gap: 40px;
-  }
-  
-  .company-form-section,
-  .company-description-section {
-    max-width: 100%;
-  }
-  
-  .contact-form-panel {
-    padding: 30px;
-  }
-  
-  .company-title {
-    font-size: 2rem;
-  }
-  
-  .form-title {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
   .header-section {
     padding: 15px 0;
-    margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+  }
+  
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 0 15px;
   }
   
   .page-title {
     font-size: 28px;
+    margin-bottom: 5px;
+  }
+  
+  .breadcrumbs {
+    font-size: 13px;
+  }
+  
+  .company-content {
+    flex-direction: column;
+    gap: 30px;
+    align-items: stretch;
+  }
+  
+  /* Форма отзывов - перемещаем вниз */
+  .lombard-news-form-section {
+    order: 2;
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .lombard-news-contact-form-panel {
+    max-width: 100%;
+    min-width: auto;
+    width: 100%;
+    padding: 25px 20px;
+    margin: 0 auto;
+  }
+  
+  /* Описание компании - перемещаем вверх */
+  .company-description-section {
+    order: 1;
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .company-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .benefits-list li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+  
+  .benefits-list li:before {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lombard-company {
+    padding: 5px 0;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+  
+  .header-section {
+    padding: 12px 0;
+    margin-bottom: 25px;
+  }
+  
+  .header-container {
+    padding: 0 10px;
+    gap: 8px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    margin-bottom: 3px;
   }
   
   .breadcrumbs {
     font-size: 12px;
   }
   
-  .lombard-company {
-    padding: 40px 0;
+  .company-content {
+    gap: 25px;
   }
   
-  .company-header {
-    margin-bottom: 40px;
-  }
-  
-  .company-title {
-    font-size: 1.8rem;
-  }
-  
-  .contact-form-panel {
-    padding: 20px;
-  }
-  
-  .form-title {
-    font-size: 1.3rem;
+  .lombard-news-contact-form-panel {
+    padding: 20px 15px;
+    margin: 0;
   }
   
   .company-text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  
+  .benefits-list li {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    padding-left: 18px;
+  }
+  
+  .benefits-list li:before {
     font-size: 1rem;
+  }
+}
+
+/* Стили для очень маленьких экранов (375px и меньше) */
+@media (max-width: 375px) {
+  .lombard-company {
+    padding: 0;
+  }
+  
+  .container {
+    padding: 0 8px;
+  }
+  
+  .header-section {
+    padding: 10px 0;
+    margin-bottom: 20px;
+  }
+  
+  .header-container {
+    padding: 0 8px;
+    gap: 6px;
+  }
+  
+  .page-title {
+    font-size: 22px;
+    margin-bottom: 2px;
+  }
+  
+  .breadcrumbs {
+    font-size: 11px;
+  }
+  
+  .company-content {
+    gap: 20px;
+  }
+  
+  .lombard-news-contact-form-panel {
+    padding: 15px 12px;
+  }
+  
+  .company-text p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+  
+  .benefits-list li {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin-bottom: 6px;
+    padding-left: 16px;
+  }
+  
+  .benefits-list li:before {
+    font-size: 0.9rem;
+  }
+}
+
+/* Стили для самых маленьких экранов (320px и меньше) */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 5px;
+  }
+  
+  .header-container {
+    padding: 0 5px;
+  }
+  
+  .page-title {
+    font-size: 20px;
+  }
+  
+  .breadcrumbs {
+    font-size: 10px;
+  }
+  
+  .lombard-news-contact-form-panel {
+    padding: 12px 10px;
+  }
+  
+  .company-text p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  
+  .benefits-list li {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin-bottom: 5px;
+    padding-left: 14px;
+  }
+  
+  .benefits-list li:before {
+    font-size: 0.85rem;
+  }
+}
+
+/* Специальные стили для Samsung устройств */
+@media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
+  .company-content {
+    gap: 35px;
+  }
+  
+  .lombard-news-contact-form-panel {
+    padding: 30px 25px;
+  }
+  
+  .company-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  
+  .benefits-list li {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Стили для Samsung Galaxy устройств */
+@media screen and (max-width: 768px) and (orientation: portrait) {
+  .lombard-company {
+    padding: 15px 0;
+  }
+  
+  .company-content {
+    gap: 40px;
+  }
+  
+  .lombard-news-contact-form-panel {
+    padding: 35px 30px;
+  }
+}
+
+/* Стили для Samsung Galaxy S и Note серий */
+@media screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 3) {
+  .company-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .benefits-list li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .lombard-news-contact-form-panel {
+    padding: 25px 20px;
+  }
+}
+
+/* Стили для Samsung Galaxy A серии */
+@media screen and (max-width: 600px) and (max-height: 800px) {
+  .company-content {
+    gap: 30px;
+  }
+  
+  .lombard-news-contact-form-panel {
+    padding: 28px 22px;
+  }
+}
+
+/* Фиксация текста и предотвращение "болтания" */
+@media (max-width: 768px) {
+  .lombard-company {
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .company-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .company-text {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .company-text p {
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  .benefits-list {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .benefits-list li {
+    position: relative;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  .lombard-news-form-section {
+    position: relative;
+    z-index: 3;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  
+  .lombard-news-contact-form-panel {
+    position: relative;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: auto;
+  }
+}
+
+/* Дополнительная фиксация для очень маленьких экранов */
+@media (max-width: 480px) {
+  .lombard-company {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .container {
+    overflow-x: hidden;
+  }
+  
+  .company-content {
+    overflow-x: hidden;
+  }
+  
+  .company-text p {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  
+  .benefits-list li {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+}
+
+/* Предотвращение смещения текста при скролле */
+@media (max-width: 768px) {
+  .company-text p,
+  .benefits-list li {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+  }
+  
+  .lombard-news-contact-form-panel {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+  }
+}
+
+/* Фиксация для iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
+    .lombard-company {
+      -webkit-overflow-scrolling: touch;
+      overflow-x: hidden;
+    }
+    
+    .company-text p,
+    .benefits-list li {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+/* Дополнительная стабилизация текста */
+@media (max-width: 768px) {
+  .company-text {
+    contain: layout style;
+    -webkit-contain: layout style;
+  }
+  
+  .benefits-list {
+    contain: layout style;
+    -webkit-contain: layout style;
+  }
+  
+  .company-text p {
+    contain: layout;
+    -webkit-contain: layout;
+    isolation: isolate;
+    -webkit-isolation: isolate;
+  }
+  
+  .benefits-list li {
+    contain: layout;
+    -webkit-contain: layout;
+    isolation: isolate;
+    -webkit-isolation: isolate;
+  }
+}
+
+/* Предотвращение рефлоуа текста */
+@media (max-width: 480px) {
+  .company-text p {
+    min-height: 1.2em;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .benefits-list li {
+    min-height: 1.1em;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .lombard-news-contact-form-panel {
+    min-height: 200px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* Фиксация для Android Chrome */
+@media (max-width: 768px) {
+  .lombard-company {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  .company-text p,
+  .benefits-list li {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 }

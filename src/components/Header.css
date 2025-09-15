@@ -234,11 +234,12 @@
   opacity: 0.8;
 }
 
-/* Базовый размер для телефонов 375x667 */
+/* Адаптивные размеры логотипа для мобильных */
 .mobile-branding img {
-  width: 350px;
-  height: 150px;
+  width: clamp(280px, 70vw, 350px);
+  height: clamp(120px, 30vw, 150px);
   object-fit: contain;
+  max-width: 100%;
 }
 
 /* Улучшенная кнопка бургер-меню */
@@ -602,10 +603,9 @@
     padding: 0 8px;
   }
   
-  /* Базовый размер для телефонов 375x667 */
   .mobile-branding img {
-    width: 350px;
-    height: 150px;
+    width: clamp(250px, 65vw, 300px);
+    height: clamp(100px, 25vw, 120px);
   }
   
   .mobile-menu-content {
@@ -623,18 +623,23 @@
   }
 }
 
-@media (min-width: 481px) and (max-width: 667px) {
-  /* Увеличиваем на 40% для средних телефонов */
+@media (min-width: 376px) and (max-width: 480px) {
   .mobile-branding img {
-    width: 490px; /* 350px + 40% */
-    height: 210px; /* 150px + 40% */
+    width: clamp(300px, 75vw, 350px);
+    height: clamp(130px, 28vw, 150px);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 667px) {
+  .mobile-branding img {
+    width: clamp(350px, 80vw, 400px);
+    height: clamp(150px, 30vw, 170px);
   }
 }
 
 @media (min-width: 668px) and (max-width: 1024px) {
-  /* Увеличиваем на 30% для планшетов */
   .mobile-branding img {
-    width: 455px; /* 350px + 30% */
-    height: 195px; /* 150px + 30% */
+    width: clamp(400px, 85vw, 450px);
+    height: clamp(170px, 32vw, 190px);
   }
 }

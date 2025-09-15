@@ -26,6 +26,7 @@ import HomeAdminPanel from './components/HomeAdminPanel'
 import CalculatorAdminManager from './components/CalculatorAdminManager'
 import CalculatorAdminAuth from './components/CalculatorAdminAuth'
 import './styles/App.css'
+import './styles/mobile-enhancements.css'
 
 // Компонент для условного отображения навигации
 const ConditionalNavigation = () => {

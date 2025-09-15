@@ -1,0 +1,472 @@
+/* Дополнительные улучшения мобильной адаптивности для всех устройств */
+
+/* Улучшенные touch-элементы для мобильных устройств */
+@media (hover: none) and (pointer: coarse) {
+  /* Увеличиваем области касания для всех интерактивных элементов */
+  button,
+  .btn,
+  a,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  .clickable {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 16px;
+  }
+  
+  /* Улучшенные чекбоксы и радио-кнопки */
+  input[type="checkbox"],
+  input[type="radio"] {
+    min-width: 20px;
+    min-height: 20px;
+    margin: 8px;
+  }
+  
+  /* Улучшенные слайдеры */
+  input[type="range"] {
+    min-height: 44px;
+    padding: 8px 0;
+  }
+  
+  /* Убираем hover-эффекты на touch-устройствах */
+  *:hover {
+    transform: none !important;
+  }
+  
+  /* Добавляем активные состояния для touch */
+  *:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Улучшенная прокрутка для мобильных */
+@media (max-width: 768px) {
+  * {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Убираем горизонтальную прокрутку */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Улучшенная прокрутка для контейнеров */
+  .scroll-container {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Улучшения для очень маленьких экранов */
+@media (max-width: 320px) {
+  /* Уменьшаем отступы для экономии места */
+  .container {
+    padding: 0 6px !important;
+  }
+  
+  /* Компактные кнопки */
+  .btn {
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+    min-height: 36px !important;
+  }
+  
+  /* Компактные формы */
+  input,
+  textarea,
+  select {
+    padding: 8px 10px !important;
+    font-size: 14px !important;
+  }
+  
+  /* Компактные заголовки */
+  h1 {
+    font-size: 1.25rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 1.125rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  h3 {
+    font-size: 1rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Улучшения для средних мобильных устройств */
+@media (min-width: 376px) and (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    min-height: 42px;
+  }
+}
+
+/* Улучшения для больших мобильных устройств */
+@media (min-width: 481px) and (max-width: 667px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .btn {
+    padding: 12px 20px;
+    font-size: 15px;
+    min-height: 44px;
+  }
+}
+
+/* Улучшения для планшетов */
+@media (min-width: 668px) and (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    min-height: 46px;
+  }
+}
+
+/* Улучшения для горизонтальной ориентации */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* Уменьшаем высоту элементов для горизонтальной ориентации */
+  .hero-section,
+  .main-services,
+  .company-news {
+    padding: 20px 0 !important;
+    min-height: auto !important;
+  }
+  
+  /* Компактные заголовки */
+  h1 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  h3 {
+    font-size: 1.125rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Компактные отступы */
+  .mb-4 { margin-bottom: 1rem !important; }
+  .mt-4 { margin-top: 1rem !important; }
+  .p-4 { padding: 1rem !important; }
+}
+
+/* Улучшения для темной темы на мобильных */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+  /* Принудительно отключаем темную тему на мобильных для лучшей читаемости */
+  body {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+  }
+  
+  .container {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+  }
+  
+  /* Светлые карточки */
+  .card,
+  .calculator-card,
+  .news-card,
+  .service-card {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #e5e7eb !important;
+  }
+  
+  /* Светлые кнопки */
+  .btn {
+    background-color: #f3f4f6 !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+  }
+  
+  .btn-primary {
+    background-color: #3b82f6 !important;
+    color: #ffffff !important;
+  }
+  
+  /* Светлые формы */
+  input,
+  textarea,
+  select {
+    background-color: #ffffff !important;
+    color: #1f2937 !important;
+    border-color: #d1d5db !important;
+  }
+}
+
+/* Улучшения для высокого контраста */
+@media (prefers-contrast: high) {
+  /* Увеличиваем контрастность для лучшей видимости */
+  .btn {
+    border-width: 2px !important;
+    font-weight: 600 !important;
+  }
+  
+  .card,
+  .calculator-card,
+  .news-card,
+  .service-card {
+    border-width: 2px !important;
+    border-color: #000000 !important;
+  }
+  
+  input,
+  textarea,
+  select {
+    border-width: 2px !important;
+    border-color: #000000 !important;
+  }
+}
+
+/* Улучшения для уменьшенного движения */
+@media (prefers-reduced-motion: reduce) {
+  /* Отключаем анимации для пользователей с чувствительностью к движению */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Убираем hover-эффекты */
+  *:hover {
+    transform: none !important;
+  }
+  
+  /* Убираем активные состояния */
+  *:active {
+    transform: none !important;
+  }
+}
+
+/* Улучшения для печати */
+@media print {
+  /* Скрываем ненужные элементы при печати */
+  .mobile-header-bar,
+  .mobile-menu,
+  .mobile-menu-overlay,
+  .btn,
+  button {
+    display: none !important;
+  }
+  
+  /* Улучшаем читаемость при печати */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+    line-height: 1.4 !important;
+  }
+  
+  .container {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Убираем фоновые изображения */
+  .hero-background,
+  .background-image {
+    display: none !important;
+  }
+  
+  /* Улучшаем контрастность */
+  .card,
+  .calculator-card,
+  .news-card,
+  .service-card {
+    border: 1px solid #000000 !important;
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Дополнительные утилиты для мобильных */
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Улучшения для карточек с текстом */
+.feature-card,
+.info-card,
+.service-card {
+  padding: 18px 15px !important;
+  margin: 10px 0 !important;
+  box-sizing: border-box !important;
+}
+
+  .feature-title,
+  .info-title,
+  .service-title {
+    padding: 0 10px !important;
+    margin: 0 0 12px 0 !important;
+    word-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+
+.feature-text,
+.info-text,
+.service-text {
+  padding: 0 15px !important;
+  margin: 0 !important;
+  word-wrap: break-word !important;
+  hyphens: auto !important;
+  line-height: 1.4 !important;
+}
+
+/* Дополнительные отступы для мобильных */
+@media (max-width: 768px) {
+  .feature-card,
+  .info-card,
+  .service-card {
+    padding: 20px 20px !important;
+    margin: 15px 0 !important;
+  }
+  
+  .feature-title,
+  .info-title,
+  .service-title {
+    padding: 0 15px !important;
+    margin-bottom: 15px !important;
+    font-size: clamp(1rem, 3vw, 1.3rem) !important;
+  }
+  
+  .feature-text,
+  .info-text,
+  .service-text {
+    padding: 0 20px !important;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem) !important;
+    line-height: 1.5 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-card,
+  .info-card,
+  .service-card {
+    padding: 20px 15px !important;
+    margin: 10px 0 !important;
+  }
+  
+  .feature-title,
+  .info-title,
+  .service-title {
+    padding: 0 10px !important;
+    margin-bottom: 15px !important;
+    font-size: clamp(0.95rem, 3.5vw, 1.2rem) !important;
+  }
+  
+  .feature-text,
+  .info-text,
+  .service-text {
+    padding: 0 15px !important;
+    font-size: clamp(0.85rem, 3vw, 1rem) !important;
+    line-height: 1.4 !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .feature-card,
+  .info-card,
+  .service-card {
+    padding: 15px 10px !important;
+    margin: 8px 0 !important;
+  }
+  
+  .feature-title,
+  .info-title,
+  .service-title {
+    padding: 0 8px !important;
+    margin-bottom: 12px !important;
+    font-size: clamp(0.9rem, 4vw, 1.1rem) !important;
+  }
+  
+  .feature-text,
+  .info-text,
+  .service-text {
+    padding: 0 12px !important;
+    font-size: clamp(0.8rem, 3.5vw, 0.95rem) !important;
+    line-height: 1.3 !important;
+  }
+}
+
+/* Улучшенные утилиты для отступов */
+@media (max-width: 480px) {
+  .mobile-p-1 { padding: 0.25rem !important; }
+  .mobile-p-2 { padding: 0.5rem !important; }
+  .mobile-p-3 { padding: 0.75rem !important; }
+  .mobile-p-4 { padding: 1rem !important; }
+  
+  .mobile-m-1 { margin: 0.25rem !important; }
+  .mobile-m-2 { margin: 0.5rem !important; }
+  .mobile-m-3 { margin: 0.75rem !important; }
+  .mobile-m-4 { margin: 1rem !important; }
+  
+  .mobile-text-xs { font-size: 0.75rem !important; }
+  .mobile-text-sm { font-size: 0.875rem !important; }
+  .mobile-text-base { font-size: 1rem !important; }
+  .mobile-text-lg { font-size: 1.125rem !important; }
+}
+
+/* Улучшения для iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  /* Исправления для iOS Safari */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  textarea {
+    font-size: 16px !important; /* Предотвращает зум на iOS */
+  }
+  
+  /* Улучшенная прокрутка для iOS */
+  .scroll-container {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Улучшения для Android Chrome */
+@supports (display: -webkit-box) {
+  /* Исправления для Android Chrome */
+  .container {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
